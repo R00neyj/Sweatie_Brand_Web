@@ -1,0 +1,11 @@
+/* Normalization ================== */
+html {
+  font-size: 10px;
+  /* top-section ========================== */
+}
+.top-section {
+  width: 192rem;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
