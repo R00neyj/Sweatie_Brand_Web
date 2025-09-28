@@ -46,8 +46,8 @@ body {
 }
 
 .sec-2 > .content-wrap .scroll-ani {
+   /* change transition time here */
    --transition-duration: 0.6s;
-   --transition-delay: 0.3s;
 
    display: flex;
    flex-direction: column;
@@ -108,6 +108,7 @@ body {
             opacity: 0;
             height: 0;
             transition: inherit;
+            letter-spacing: -2%;
          }
       }
    }
@@ -191,15 +192,17 @@ body {
          }
       }
 
+      /* cta buttons */
       .btn-wrap {
          position: absolute;
          bottom: 2%;
          left: 50%;
          display: flex;
-         gap: 2.4rem;
+         gap: 1.6rem;
          transform: translate(-50%, -50%);
 
          a {
+            --content: ""; /* content will be inherited from span / js */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -211,7 +214,135 @@ body {
             color: var(--black);
             font-size: 2.2rem;
             font-weight: 500;
+            transition: all 0.3s;
+
+            .txt-hide-wrap {
+               overflow: hidden;
+               span {
+                  display: block;
+                  position: relative;
+                  transition: all 0.3s;
+
+                  &::after {
+                     content: var(--content);
+                     display: block;
+                     position: absolute;
+                     top: 100%;
+                  }
+               }
+            }
+
+            /* btn hover */
+            &:hover {
+               transform: scale(1.06);
+               box-shadow: 0 5px 24px rgba(0, 0, 0, 0.2);
+
+               span {
+                  transform: translateY(-100%);
+               }
+            }
          }
       }
    }
 }
+/* ----------------------------- section 4 end ----------------------------- */
+
+/* ----------------------------- section 6 ----------------------------- */
+.sec-6 {
+   padding-bottom: 100px;
+   .card-box {
+      display: flex;
+      gap: 2.4rem;
+      /* change transition time here */
+      --transition-duration: 0.6s;
+
+      /* card common settings */
+      .card {
+         flex: 1 1 0;
+         position: relative;
+         height: 95rem;
+         overflow: hidden;
+         border-radius: 2.4rem;
+         transition: all var(--transition-duration);
+
+         .img-box {
+            line-height: 0;
+            width: 100%;
+            height: 100%;
+
+            img {
+               object-fit: cover;
+               width: 100%;
+               height: 100%;
+               filter: blur(0.2rem);
+               transition: all var(--transition-duration);
+            }
+            &::after {
+               content: "";
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+               background-color: rgba(0, 0, 0, 0.5);
+               transition: all var(--transition-duration);
+            }
+         }
+
+         .text-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            text-wrap: nowrap;
+
+            h3 {
+               font-size: 2.4rem;
+               transition: all var(--transition-duration);
+            }
+
+            p {
+               font-size: 1.6rem;
+               font-weight: 500;
+               letter-spacing: -2%;
+               transition: all var(--transition-duration);
+            }
+         }
+      }
+
+      .card.card-1 {
+         border-radius: 0 2.4rem 2.4rem 0;
+      }
+
+      .card.card-4 {
+         border-radius: 2.4rem 0 0 2.4rem;
+      }
+
+      /* active card */
+      .card.active {
+         flex: 4.5 1 0;
+
+         .img-box {
+            img {
+               filter: blur(0rem);
+            }
+            &::after {
+               background-color: rgba(0, 0, 0, 0.2);
+            }
+         }
+
+         .text-box {
+            h3 {
+               font-size: 6.4rem;
+            }
+
+            p {
+               font-size: 3.2rem;
+            }
+         }
+      }
+   }
+}
+
+/* ----------------------------- section 6 end ----------------------------- */
