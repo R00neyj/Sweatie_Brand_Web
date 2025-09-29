@@ -1,6 +1,7 @@
 /* Normalization ================== */
 html {
   font-size: 10px;
+  overflow-x: hidden;
 }
 /* top-section ========================== */
 .top-section {
@@ -160,6 +161,7 @@ html {
 .top-section > .intro-container > .intro-wrap > .intro-box > .intro-text > p {
   font-weight: bold;
   font-size: 3.2rem;
+  white-space: nowrap;
 }
 
 .top-section > .intro-container > .intro-wrap > .intro-box > .intro-text > .line-wrap {
@@ -185,7 +187,6 @@ html {
   color: #ffffff;
 }
 /* sec-5 ========================== */
-/* section-5)text-wrapper ========== */
 .sec-5 {
   font-family: "Urbanist";
   position: relative;
@@ -198,8 +199,9 @@ html {
   padding: 0;
   color: #ffffff;
   background-color: #000;
+  box-shadow: inset 5rem #000;
 }
-
+/* section-5)text-wrapper ========== */
 .sec-5 > .partner-text-wrap {
   width: 100%;
   height: 12rem;
@@ -218,15 +220,35 @@ html {
 /* section-5)partners-container ============ */
 .sec-5 > .partners-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
 }
 
-.sec-5 > .partners-container > .partners-wrap-1 {
+.sec-5 > .partners-container > span {
   display: flex;
   gap: 3rem;
-  padding-left: 2.8rem;
 }
 
-.sec-5 > .partners-container > .partners-wrap-1 > div {
+.sec-5 > .partners-container > span > div > img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  object-fit: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.sec-5 > .partners-container > span > div:hover {
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.sec-5 > .partners-container > span > div:hover > img {
+  filter: invert(100%);
+  transition: all 0.2s ease-in-out;
+}
+
+.sec-5 > .partners-container > span > div {
   margin: 0;
   padding: 0;
   width: 35rem;
@@ -238,23 +260,15 @@ html {
   flex-shrink: 0;
   transition: all 0.2s ease-in-out;
 }
-
-.sec-5 > .partners-container > .partners-wrap-1 > div > img {
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;
-  object-fit: cover;
-  transition: all 0.2s ease-in-out;
+/* partners-wrap-1 =========================== */
+.sec-5 > .partners-container > .partners-wrap-1 {
+  padding-left: 2.8rem;
 }
-
-.sec-5 > .partners-container > .partners-wrap-1 > div:hover {
-  background-color: #ffffff;
-  transition: all 0.2s ease-in-out;
-}
-
-.sec-5 > .partners-container > .partners-wrap-1 > div:hover > img {
-  filter: invert(100%);
-  transition: all 0.2s ease-in-out;
+/* partners-wrap-2 =========================== */
+.sec-5 > .partners-container > .partners-wrap-2 {
+  padding-right: 2.8rem;
+  display: flex;
+  flex-direction: row-reverse;
 }
 /* bottom-section ========================== */
 .bottom-section {
