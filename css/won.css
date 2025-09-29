@@ -1,0 +1,358 @@
+/* font 국문 프리텐다드 / 영문 어바니스트*/
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ */
+
+/* font-size adjustment */
+html {
+  font-size: max(8px, 0.5208vw);
+}
+::selection {
+  background-color: var(--primary);
+  color: var(--black);
+}
+/* ----------------------------- Variable ----------------------------- */
+:root {
+  --primary: #cafa00;
+  --secondary: #006cfa;
+  --bgColor: #2c2c2c;
+  --white: #f5f5f5;
+  --black: #222;
+}
+
+body {
+  background-color: black;
+  color: #f5f5f5;
+}
+/* ----------------------------- section header ----------------------------- */
+.section {
+  .section-header {
+    width: 164rem;
+    margin: 10rem auto 3.6rem;
+    font-weight: 700;
+    font-size: 8rem;
+  }
+}
+/* ----------------------------- section 2 ----------------------------- */
+.sec-2 {
+  > .content-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.sec-2 > .content-wrap .scroll-ani {
+  /* change transition time here */
+  --transition-duration: 0.6s;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  /* card common setting */
+  .card {
+    position: relative;
+    height: 50dvh;
+    width: 100%;
+    overflow: hidden;
+    transition: all var(--transition-duration);
+
+    > .img-box {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      line-height: 0;
+      transition: inherit;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        transition: inherit;
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: inherit;
+      }
+    }
+
+    > .text-box {
+      position: absolute;
+      top: 50%;
+      left: 2.5%;
+      transform: translate(0%, -50%);
+      color: var(--white);
+      line-height: 1;
+      text-align: left;
+      transition: inherit;
+
+      > h3 {
+        font-size: 6.4rem;
+        font-weight: 700;
+        transition: inherit;
+      }
+
+      > p {
+        opacity: 0;
+        height: 0;
+        transition: inherit;
+        letter-spacing: -2%;
+      }
+    }
+  }
+
+  .card.active {
+    height: 100dvh;
+
+    > .img-box {
+      &::after {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    > .text-box {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      > h3 {
+        font-size: 14.2rem;
+        font-weight: 700;
+      }
+
+      > p {
+        opacity: 1;
+        margin-top: 3.6rem;
+        font-size: 4.8rem;
+        font-weight: 800;
+        height: auto;
+      }
+    }
+  }
+}
+/* ----------------------------- section 2 end----------------------------- */
+
+/* ----------------------------- section 4 ----------------------------- */
+.sec-4 {
+  .svg-box {
+    line-height: 0;
+  }
+
+  > .content-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 100dvh;
+
+    .bg-video {
+      position: absolute;
+      z-index: -1;
+      top: -5%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      video {
+        width: 100%;
+      }
+    }
+
+    .text-box {
+      position: absolute;
+      font-size: 12.8rem;
+      line-height: 1;
+      font-weight: 700;
+      transform: translate(-50%, -50%);
+      text-wrap: nowrap;
+      z-index: 10;
+
+      > .dm-serif {
+        font-family: "Dm Serif", serif;
+      }
+      span {
+        display: inline-flex;
+
+        .o {
+          margin-left: -1rem;
+        }
+        .e {
+          margin-left: -0.5rem;
+        }
+      }
+
+      &.left {
+        top: 50%;
+        left: 25%;
+      }
+      &.right {
+        top: 50%;
+        left: 75%;
+      }
+    }
+
+    /* cta buttons */
+    .btn-wrap {
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      display: flex;
+      gap: 1.6rem;
+      transform: translate(-50%, -50%);
+
+      a {
+        --content: ""; /* content will be inherited from span / js */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        border-radius: 9rem;
+        width: 22rem;
+        height: 6.4rem;
+        background-color: var(--white);
+        color: var(--black);
+        font-size: 2.2rem;
+        font-weight: 500;
+        transition: all 0.3s;
+
+        .txt-hide-wrap {
+          overflow: hidden;
+          span {
+            display: block;
+            position: relative;
+            transition: all 0.3s;
+
+            &::after {
+              content: var(--content);
+              display: block;
+              position: absolute;
+              top: 100%;
+            }
+          }
+        }
+
+        /* btn hover */
+        &:hover {
+          transform: scale(1.06);
+          box-shadow: 0 5px 24px rgba(0, 0, 0, 0.2);
+
+          span {
+            transform: translateY(-100%);
+          }
+        }
+      }
+    }
+  }
+}
+/* ----------------------------- section 4 end ----------------------------- */
+
+/* ----------------------------- section 6 ----------------------------- */
+.sec-6 {
+  padding-bottom: 100px;
+  .card-box {
+    display: flex;
+    gap: 2.4rem;
+    /* change transition time here */
+    --transition-duration: 0.6s;
+
+    /* card common settings */
+    .card {
+      flex: 1 1 0;
+      position: relative;
+      height: 95rem;
+      overflow: hidden;
+      border-radius: 2.4rem;
+      transition: all var(--transition-duration);
+
+      .img-box {
+        line-height: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          filter: blur(0.2rem);
+          transition: all var(--transition-duration);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          transition: all var(--transition-duration);
+        }
+      }
+
+      .text-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        text-wrap: nowrap;
+
+        h3 {
+          font-size: 2.4rem;
+          transition: all var(--transition-duration);
+        }
+
+        p {
+          font-size: 1.6rem;
+          font-weight: 500;
+          letter-spacing: -2%;
+          transition: all var(--transition-duration);
+        }
+      }
+    }
+
+    .card.card-1 {
+      border-radius: 0 2.4rem 2.4rem 0;
+    }
+
+    .card.card-4 {
+      border-radius: 2.4rem 0 0 2.4rem;
+    }
+
+    /* active card */
+    .card.active {
+      flex: 4.5 1 0;
+
+      .img-box {
+        img {
+          filter: blur(0rem);
+        }
+        &::after {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .text-box {
+        h3 {
+          font-size: 6.4rem;
+        }
+
+        p {
+          font-size: 3.2rem;
+        }
+      }
+    }
+  }
+}
+
+/* ----------------------------- section 6 end ----------------------------- */
