@@ -9,7 +9,7 @@
 
 /* font-size adjustment */
 html {
-   font-size: max(8px, 0.5208vw);
+   font-size: max(8px, 0.52083333vw);
 }
 ::selection {
    background-color: var(--primary);
@@ -90,7 +90,6 @@ body {
             object-position: center;
             width: 100%;
             height: 100%;
-            transition: inherit;
          }
          &::after {
             content: "";
@@ -125,7 +124,7 @@ body {
             opacity: 0;
             height: 0;
             transition: inherit;
-            letter-spacing: -2%;
+            letter-spacing: -0.05rem;
          }
       }
    }
@@ -173,7 +172,7 @@ body {
 
 .sec-3 {
    /* === section 3 variable === */
-   --section3-width: 545rem;
+   --section3-width: 570rem;
    --sec-3__left-width: 80rem;
    --sec-3__text-box-size: 133rem;
    --sec-3__text-left-position: 63.5rem;
@@ -321,6 +320,7 @@ body {
             > p {
                font-size: 1.8rem;
                line-height: 1.7;
+               letter-spacing: -0.05rem;
             }
 
             > .box-swiper {
@@ -533,13 +533,15 @@ body {
 
             h3 {
                font-size: 2.4rem;
+               line-height: 1;
                transition: all var(--transition-duration);
             }
 
             p {
+               margin-top: 1.2rem;
                font-size: 1.6rem;
                font-weight: 500;
-               letter-spacing: -2%;
+               letter-spacing: -0.05rem;
                transition: all var(--transition-duration);
             }
          }
@@ -573,6 +575,7 @@ body {
 
             p {
                font-size: 3.2rem;
+               font-weight: 600;
             }
          }
       }

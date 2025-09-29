@@ -369,6 +369,7 @@
       <!-- swiper -->
       <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
       <script>
+         console.clear();
          AOS.init();
          gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -447,9 +448,11 @@
          function textSplit__init() {
             const target = document.querySelectorAll(".sec-4 .text-box span");
             let charArr = [];
+            let spanEl;
 
             target.forEach((el, index) => {
                char = el.textContent.split("");
+
                charArr.push(char);
                el.innerText = "";
 
@@ -457,12 +460,18 @@
                   let spans = document.createElement("span");
                   spans.textContent = charArr[index][i];
                   spans.classList.add(charArr[index][i]);
-                  spans.setAttribute("data-aos", "fade-up");
-                  spans.setAttribute("data-aos-duration", "1000");
-                  spans.setAttribute("data-aos-once", "true");
-                  spans.setAttribute("data-aos-delay", (index + i) * 100);
+
                   el.append(spans);
                }
+            });
+
+            // set- data-aos-delay
+            const target2 = document.querySelectorAll(".sec-4 .text-box span span");
+            target2.forEach((el, index) => {
+               el.setAttribute("data-aos", "fade-in");
+               el.setAttribute("data-aos-duration", "500");
+               el.setAttribute("data-aos-once", "true");
+               el.setAttribute("data-aos-delay", (index + 1) * 100);
             });
          }
 
@@ -518,8 +527,9 @@
          }
 
          ////////////////////////////////////
-         ////////////////////////////////////
          // function load
+         ////////////////////////////////////
+
          window.addEventListener("load", () => {
             sec3_gsapScroll__init();
             sec3__Swiper();
@@ -532,6 +542,20 @@
                smooth: 1.5,
                effects: true,
             });
+         });
+
+         ////////////////////////////////////
+         // resize
+         ////////////////////////////////////
+         let resizeTimer;
+         window.addEventListener("resize", function () {
+            clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(function () {
+               sec3_gsapScroll__init();
+               ScrollTrigger.refresh();
+               console.log("Resize done");
+            }, 200);
          });
       </script>
    </body>
