@@ -87,6 +87,8 @@ html {
 
 .top-section > .header > .header-grid > .menu-wrap > ul > a:hover {
   color: #cafa00;
+  text-decoration: 0.25rem underline #000000;
+  text-underline-offset: 3.5rem;
 }
 /* header)trans lane ================================= */
 .top-section > .header > .header-grid > .translate-wrap {
@@ -158,7 +160,7 @@ html {
   gap: 1.2rem;
 }
 
-.top-section > .intro-container > .intro-wrap > .intro-box > .intro-text > p {
+.top-section > .intro-container > .intro-wrap > .intro-box > .intro-text > h3 {
   font-weight: bold;
   font-size: 3.2rem;
   white-space: nowrap;
@@ -193,6 +195,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 4.8rem;
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -210,12 +213,13 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4.8rem;
 }
 
 .sec-5 > .partner-text-wrap > .partner-text-box {
   width: 90%;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 /* section-5)partners-container ============ */
 .sec-5 > .partners-container {
@@ -225,12 +229,12 @@ html {
   gap: 3.4rem;
 }
 
-.sec-5 > .partners-container > span {
+.sec-5 > .partners-container > .marquee-slider > span {
   display: flex;
   gap: 3rem;
 }
 
-.sec-5 > .partners-container > span > div > img {
+.sec-5 > .partners-container > .marquee-slider > span > div > img {
   width: 100%;
   height: 100%;
   vertical-align: middle;
@@ -238,17 +242,17 @@ html {
   transition: all 0.2s ease-in-out;
 }
 
-.sec-5 > .partners-container > span > div:hover {
+.sec-5 > .partners-container > .marquee-slider > span > div:hover {
   background-color: #ffffff;
   transition: all 0.2s ease-in-out;
 }
 
-.sec-5 > .partners-container > span > div:hover > img {
+.sec-5 > .partners-container > .marquee-slider > span > div:hover > img {
   filter: invert(100%);
   transition: all 0.2s ease-in-out;
 }
 
-.sec-5 > .partners-container > span > div {
+.sec-5 > .partners-container > .marquee-slider > span > div {
   margin: 0;
   padding: 0;
   width: 35rem;
@@ -260,15 +264,93 @@ html {
   flex-shrink: 0;
   transition: all 0.2s ease-in-out;
 }
-/* partners-wrap-1 =========================== */
-.sec-5 > .partners-container > .partners-wrap-1 {
+/* partners-marquee-1 =========================== */
+.sec-5 > .partners-container > .marquee-slider > .partners-marquee-1 {
   padding-left: 2.8rem;
+  
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+
+    -moz-animation: overwrap1 25s linear infinite;
+    -webkit-animation:overwrap1 25s linear infinite;
+    animation: overwrap1 25s linear infinite;
 }
-/* partners-wrap-2 =========================== */
-.sec-5 > .partners-container > .partners-wrap-2 {
+/* Move tool(define the animation) ================ */
+@-moz-keyframes overwrap1 {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes overwrap1 {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes overwrap1 {
+    0% {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+/* partners-marquee-2 =========================== */
+.sec-5 > .partners-container > .marquee-slider > .partners-marquee-2 {
   padding-right: 2.8rem;
   display: flex;
   flex-direction: row-reverse;
+  
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+
+    -moz-animation: overwrap2 25s linear infinite;
+    -webkit-animation:overwrap2 25s linear infinite;
+    animation: overwrap2 25s linear infinite;
+}
+/* Move tool(define the animation) ================ */
+@-moz-keyframes overwrap2 {
+    0% {
+        -moz-transform: translateX(-100%);
+    }
+    100% {
+        -moz-transform: translateX(100%);
+    }
+}
+
+@-webkit-keyframes overwrap2 {
+    0% {
+        -webkit-transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(100%);
+    }
+}
+
+@keyframes overwrap2 {
+    0% {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    100% {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
 }
 /* bottom-section ========================== */
 .bottom-section {
