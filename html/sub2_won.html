@@ -48,8 +48,8 @@
                      customized courses, safety, and community.
                   </p>
                </div>
+               <div class="section-divider"></div>
             </section>
-            <div class="section-divider"></div>
             <section class="section sub2 sub2-sec-3">
                <div class="section-header">
                   <h3>Runningmate Matching</h3>
@@ -114,20 +114,20 @@
                </div>
                <div class="content-wrap">
                   <div class="content-box box-1">
-                     <div class="img-box">
+                     <div class="img-box" data-aos="fade-right">
                         <img src="../image/subpage_2/reword_1.webp" alt="Reword screen 1" />
                      </div>
                      <div class="text-box">
-                        <h4>A special gift for all your running.</h4>
-                        <h4 class="kr">열심히 달려온 당신을 위한 특별한 선물</h4>
-                        <p class="kr">
+                        <h4 data-aos="fade-in">A special gift for all your running.</h4>
+                        <h4 class="kr" data-aos="fade-in" data-aos-delay="100">열심히 달려온 당신을 위한 특별한 선물</h4>
+                        <p class="kr" data-aos="fade-in" data-aos-delay="200">
                            달릴수록 쌓이는 포인트로 <br />
                            더 즐겁게 뛰어보세요
                         </p>
                      </div>
                   </div>
                   <div class="content-box box-2">
-                     <div class="text-box">
+                     <div class="text-box" data-aos="fade-in">
                         <p class="kr">
                            달릴수록 쌓이는 포인트와 제휴 혜택, <br />
                            굿즈로 운동에 재미를 붙여보세요 <br />
@@ -135,7 +135,7 @@
                            즐거움이 두 배 되는 러닝을 선사합니다
                         </p>
                      </div>
-                     <div class="img-box">
+                     <div class="img-box" data-aos="fade-left">
                         <img src="../image/subpage_2/reword_2.png" alt="Reword screen 2" />
                      </div>
                   </div>
@@ -146,35 +146,35 @@
                   <div class="content-box box-3">
                      <div class="text-box">
                         <h4>
-                           Beyond your limits, <br />
-                           meet a better you than Yesterday
+                           <span data-aos="fade-in">Beyond your limits,</span> <br />
+                           <span data-aos="fade-in">meet a better you than Yesterday</span>
                         </h4>
                         <h4 class="kr">
-                           당신의 한계를 넘어, <br />
-                           어제보다 더 나아진 나를 만나보세요
+                           <span data-aos="fade-in">당신의 한계를 넘어,</span> <br />
+                           <span data-aos="fade-in">어제보다 더 나아진 나를 만나보세요</span>
                         </h4>
                      </div>
                   </div>
                   <div class="content-box box-4">
                      <div class="img-container img-container-1">
-                        <div class="img-box">
+                        <div class="img-box" data-aos="fade-right">
                            <img src="../image/subpage_2/analysis_2.png" alt="analysis screen 2" />
                         </div>
-                        <div class="text-box">
+                        <div class="text-box" data-aos="fade-in">
                            주간, 월간, 연간 쌓인 데이터 속에서 <br />
                            당신의 꾸준한 성장을 발견하세요
                         </div>
                      </div>
                      <div class="img-container img-container-2">
-                        <div class="img-box">
+                        <div class="img-box" data-aos="fade-down" data-aos-offset="400">
                            <img src="../image/subpage_2/analysis_1.png" alt="analysis screen 1" />
                         </div>
                      </div>
                      <div class="img-container img-container-3">
-                        <div class="img-box">
+                        <div class="img-box" data-aos="fade-left">
                            <img src="../image/subpage_2/analysis_3.png" alt="analysis screen 3" />
                         </div>
-                        <div class="text-box">
+                        <div class="text-box" data-aos="fade-in">
                            달린 모든 기록이 모여, <br />
                            당신의 러닝 스토리가 됩니다
                         </div>
@@ -285,6 +285,23 @@
             });
          }
 
+         function aos지연시간일일히적기귀찮아함수() {
+            const 적용할애들 = document.querySelectorAll(
+               `[data-aos="fade-in"],[data-aos="fade-left"],[data-aos="fade-right"],[data-aos="fade-up"],[data-aos="fade-down"]`
+            );
+            let 지연시간 = 600;
+
+            적용할애들.forEach((엘리먼트) => {
+               let 이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-duration`);
+               let 불리언타입으로바꾸기 = 이미있는애찾기 == null;
+
+               if (불리언타입으로바꾸기) {
+                  엘리먼트.setAttribute("data-aos-duration", 지연시간);
+               }
+            });
+         }
+
+         aos지연시간일일히적기귀찮아함수();
          AdvancedTextSplit__init();
          gsap__init();
       </script>
