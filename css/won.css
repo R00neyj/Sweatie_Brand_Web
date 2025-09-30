@@ -44,6 +44,7 @@ body {
 /* dm-serif */
 .dm-serif {
   font-family: "Dm Serif", serif;
+  letter-spacing: -0.1rem;
 }
 /* img-box */
 .img-box {

@@ -1,4 +1,8 @@
 /* Normalization ================== */
+/*  */
+/*  */
+/*  */
+/* header, section 1, section 4 css */
 
 /* top-section ========================== */
 .top-section {
@@ -54,7 +58,22 @@
   left: 0;
   z-index: 10000;
   box-sizing: border-box;
-  /* border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5); */
+  transition: all 0.3s;
+}
+
+header.invert {
+  color: var(--black);
+  background-color: var(--white);
+
+  .translate-wrap {
+    > a {
+      border: 0.1rem solid var(--black) !important;
+    }
+  }
+
+  img {
+    filter: invert(100%);
+  }
 }
 
 .header > .header-grid {

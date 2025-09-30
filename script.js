@@ -117,6 +117,7 @@ function sec3_gsapScroll__init() {
   let pinWrap = document.querySelector(".sec-3 .content-wrap");
   let pinWrapWidth = pinWrap.offsetWidth;
   let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+  const header = document.querySelector(".header");
 
   // Pinning and horizontal scrolling
 
@@ -129,6 +130,18 @@ function sec3_gsapScroll__init() {
       // anticipatePin: 1,
       start: "top top",
       end: pinWrapWidth,
+      onEnter: () => {
+        header.classList.add("invert");
+      },
+      onEnterBack: () => {
+        header.classList.add("invert");
+      },
+      onLeave: () => {
+        header.classList.remove("invert");
+      },
+      onLeaveBack: () => {
+        header.classList.remove("invert");
+      },
     },
     x: -horizontalScrollLength,
     ease: "none",
