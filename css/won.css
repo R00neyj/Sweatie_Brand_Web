@@ -9,7 +9,7 @@
 /*  */
 /*  */
 /*  */
-/* main - section 2 , 3 , 4 css */
+/* main - section 2 , 3 , 4 , 6  */
 /*  */
 /*  */
 /*  */
@@ -56,10 +56,24 @@ body {
 /* img-box */
 .img-box {
    line-height: 0;
+   user-select: none;
 }
 
+/* svg-box */
 .svg-box {
    line-height: 0;
+   user-select: none;
+}
+
+/* kr letter spacing */
+.kr {
+   letter-spacing: -0.05rem;
+}
+
+/* blank // delete this after finish */
+.blank {
+   height: 100dvh;
+   background-color: #666;
 }
 
 /* ----------------------------- section 2 ----------------------------- */
@@ -592,3 +606,191 @@ body {
 }
 
 /* ----------------------------- section 6 end ----------------------------- */
+
+/* ---------------------------------------------------------------------- */
+/* ----------------------------- sub page 2 ----------------------------- */
+/* ---------------------------------------------------------------------- */
+.section.sub2 .section-header {
+   h3 {
+      font-size: 9rem;
+      line-height: 1.5;
+   }
+   h4 {
+      font-size: 6.4rem;
+   }
+}
+
+/* ----------------------------- sub2 section 1 ----------------------------- */
+.sub2-sec-1 {
+   margin-top: 8rem;
+
+   > .content-wrap {
+      height: calc(100dvh - 8rem);
+      overflow: hidden;
+   }
+}
+
+/* img box */
+.sub2-sec-1 > .content-wrap > .img-box {
+   position: relative;
+
+   .filter {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(0deg, var(--black) 10%, rgba(0, 0, 0, 0.2) 60%);
+   }
+
+   img {
+      margin-top: -10rem;
+      width: 100vw;
+      filter: brightness(75%);
+      transform: scaleX(-1);
+   }
+}
+/* text box */
+.sub2-sec-1 > .content-wrap > .text-box {
+   position: absolute;
+   z-index: 2;
+   left: 16rem;
+   bottom: 6rem;
+
+   > h2 {
+      font-size: 17rem;
+      line-height: 1;
+   }
+}
+/* ----------------------------- sub2 section 2 ----------------------------- */
+.sub2-sec-2 {
+   > .content-wrap {
+      text-align: center;
+      padding: 12.8rem 0 6.4rem;
+      background-color: var(--black);
+
+      p {
+         margin-top: 0.6rem;
+      }
+      > h3 {
+         font-size: 4rem;
+      }
+      > p:nth-child(2) {
+         font-size: 3.2rem;
+         font-weight: 500;
+      }
+      > h4 {
+         font-size: 2.4rem;
+         margin-top: 4rem;
+      }
+      > p:last-child {
+         font-size: 2rem;
+      }
+   }
+}
+
+/* gradient section divider */
+.sub2-content .section-divider {
+   height: 40rem;
+   background: linear-gradient(0deg, #000, var(--black));
+}
+
+/* ----------------------------- sub2 section 3 ----------------------------- */
+.sub2-content {
+   /* === section 3 font size */
+   --font-xl: 6.4rem;
+   --font-l: 4.8rem;
+   --font-m: 3.2rem;
+   --font-s: 2.4rem;
+}
+.sub2-sec-3 {
+   overflow-x: hidden;
+   position: relative;
+   height: 262rem;
+
+   > .content-wrap {
+      width: 164rem;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+   }
+}
+.sub2-sec-3 > .content-wrap > .content-box {
+   display: flex;
+   align-items: center;
+   gap: 3rem;
+   > .text-box {
+      font-size: var(--font-s);
+   }
+
+   > .img-box {
+      overflow: hidden;
+   }
+}
+/* sec-3 box-1 */
+.sub2-sec-3 > .content-wrap > .content-box.box-1 {
+   height: 110rem;
+   position: relative;
+   display: block;
+
+   > .text-box {
+      position: absolute;
+      top: 16rem;
+      left: 0;
+
+      > h4 {
+         font-size: var(--font-xl);
+      }
+      > h4.kr {
+         font-size: var(--font-l);
+      }
+      > p {
+         font-size: var(--font-m);
+         font-weight: 500;
+         margin-top: var(--font-l);
+      }
+   }
+
+   > .img-box {
+      width: 160rem;
+      top: 20rem;
+      left: 27rem;
+      position: absolute;
+   }
+}
+/* sec-3 box-2 */
+.sub2-sec-3 > .content-wrap > .content-box.box-2 {
+   position: absolute;
+   top: 110rem;
+   left: 33.33%;
+   height: 59.5rem;
+   transform: translateX(-50%);
+
+   > .img-box {
+      width: 40rem;
+      border-radius: 2.4rem;
+   }
+}
+/* sec-3 box-3 */
+.sub2-sec-3 > .content-wrap > .content-box.box-3 {
+   position: absolute;
+   top: 155rem;
+   right: 33.3%;
+   display: flex;
+   height: 59.5rem;
+   transform: translateX(50%);
+
+   > .img-box {
+      width: 40rem;
+      border-radius: 2.4rem;
+   }
+}
+
+.sub2-sec-3 > .svg-box {
+   position: absolute;
+   top: 58rem;
+   left: 0;
+   z-index: 1;
+   transform: scale(-1);
+}
