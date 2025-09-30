@@ -26,6 +26,7 @@
      <header class="sub-1-header"></header>
      <!-- sub-1-main -->
      <main class="sub-1-main">
+      <!-- sub-section-1 -->
       <section class="sub-section-1">
         <div class="img-container">
           <img src="../image/subPage1_imgs/section-1/sub-top-background-img.png" alt="background-img">
@@ -38,13 +39,80 @@
           <h3>런닝을 넘어, 즐거움과 함께 성장하는 경험.</h3>
         </div>
       </section>  
+      <!-- sub-section-2 -->
       <section class="sub-section-2">
-        <div class="scroll-banner-container"></div>
+        <div class="scroll-banner-container">
+          <div class="banner-wrapper">
+            <h1>Our Goals For Users</h1>
+            <h3>
+              <p>to provide with a differentiated running</p>
+              <p>experience by offering motivation, record</p>
+              <p>management, personalized course</p>
+              <p>guidance, safety assurance</p>
+            </h3>
+            <h4>
+              <p>우리는 사용자에게 동기 부여, 기록 관리, 맞춤형 코스 안내,</p>
+              <p>안전 확보 및 커뮤니티 활성화를 제공하여 차별화된 런닝</p>
+              <p>경험을 제공하는 것을 목표로 합니다.</p>
+            </h4>
+          </div>
+          <div class="scroll-wrapper">
+            <div class="card">
+              <img src="../image/subPage1_imgs/section-2/scroll-img-1.webp" alt="card-1">
+            </div>
+            <div class="card">
+              <img src="../image/subPage1_imgs/section-2/scroll-img-2.webp" alt="card-2">
+            </div>
+            <div class="card">
+              <img src="../image/subPage1_imgs/section-2/scroll-img-3.jpg" alt="card-3">
+            </div>
+            <div class="card">
+              <img src="../image/subPage1_imgs/section-2/scroll-img-4.jpg" alt="card-4">
+            </div>
+          </div>
+        </div>
       </section>
      </main>
      <!-- sub-1-footer -->
      <footer class="sub-1-footer"></footer>
-    <!-- 자바 여기다 일단 적으십쇼 -->
-    <script></script>
+     <!-- (gsap) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Js zone -->
+    <script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const cards = gsap.utils.toArray(".goal-card");
+
+  cards.forEach((card, i) => {
+    gsap.fromTo(
+      card,
+      { y: i * 120, scale: 0.9, opacity: 0.6 },
+      {
+        y: i * 150,
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.to(card, {
+      scale: 0.9,
+      opacity: 0.6,
+      scrollTrigger: {
+        trigger: card,
+        start: "top 30%",
+        end: "top 10%",
+        scrub: true,
+      },
+    });
+  });
+    </script>
   </body>
 </html>
