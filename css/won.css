@@ -70,12 +70,6 @@ body {
    letter-spacing: -0.05rem;
 }
 
-/* blank // delete this after finish */
-.blank {
-   height: 100dvh;
-   background-color: #666;
-}
-
 /* ----------------------------- section 2 ----------------------------- */
 .sec-2 {
    > .content-wrap {
@@ -628,6 +622,7 @@ body {
    > .content-wrap {
       height: calc(100dvh - 8rem);
       overflow: hidden;
+      position: relative;
    }
 }
 
@@ -724,7 +719,8 @@ body {
    --font-s: 2.4rem;
 }
 .sub2-sec-3,
-.sub2-sec-4 {
+.sub2-sec-4,
+.sub2-sec-5 {
    overflow-x: hidden;
    position: relative;
 
@@ -739,12 +735,13 @@ body {
    height: 262rem;
 }
 
-/* component setting */
+/* ========== sub2 sec-3,4,5 content-box component setting */
 .sub2 > .content-wrap > .content-box {
    position: absolute;
    display: flex;
    align-items: center;
    gap: 3rem;
+   text-wrap: nowrap;
 
    > .text-box {
       font-size: var(--font-s);
@@ -768,6 +765,7 @@ body {
       }
    }
 }
+
 /* sub2 sec-3 box-1 */
 .sub2-sec-3 > .content-wrap > .content-box.box-1 {
    height: 110rem;
@@ -822,7 +820,7 @@ body {
 }
 /* ----------------------------- sub2 section 4 ----------------------------- */
 .sub2-sec-4 {
-   height: 500rem;
+   height: 480rem;
 
    .svg-box {
       position: absolute;
@@ -871,7 +869,6 @@ body {
    left: 50%;
    transform: translateX(-50%);
    text-align: center;
-   text-wrap: nowrap;
 
    > .text-box {
       > h4 {
@@ -890,7 +887,7 @@ body {
    top: 300rem;
    width: 100%;
 
-   /* componet setting */
+   /* img-container componet setting */
    .img-container {
       position: absolute;
 
@@ -925,5 +922,50 @@ body {
    > .img-container-3 {
       bottom: 10%;
       right: 0;
+   }
+}
+
+.sub2-sec-5 {
+   height: 315rem;
+
+   .svg-box {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, 0);
+   }
+}
+
+/* sub2 sec-5 box-1 */
+.sub2-sec-5 > .content-wrap > .content-box.box-1 {
+   top: 0;
+   left: 50%;
+   transform: translate(-50%, 0);
+
+   .img-box {
+      width: 60rem;
+   }
+}
+
+/* sub2 sec-5 box-2 */
+.sub2-sec-5 > .content-wrap > .content-box.box-2 {
+   top: 150rem;
+   left: 33.33%;
+   transform: translate(-50%, 0);
+
+   .img-box {
+      width: 40rem;
+      border-radius: 2.4rem;
+   }
+}
+
+/* sub2 sec-5 box-3 */
+.sub2-sec-5 > .content-wrap > .content-box.box-3 {
+   top: 200rem;
+   right: 0;
+
+   .img-box {
+      width: 40rem;
+      border-radius: 2.4rem;
    }
 }
