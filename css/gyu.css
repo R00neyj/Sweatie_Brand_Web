@@ -230,10 +230,46 @@
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > div > img {
-  width: 100%;
+  height: 80%;
   vertical-align: middle;
   object-fit: contain;
   transition: all 0.2s ease-in-out;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span > .adidas-logo > img {
+  height: 50%;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span > .nike-logo > img {
+  height: 50%;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span > .pro-specs-logo > img {
+  height: 50%;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span > .apple-logo > img {
+  height: 50%;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span > .reebok-logo > img {
+  height: 60%;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span > .samsung-logo > img {
+  width: 60%;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span > .cocacola-logo > img {
+  width: 60%;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span > .spaceX-logo > img {
+  width: 70%;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span > .guiness-logo > img {
+  height: 70%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > div:hover {
