@@ -382,6 +382,11 @@
   cursor: default;
 }
 
+.bottom-section > .footer > .footer-link-wrap > div > li > a:hover {
+  text-decoration: 0.2rem underline #fff;
+  text-underline-offset: 0.5rem;
+}
+
 .bottom-section > .footer > .footer-logo-wrap {
   width: 100%;
   height: 100%;
