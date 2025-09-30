@@ -3,7 +3,701 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sweatie Main</title>
+
+    <!-- libs -->
+    <!-- font urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <!-- font dm serif -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <!-- css -->
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <link href="/css/won.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/gyu.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <div class="header-grid">
+        <a class="logo-wrap" href="#">
+          <img class="logo" src="/image/top-section/header/logo.svg" alt="logo" />
+        </a>
+        <div class="menu-wrap">
+          <ul>
+            <a href="#">SWEATIE</a>
+          </ul>
+          <ul>
+            <a href="#">Service</a>
+          </ul>
+          <ul>
+            <a href="#">Review</a>
+          </ul>
+          <ul>
+            <a href="#">Contact</a>
+          </ul>
+        </div>
+        <div class="translate-wrap">
+          <a href="#">
+            <span><img src="/image/top-section/header/translate icon.png" alt="#" /></span>
+            <p>KOR</p>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <!-- section 1 -->
+        <section class="top-section">
+          <div class="video-container">
+            <video src="/video/main.vedio/main4.mp4" autoplay muted></video>
+          </div>
+          <div class="intro-container">
+            <div class="intro-wrap">
+              <div class="intro-box">
+                <div class="intro-text">
+                  <h3>Beyond the Run, Grow with Joy</h3>
+                  <div class="line-wrap">
+                    <span></span>
+                  </div>
+                </div>
+                <div class="intro-logo">
+                  <img src="/image/top-section/intro/logo-box.png" alt="intro-logo-box" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- section 2 -->
+        <section class="section sec-2">
+          <div class="content-wrap">
+            <div class="section-header">
+              <h2>Highlight</h2>
+            </div>
+            <div class="scroll-ani">
+              <div class="card card-1">
+                <div class="img-box">
+                  <img src="/image/section2/sec-2-1.webp" alt="section-2 image Run with Mate" />
+                </div>
+                <div class="text-box">
+                  <h3>Run with Mate</h3>
+                  <p>나와 딱 맞는 러닝 메이트를 찾아보세요</p>
+                </div>
+              </div>
+              <div class="card card-2">
+                <div class="img-box">
+                  <img src="/image/section2/sec-2-2.jpg" alt="section-2 image Rewords" />
+                </div>
+                <div class="text-box">
+                  <h3>Rewords</h3>
+                  <p>기록을 넘어선 도전, 짜릿한 경쟁과 풍성한 보상</p>
+                </div>
+              </div>
+              <div class="card card-3">
+                <div class="img-box">
+                  <img src="/image/section2/sec-2-3.webp" alt="section-2 image Record&Analize" />
+                </div>
+                <div class="text-box">
+                  <h3>Record&Analize</h3>
+                  <p>나의 러닝 데이터를 완벽하게 분석하고 성장하세요.</p>
+                </div>
+              </div>
+              <div class="card card-4">
+                <div class="img-box">
+                  <img src="/image/section2/sec-2-4.webp" alt="section-2 image Community" />
+                </div>
+                <div class="text-box">
+                  <h3>Community</h3>
+                  <p>러닝의 즐거움을 함께 나누는 공간.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- section 3 -->
+        <section class="section sec-3">
+          <div class="content-wrap">
+            <div class="left">
+              <div class="svg-box logo-svg">
+                <svg width="80rem" viewBox="0 0 420 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M72.3476 30.3576H48.7087L51.1971 23.5529C52.365 20.3791 52.7967 18.3478 52.492 17.4846C52.1873 16.6213 51.3494 16.1896 49.9529 16.1896C48.4295 16.1896 47.0584 16.7736 45.8396 17.9416C44.6209 19.1095 43.5798 20.8869 42.7165 23.2736C41.5993 26.3459 41.1931 28.6564 41.5232 30.2053C41.8025 31.7541 43.5036 33.6331 46.6775 35.8167C55.7166 42.139 60.9472 47.3187 62.4198 51.3559C63.8925 55.4184 62.9784 61.9438 59.703 70.9576C57.3163 77.5084 54.7518 82.3326 51.9842 85.4303C49.2166 88.5279 45.1287 91.1432 39.695 93.2507C34.2614 95.3581 28.4215 96.3991 22.2261 96.3991C15.4214 96.3991 10.0386 95.1804 6.10298 92.7682C2.1674 90.3561 0.136109 87.2585 0.00915528 83.5006C-0.117799 79.7428 1.07558 74.4361 3.58927 67.5552L5.77288 61.5375H29.4117L25.3492 72.7349C24.1051 76.188 23.6226 78.3971 23.9273 79.3873C24.232 80.3776 25.2223 80.86 26.9234 80.86C28.6246 80.86 30.0973 80.2252 31.3922 78.9811C32.6618 77.7369 33.7536 75.8834 34.6676 73.4205C36.6481 68.0122 37.1306 64.4575 36.1657 62.8071C35.1501 61.1313 32.2047 58.3637 27.3043 54.4535C22.4039 50.518 19.2554 47.6488 17.8589 45.8714C16.4624 44.0941 15.6499 41.6312 15.4468 38.4827C15.2437 35.3343 16.0308 31.3225 17.8081 26.4475C20.3726 19.4142 23.191 14.2599 26.2887 11.0099C29.3864 7.75983 33.3981 5.19541 38.3493 3.36727C43.3005 1.53914 48.7849 0.599609 54.8279 0.599609C61.4295 0.599609 66.7108 1.61525 70.621 3.62112C74.5312 5.62699 76.7149 8.16613 77.0957 11.213C77.502 14.2599 76.3593 19.4396 73.7187 26.7522L72.3984 30.383L72.3476 30.3576Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M175.182 2.5293L131.51 94.4693H102.92C105.434 80.3521 108.989 64.2797 113.534 46.2522C109.801 53.9711 101.828 70.0434 89.59 94.4693H61.1523L84.3595 2.5293H106.602L97.3343 34.5979L88.3713 65.6254C95.0491 49.5785 104.824 28.5549 117.672 2.5293H141.438C140.778 5.22072 137.934 15.3263 132.907 32.8459L122.7 67.8344C132.094 45.5667 142.149 23.8068 152.864 2.5293H175.106H175.182Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M177.416 2.5293H219.844L213.141 20.9376H196.155L189.807 38.3811H205.702L199.329 55.8754H183.434L176.071 76.0864H194.733L188.03 94.4948H143.9L177.365 2.55471L177.416 2.5293Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M272.835 2.5293L253.918 94.4693H227.918L232.565 77.94H223.475L215.934 94.4693H189.629L236.069 2.5293H272.835ZM238.481 59.7856C240.258 52.5238 242.416 44.1702 244.981 34.7756C245.413 33.2014 243.178 32.3381 242.442 33.8108C236.932 44.7542 232.717 53.4379 229.797 59.8363C229.264 60.9789 230.127 62.2738 231.371 62.2738H235.307C236.805 62.2738 238.125 61.2583 238.481 59.7856Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M280.528 2.5293L273.824 20.9376H288.881L262.094 94.4693H287.535L314.323 20.9376H335.219L308.457 94.4693H333.899L367.364 2.5293H280.528Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M377.573 2.5293H420.001L413.297 20.9376H396.311L389.963 38.3811H405.858L399.485 55.8754H383.59L376.227 76.0864H394.889L388.186 94.4948H344.057L377.522 2.55471L377.573 2.5293Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <h3 class="subtitle">My Running Platform</h3>
+              <div class="marquee-box">
+                <div class="sec-3-marquee">
+                  <span>Keep Scrolling</span>
+                  <img src="/image/section3/Arrow_right.svg" alt="Arrow to right" />
+                  <span>Keep Scrolling</span>
+                  <img src="/image/section3/Arrow_right.svg" alt="Arrow to right" />
+                  <span>Keep Scrolling</span>
+                  <img src="/image/section3/Arrow_right.svg" alt="Arrow to right" />
+                  <span>Keep Scrolling</span>
+                  <img src="/image/section3/Arrow_right.svg" alt="Arrow to right" />
+                  <span>Keep Scrolling</span>
+                  <img src="/image/section3/Arrow_right.svg" alt="Arrow to right" />
+                  <span>Keep Scrolling</span>
+                  <img src="/image/section3/Arrow_right.svg" alt="Arrow to right" />
+                </div>
+              </div>
+            </div>
+            <div class="middle">
+              <div class="text-back text-box">
+                <div class="line-1">Run with <span class="dm-serif">mates,</span></div>
+                <div class="line-2">Get Your Rewords</div>
+                <div class="line-3"><span class="dm-serif">on</span> SWEATIE</div>
+              </div>
+              <div class="img-container">
+                <div class="img-box">
+                  <img src="/image/section3/Untitled-2 copy.webp" alt="section 3 poster image" />
+                </div>
+                <div class="text-front text-box">
+                  <div class="line-1">Run with <span class="dm-serif">mates,</span></div>
+                  <div class="line-2">Get Your Rewords</div>
+                  <div class="line-3"><span class="dm-serif">on</span> SWEATIE</div>
+                </div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="box box-1">
+                <div class="chip dm-serif">01</div>
+                <h4><span class="dm-serif">Find</span> Your Match</h4>
+                <p>
+                  당신의 러닝 스타일에 딱 맞는 메이트를 찾아보세요. <br />
+                  믿을 수 있는 평판 시스템으로 언제나 안심하고 함께 달리세요.
+                </p>
+                <div class="box-swiper swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/image/section3/find_1.png" alt="running mate match screen" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/image/section3/find_2.png" alt="running mate match screen" />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next swiper-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                  </svg>
+                </div>
+                <div class="swiper-button-prev swiper-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                    <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="box box-2">
+                <div class="chip dm-serif">02</div>
+                <h4><span class="dm-serif">Challenge</span> Your Limits</h4>
+                <p>
+                  목표 코스의 랭킹에 도전하며, 자신의 최고 기록을 깨는 즐거움을 경험하세요. <br />
+                  러닝 데이터에 따라 티어를 부여받고, 명확한 목표로 다음 단계에 도전하세요
+                </p>
+                <div class="box-swiper swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/image/section3/challenge_1.png" alt="score board screen" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/image/section3/challenge_2.png" alt="score board screen" />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next swiper-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                  </svg>
+                </div>
+                <div class="swiper-button-prev swiper-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                    <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="box box-3">
+                <div class="chip dm-serif">03</div>
+                <h4><span class="dm-serif">Manage</span> Your Record</h4>
+                <p>
+                  나의 모든 러닝 기록을 한눈에 상세 통계로 성장 과정을 확인하세요. <br />
+                  AI 기반 자세 분석으로 부상을 예방하고 효율적인 러닝 자세를 만드세요.
+                </p>
+                <div class="box-swiper swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/image/section3/analysis.png" alt="analysis screen" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/image/section3/activity.png" alt="select course screen" />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next swiper-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                  </svg>
+                </div>
+                <div class="swiper-button-prev swiper-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                    <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="box box-4">
+                <div class="chip dm-serif">04</div>
+                <h4><span class="dm-serif">Share</span> Your Journey</h4>
+                <p>
+                  소셜 피드에 당신의 러닝 스토리를 공유하고, 다른 러너들과 교류하세요. <br />
+                  러닝 크루와 함께, 혼자서는 느낄 수 없는 팀워크와 성취감을 경험하세요.
+                </p>
+                <div class="box-swiper swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/image/section3/community_1.png" alt="community screen" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/image/section3/community_2.png" alt="community feed screen" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/image/section3/reword_1.png" alt="reword screen" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/image/section3/reword_2.png" alt="reword screen" />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next swiper-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                  </svg>
+                </div>
+                <div class="swiper-button-prev swiper-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                    <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white"></div>
+          </div>
+        </section>
+
+        <!-- section 4 -->
+        <section class="section sec-4">
+          <div class="content-wrap">
+            <div class="text-box left">
+              <span class="dm-serif">Run</span>
+              <span>TO</span>
+            </div>
+            <div class="text-box right">
+              <span>Your</span>
+              <span>Life</span>
+            </div>
+            <div class="btn-wrap">
+              <a href="#" class="google-play">
+                <div class="svg-box">
+                  <svg width="2.3rem" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.7766 11.957L0.59375 22.6255C0.70809 23.0308 0.913575 23.4045 1.1945 23.7182C1.47542 24.0318 1.82434 24.2771 2.21459 24.4353C2.60484 24.5934 3.02608 24.6603 3.44611 24.6307C3.86615 24.6011 4.27385 24.4758 4.63806 24.2645L16.0957 17.739L10.7766 11.957Z"
+                      fill="#EA4335"
+                    />
+                    <path
+                      d="M21.071 10.1425L16.1161 7.30469L10.5391 12.1988L16.1389 17.7228L21.0558 14.9153C21.4914 14.6872 21.8563 14.3442 22.1108 13.9236C22.3654 13.5029 22.5 13.0206 22.5 12.5289C22.5 12.0372 22.3654 11.5549 22.1108 11.1342C21.8563 10.7136 21.4914 10.3706 21.0558 10.1425H21.071Z"
+                      fill="#FBBC04"
+                    />
+                    <path
+                      d="M0.591084 2.38281C0.529531 2.61036 0.498904 2.84517 0.50003 3.08089V21.9291C0.500646 22.1647 0.531243 22.3992 0.591084 22.6271L11.123 12.2318L0.591084 2.38281Z"
+                      fill="#4285F4"
+                    />
+                    <path
+                      d="M10.8525 12.5038L16.1184 7.30615L4.676 0.750266C4.24553 0.498153 3.75594 0.364627 3.25708 0.363287C2.65459 0.362093 2.06824 0.557935 1.5874 0.920961C1.10656 1.28399 0.757613 1.79428 0.59375 2.37406L10.8525 12.5038Z"
+                      fill="#34A853"
+                    />
+                  </svg>
+                </div>
+                <div class="txt-hide-wrap"><span>Google Play</span></div>
+              </a>
+              <a href="#" class="app-store">
+                <div class="svg-box">
+                  <svg width="2.2rem" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M21.2974 9.20522C21.1406 9.32673 18.3734 10.8848 18.3734 14.3492C18.3734 18.3564 21.8946 19.7741 22 19.8092C21.9838 19.8956 21.4406 21.7507 20.1435 23.6409C18.9869 25.3042 17.7789 26.9649 15.9413 26.9649C14.1037 26.9649 13.6308 25.8983 11.5094 25.8983C9.44208 25.8983 8.70704 27 7.02616 27C5.34529 27 4.17246 25.4608 2.82398 23.5707C1.26201 21.351 0 17.9028 0 14.6301C0 9.38074 3.4158 6.59676 6.77755 6.59676C8.56381 6.59676 10.0528 7.76868 11.1743 7.76868C12.2417 7.76868 13.9064 6.52655 15.9386 6.52655C16.7088 6.52655 19.476 6.59676 21.2974 9.20522ZM14.9738 4.30423C15.8143 3.30783 16.4088 1.92529 16.4088 0.542754C16.4088 0.351035 16.3926 0.156616 16.3575 0C14.9901 0.0513051 13.3632 0.909991 12.3823 2.0468C11.6121 2.92169 10.8933 4.30423 10.8933 5.70567C10.8933 5.91629 10.9284 6.12691 10.9446 6.19442C11.0311 6.21062 11.1716 6.22952 11.3121 6.22952C12.539 6.22952 14.0821 5.40864 14.9738 4.30423Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                <div class="txt-hide-wrap"><span>App Store</span></div>
+              </a>
+            </div>
+            <div class="bg-video">
+              <video src="/video/The_logo_image_202509021314.mp4" muted autoplay loop></video>
+            </div>
+          </div>
+        </section>
+
+        <!-- section 5 -->
+        <section class="sec-5">
+          <div class="partner-text-wrap">
+            <div class="partner-text-box">
+              <h3>Our Partners</h3>
+            </div>
+          </div>
+          <div class="partners-container">
+            <div class="marquee-slider slider">
+              <span class="partners-marquee-1 tracker">
+                <div class="adidas-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/adidas_logo.png" alt="adidas" />
+                </div>
+                <div class="nike-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/nike_logo.png" alt="nike" />
+                </div>
+                <div class="new-balance-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/new-balance_logo.png" alt="new-balance" />
+                </div>
+                <div class="reebok-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/reebok_logo.png" alt="reebok" />
+                </div>
+                <div class="underarmor-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/underarmor_logo.png" alt="underarmor" />
+                </div>
+                <div class="descente-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/descente_logo.png" alt="descente" />
+                </div>
+                <div class="puma-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/puma_logo.png" alt="puma" />
+                </div>
+                <div class="lacoste-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/lacoste_logo.png" alt="lacoste" />
+                </div>
+                <div class="vans-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/vans_logo.png" alt="vans" />
+                </div>
+                <div class="asics-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/asics_logo.png" alt="asics" />
+                </div>
+                <div class="champion-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/champion_logo.png" alt="champion" />
+                </div>
+                <div class="pro-specs-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/prospecs_logo.png" alt="pro-specs" />
+                </div>
+                <div class="fila-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/fila_logo.png" alt="fila" />
+                </div>
+                <div class="dynafit-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/dynafit_logo.png" alt="dynafit" />
+                </div>
+              </span>
+              <span class="partners-marquee-2 tracker">
+                <div class="adidas-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/adidas_logo.png" alt="adidas" />
+                </div>
+                <div class="nike-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/nike_logo.png" alt="nike" />
+                </div>
+                <div class="new-balance-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/new-balance_logo.png" alt="new-balance" />
+                </div>
+                <div class="reebok-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/reebok_logo.png" alt="reebok" />
+                </div>
+                <div class="underarmor-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/underarmor_logo.png" alt="underarmor" />
+                </div>
+                <div class="descente-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/descente_logo.png" alt="descente" />
+                </div>
+                <div class="puma-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/puma_logo.png" alt="puma" />
+                </div>
+                <div class="lacoste-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/lacoste_logo.png" alt="lacoste" />
+                </div>
+                <div class="vans-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/vans_logo.png" alt="vans" />
+                </div>
+                <div class="asics-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/asics_logo.png" alt="asics" />
+                </div>
+                <div class="champion-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/champion_logo.png" alt="champion" />
+                </div>
+                <div class="pro-specs-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/prospecs_logo.png" alt="pro-specs" />
+                </div>
+                <div class="fila-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/fila_logo.png" alt="fila" />
+                </div>
+                <div class="dynafit-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_1/dynafit_logo.png" alt="dynafit" />
+                </div>
+              </span>
+            </div>
+            <div class="marquee-slider slider">
+              <span class="partners-marquee-3 tracker">
+                <div class="redbull-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/redbull_logo.png" alt="redbull" />
+                </div>
+                <div class="guiness-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/guiness_logo.png" alt="guiness" />
+                </div>
+                <div class="cocacloa-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/cocacola_logo.png" alt="cocacola" />
+                </div>
+                <div class="sprite-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/sprite_logo.png" alt="sprite" />
+                </div>
+                <div class="monster-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/monster_logo.png" alt="monster" />
+                </div>
+                <div class="olive-young-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/olive-young_logo.png" alt="olive-young" />
+                </div>
+                <div class="chanel-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/chanel_logo.png" alt="chanel" />
+                </div>
+                <div class="google-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/google_logo.png" alt="google" />
+                </div>
+                <div class="apple-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/apple_logo.png" alt="apple" />
+                </div>
+                <div class="spaceX-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/spaceX-logo.png" alt="spaceX" />
+                </div>
+                <div class="korail-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/korail_logo.png" alt="korail" />
+                </div>
+                <div class="riot-games-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/riot-games_logo.png" alt="riot-games" />
+                </div>
+                <div class="ufc-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/ufc_logo.png" alt="ufc" />
+                </div>
+                <div class="samsung-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/samsung_logo.png" alt="samsung" />
+                </div>
+              </span>
+              <span class="partners-marquee-4 tracker">
+                <div class="redbull-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/redbull_logo.png" alt="redbull" />
+                </div>
+                <div class="guiness-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/guiness_logo.png" alt="guiness" />
+                </div>
+                <div class="cocacloa-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/cocacola_logo.png" alt="cocacola" />
+                </div>
+                <div class="sprite-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/sprite_logo.png" alt="sprite" />
+                </div>
+                <div class="monster-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/monster_logo.png" alt="monster" />
+                </div>
+                <div class="olive-young-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/olive-young_logo.png" alt="olive-young" />
+                </div>
+                <div class="chanel-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/chanel_logo.png" alt="chanel" />
+                </div>
+                <div class="google-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/google_logo.png" alt="google" />
+                </div>
+                <div class="apple-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/apple_logo.png" alt="apple" />
+                </div>
+                <div class="spaceX-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/spaceX-logo.png" alt="spaceX" />
+                </div>
+                <div class="korail-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/korail_logo.png" alt="korail" />
+                </div>
+                <div class="riot-games-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/riot-games_logo.png" alt="riot-games" />
+                </div>
+                <div class="ufc-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/ufc_logo.png" alt="ufc" />
+                </div>
+                <div class="samsung-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/samsung_logo.png" alt="samsung" />
+                </div>
+              </span>
+              <span class="partners-marquee-5 tracker">
+                <div class="redbull-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/redbull_logo.png" alt="redbull" />
+                </div>
+                <div class="guiness-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/guiness_logo.png" alt="guiness" />
+                </div>
+                <div class="cocacloa-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/cocacola_logo.png" alt="cocacola" />
+                </div>
+                <div class="sprite-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/sprite_logo.png" alt="sprite" />
+                </div>
+                <div class="monster-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/monster_logo.png" alt="monster" />
+                </div>
+                <div class="olive-young-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/olive-young_logo.png" alt="olive-young" />
+                </div>
+                <div class="chanel-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/chanel_logo.png" alt="chanel" />
+                </div>
+                <div class="google-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/google_logo.png" alt="google" />
+                </div>
+                <div class="apple-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/apple_logo.png" alt="apple" />
+                </div>
+                <div class="spaceX-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/spaceX-logo.png" alt="spaceX" />
+                </div>
+                <div class="korail-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/korail_logo.png" alt="korail" />
+                </div>
+                <div class="riot-games-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/riot-games_logo.png" alt="riot-games" />
+                </div>
+                <div class="ufc-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/ufc_logo.png" alt="ufc" />
+                </div>
+                <div class="samsung-logo items">
+                  <img src="/image/sec-5/sweatie_img_file/img_container_2/samsung_logo.png" alt="samsung" />
+                </div>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- section6 -->
+        <div class="section section sec-6">
+          <div class="content-wrap">
+            <div class="section-header">
+              <h2>News</h2>
+            </div>
+            <div class="card-box">
+              <div class="card card-1 active">
+                <div class="img-box">
+                  <img src="/image/section6/sec-6-1.jpg" alt="" />
+                </div>
+                <div class="text-box">
+                  <h3>Fashion Rewords</h3>
+                  <p>포기할 수 없는 패션 리워드</p>
+                </div>
+              </div>
+              <div class="card card-2">
+                <div class="img-box">
+                  <img src="/image/section6/sec-6-2.jpg" alt="" />
+                </div>
+                <div class="text-box">
+                  <h3>Ordinary Daily Life</h3>
+                  <p>편리함을 추구하는 일상</p>
+                </div>
+              </div>
+              <div class="card card-3">
+                <div class="img-box">
+                  <img src="/image/section6/sec-6-3.jpg" alt="" />
+                </div>
+                <div class="text-box">
+                  <h3>Daily, Running Core</h3>
+                  <p>함께할 수 있는 데일리 런닝코어</p>
+                </div>
+              </div>
+              <div class="card card-4">
+                <div class="img-box">
+                  <img src="/image/section6/sec-6-4.jpg" alt="" />
+                </div>
+                <div class="text-box">
+                  <h3>A Review Event</h3>
+                  <p>가치를 올리는 후기 이벤트</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="bottom-section">
+          <div class="footer">
+            <div class="footer-link-wrap">
+              <div>
+                <p>04049</p>
+                <p>4F</p>
+                <p>45 Yanghwa-ro 10-revenue</p>
+                <p>Mapo-city. Seoul</p>
+                <p>Republic of Korea</p>
+              </div>
+              <div>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Archive</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">News</a></li>
+              </div>
+              <div>
+                <p>Any Business Inquieries</p>
+                <p>+82 2 336 1015</p>
+                <p>Hello123@sweatie.com</p>
+              </div>
+              <div>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Youtube</a></li>
+                <li><a href="#">X</a></li>
+              </div>
+            </div>
+            <div class="footer-logo-wrap">
+              <img src="/image/footer/footer-logo-box.png" alt="footer-logo-box" />
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <!-- gsap svg -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <!-- gsap scrollsmoother -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
 </html>
