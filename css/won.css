@@ -92,7 +92,7 @@ body {
    flex-direction: column;
    gap: 1.2rem;
 
-   /* card common setting */
+   /* card componet setting */
    .card {
       position: relative;
       height: 50dvh;
@@ -316,7 +316,7 @@ body {
          left: calc(var(--sec-3__left-width) + var(--sec-3__text-box-size) + var(--sec-3__text-left-position));
          color: var(--black);
 
-         /* box common setting */
+         /* box componet setting */
          .box {
             position: relative;
             width: var(--sec-3__right-box-width);
@@ -512,12 +512,13 @@ body {
       gap: 2.4rem;
       /* change transition time here */
       --transition-duration: 0.6s;
+      --card-height: 45rem;
 
-      /* card common settings */
+      /* card componet settings */
       .card {
          flex: 1 1 0;
          position: relative;
-         height: 95rem;
+         height: var(--card-height);
          overflow: hidden;
          border-radius: 2.4rem;
          transition: all var(--transition-duration);
@@ -580,7 +581,7 @@ body {
 
       /* active card */
       .card.active {
-         flex: 4.5 1 0;
+         flex: 3.5 1 0;
 
          .img-box {
             img {
@@ -652,15 +653,33 @@ body {
    }
 }
 /* text box */
+@keyframes mainfeatureAni {
+   0% {
+      transform: scale(1.25);
+      filter: blur(1.2rem);
+      opacity: 0;
+   }
+   100% {
+   }
+}
 .sub2-sec-1 > .content-wrap > .text-box {
    position: absolute;
    z-index: 2;
    left: 16rem;
-   bottom: 6rem;
+   bottom: 10rem;
 
    > h2 {
       font-size: 17rem;
       line-height: 1;
+
+      > span {
+         display: inline-block;
+         letter-spacing: -0.4rem;
+         animation: mainfeatureAni 0.8s 1 both;
+      }
+      > span.splited__ {
+         width: 4rem;
+      }
    }
 }
 /* ----------------------------- sub2 section 2 ----------------------------- */
@@ -698,16 +717,16 @@ body {
 
 /* ----------------------------- sub2 section 3 ----------------------------- */
 .sub2-content {
-   /* === section 3 font size */
+   /* === section 3,4,5 font size */
    --font-xl: 6.4rem;
    --font-l: 4.8rem;
    --font-m: 3.2rem;
    --font-s: 2.4rem;
 }
-.sub2-sec-3 {
+.sub2-sec-3,
+.sub2-sec-4 {
    overflow-x: hidden;
    position: relative;
-   height: 262rem;
 
    > .content-wrap {
       width: 164rem;
@@ -716,29 +735,19 @@ body {
       z-index: 2;
    }
 }
-.sub2-sec-3 > .content-wrap > .content-box {
+.sub2-sec-3 {
+   height: 262rem;
+}
+
+/* component setting */
+.sub2 > .content-wrap > .content-box {
+   position: absolute;
    display: flex;
    align-items: center;
    gap: 3rem;
+
    > .text-box {
       font-size: var(--font-s);
-   }
-
-   > .img-box {
-      overflow: hidden;
-   }
-}
-/* sec-3 box-1 */
-.sub2-sec-3 > .content-wrap > .content-box.box-1 {
-   height: 110rem;
-   position: relative;
-   display: block;
-
-   > .text-box {
-      position: absolute;
-      top: 16rem;
-      left: 0;
-
       > h4 {
          font-size: var(--font-xl);
       }
@@ -748,8 +757,27 @@ body {
       > p {
          font-size: var(--font-m);
          font-weight: 500;
-         margin-top: var(--font-l);
+         margin-top: var(--font-m);
       }
+   }
+
+   > .img-box {
+      overflow: hidden;
+      img {
+         width: 100%;
+      }
+   }
+}
+/* sub2 sec-3 box-1 */
+.sub2-sec-3 > .content-wrap > .content-box.box-1 {
+   height: 110rem;
+   position: relative;
+   display: block;
+
+   > .text-box {
+      position: absolute;
+      top: 16rem;
+      left: 0;
    }
 
    > .img-box {
@@ -759,9 +787,8 @@ body {
       position: absolute;
    }
 }
-/* sec-3 box-2 */
+/* sub2 sec-3 box-2 */
 .sub2-sec-3 > .content-wrap > .content-box.box-2 {
-   position: absolute;
    top: 110rem;
    left: 33.33%;
    height: 59.5rem;
@@ -772,9 +799,8 @@ body {
       border-radius: 2.4rem;
    }
 }
-/* sec-3 box-3 */
+/* sub2 sec-3 box-3 */
 .sub2-sec-3 > .content-wrap > .content-box.box-3 {
-   position: absolute;
    top: 155rem;
    right: 33.3%;
    display: flex;
@@ -790,7 +816,114 @@ body {
 .sub2-sec-3 > .svg-box {
    position: absolute;
    top: 58rem;
-   left: 0;
+   left: 50%;
    z-index: 1;
-   transform: scale(-1);
+   transform: scale(-1) translateX(50%);
+}
+/* ----------------------------- sub2 section 4 ----------------------------- */
+.sub2-sec-4 {
+   height: 500rem;
+
+   .svg-box {
+      position: absolute;
+      top: 23.8%;
+      left: 50%;
+      transform: translate(-50%, 0);
+   }
+}
+
+/* sub2 sec-4 box-1 */
+.sub2-sec-4 > .content-wrap > .content-box.box-1 {
+   top: 10rem;
+   left: -3rem;
+
+   > .text-box {
+      text-wrap: nowrap;
+   }
+
+   > .img-box {
+      width: 64rem;
+   }
+}
+
+/* sub2 sec-4 box-2 */
+.sub2-sec-4 > .content-wrap > .content-box.box-2 {
+   top: 120rem;
+   right: 33.33%;
+   transform: translateX(50%);
+
+   > .text-box {
+      text-align: center;
+   }
+   > .img-box {
+      width: 40rem;
+      border-radius: 2.4rem;
+   }
+}
+.sub2-sec-4 > .content-wrap > .section-header {
+   position: absolute;
+   top: 210rem;
+}
+
+/* sub2 sec-4 box-3 */
+.sub2-sec-4 > .content-wrap > .content-box.box-3 {
+   top: 270rem;
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   text-wrap: nowrap;
+
+   > .text-box {
+      > h4 {
+         line-height: 1.4;
+      }
+      > h4.kr {
+         margin: 2rem 0 0 0;
+         line-height: 1.6;
+      }
+   }
+}
+
+/* sub2 sec-4 box-4 */
+.sub2-sec-4 > .content-wrap > .content-box.box-4 {
+   justify-content: center;
+   top: 300rem;
+   width: 100%;
+
+   /* componet setting */
+   .img-container {
+      position: absolute;
+
+      .text-box {
+         text-align: center;
+         font-size: var(--font-s);
+         margin-top: var(--font-s);
+      }
+      .img-box {
+         width: 40rem;
+         overflow: hidden;
+         border-radius: 2.4rem;
+
+         img {
+            width: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+
+   > .img-container-1 {
+      top: 17%;
+      left: 0;
+   }
+   > .img-container-2 {
+      position: static;
+
+      .img-box {
+         width: 140rem;
+      }
+   }
+   > .img-container-3 {
+      bottom: 10%;
+      right: 0;
+   }
 }
