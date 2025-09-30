@@ -74,6 +74,15 @@ function sec4btnSwapContent() {
   });
 }
 
+function HeaderbtnSwapContent() {
+  const btns = document.querySelectorAll(".header .menu-wrap a");
+  btns.forEach((el) => {
+    let content = el.querySelector("span").textContent;
+    el.querySelector("span").style.setProperty("--content", `"${content}"`);
+  });
+}
+HeaderbtnSwapContent();
+
 function textSplit__init() {
   const target = document.querySelectorAll(".sec-4 .text-box span");
   let charArr = [];
