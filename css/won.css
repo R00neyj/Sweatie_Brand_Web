@@ -818,6 +818,7 @@ body {
    z-index: 1;
    transform: scale(-1) translateX(50%);
 }
+
 /* ----------------------------- sub2 section 4 ----------------------------- */
 .sub2-sec-4 {
    height: 480rem;
@@ -925,12 +926,13 @@ body {
    }
 }
 
+/* ----------------------------- sub2 section 5 ----------------------------- */
 .sub2-sec-5 {
    height: 315rem;
 
    .svg-box {
       position: absolute;
-      top: 20%;
+      top: 25.5%;
       left: 50%;
       transform: translate(-50%, 0);
    }
