@@ -46,9 +46,6 @@
 /* top)header container ======================== */
 .header {
   background-color: rgba(0, 0, 0, 1);
-  backdrop-filter: blur(1.5rem);
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 8rem;
   position: fixed;
@@ -64,6 +61,7 @@
 header.invert {
   color: var(--black);
   background-color: var(--white);
+  border-bottom: rgba(0, 0, 0, 0.3) solid 1px;
 
   .translate-wrap {
     > a {
