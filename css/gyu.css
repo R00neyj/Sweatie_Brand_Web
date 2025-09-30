@@ -229,6 +229,10 @@ html {
   gap: 3.4rem;
 }
 
+.sec-5 > .partners-container > .marquee-slider {
+  display: flex;
+}
+
 .sec-5 > .partners-container > .marquee-slider > span {
   display: flex;
   gap: 3rem;
@@ -265,92 +269,91 @@ html {
   transition: all 0.2s ease-in-out;
 }
 /* partners-marquee-1 =========================== */
-.sec-5 > .partners-container > .marquee-slider > .partners-marquee-1 {
+.sec-5 > .partners-container > .marquee-slider > .partners-marquee-1,
+.partners-marquee-2 {
   padding-left: 2.8rem;
-  
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
 
-    -moz-animation: overwrap1 25s linear infinite;
-    -webkit-animation:overwrap1 25s linear infinite;
-    animation: overwrap1 25s linear infinite;
+  -moz-transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+
+  -moz-animation: overwrap1 25s linear infinite;
+  -webkit-animation: overwrap1 25s linear infinite;
+  animation: overwrap1 25s linear infinite;
 }
 /* Move tool(define the animation) ================ */
 @-moz-keyframes overwrap1 {
-    0% {
-        -moz-transform: translateX(100%);
-    }
-    100% {
-        -moz-transform: translateX(-100%);
-    }
+  0% {
+    -moz-transform: translateX(0%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+  }
 }
 
 @-webkit-keyframes overwrap1 {
-    0% {
-        -webkit-transform: translateX(100%);
-    }
-    100% {
-        -webkit-transform: translateX(-100%);
-    }
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
 }
 
 @keyframes overwrap1 {
-    0% {
-        -moz-transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-        transform: translateX(100%);
-    }
-    100% {
-        -moz-transform: translateX(-100%);
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%);
-    }
-}
-/* partners-marquee-2 =========================== */
-.sec-5 > .partners-container > .marquee-slider > .partners-marquee-2 {
-  padding-right: 2.8rem;
-  display: flex;
-  flex-direction: row-reverse;
-  
+  0% {
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  100% {
     -moz-transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
-
-    -moz-animation: overwrap2 25s linear infinite;
-    -webkit-animation:overwrap2 25s linear infinite;
-    animation: overwrap2 25s linear infinite;
+  }
 }
-/* Move tool(define the animation) ================ */
+/* partners-marquee-2 =========================== */
+.sec-5 > .partners-container > .marquee-slider > .partners-marquee-3,
+.partners-marquee-4 {
+  padding-right: 2.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+
+  -moz-animation: overwrap2 25s linear infinite;
+  -webkit-animation: overwrap2 25s linear infinite;
+  animation: overwrap2 25s linear infinite;
+}
+
 @-moz-keyframes overwrap2 {
-    0% {
-        -moz-transform: translateX(-100%);
-    }
-    100% {
-        -moz-transform: translateX(100%);
-    }
+  0% {
+    -moz-transform: translateX(-100%);
+  }
+  100% {
+    -moz-transform: translateX(0%);
+  }
 }
 
 @-webkit-keyframes overwrap2 {
-    0% {
-        -webkit-transform: translateX(-100%);
-    }
-    100% {
-        -webkit-transform: translateX(100%);
-    }
+  0% {
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
 }
 
 @keyframes overwrap2 {
-    0% {
-        -moz-transform: translateX(-100%);
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%);
-    }
-    100% {
-        -moz-transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-        transform: translateX(100%);
-    }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 /* bottom-section ========================== */
 .bottom-section {
