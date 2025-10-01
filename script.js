@@ -11,6 +11,7 @@ function HeaderbtnSwapContent() {
    });
 }
 function ScrollSmoother__init() {
+   console.log("ScrollSmoother__init");
    ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
@@ -23,6 +24,10 @@ function ScrollSmoother__init() {
 function highlightAni__init() {
    const cardBox = document.querySelector(".sec-2 .scroll-ani");
    const cards = cardBox.querySelectorAll(".card");
+
+   if (thresholdMobile >= viewportWidth) {
+      return;
+   }
 
    const HighlightObserver = new IntersectionObserver(
       function (entries) {
@@ -71,6 +76,10 @@ function highlightAni__init() {
 }
 
 function newsHover__init() {
+   if (thresholdMobile >= viewportWidth) {
+      return;
+   }
+
    const cardBox = document.querySelector(".sec-6 .card-box");
    const cards = cardBox.querySelectorAll(".card");
 
@@ -162,6 +171,21 @@ function sec3_gsapScroll__init() {
 }
 
 function sec3__Swiper() {
+   const swiperEl = document.querySelector(".sec-3 .right.swiper");
+   const outerSwiper = new Swiper(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 100,
+      centeredslides: true,
+
+      breakpoints: {
+         770: {
+            slidesPerView: 4,
+            spaceBetween: 80,
+            centeredslides: false,
+         },
+      },
+   });
+
    const BoxesEl = document.querySelectorAll(".sec-3 .right .box");
 
    BoxesEl.forEach((box) => {
@@ -170,7 +194,7 @@ function sec3__Swiper() {
       let nextBtn = box.querySelector(".swiper-button-next");
       let prevBtn = box.querySelector(".swiper-button-prev");
 
-      const swiper = new Swiper(swiperBox, {
+      const innerSwiper = new Swiper(swiperBox, {
          loop: true,
          spaceBetween: 24,
          effect: "fade",
@@ -183,6 +207,9 @@ function sec3__Swiper() {
          navigation: {
             nextEl: nextBtn,
             prevEl: prevBtn,
+         },
+         breakpoints: {
+            770: { touchRatio: 0, grabCursor: false },
          },
       });
    });
@@ -305,7 +332,6 @@ window.addEventListener("load", () => {
    HeaderbtnSwapContent();
    if (viewportWidth >= thresholdMobile) {
       ScrollSmoother__init();
-      console.log("ScrollSmoother__init");
    }
 
    /////////// vertify main page
@@ -313,8 +339,6 @@ window.addEventListener("load", () => {
       console.log("mainpage not founded");
    } else {
       console.log("mainpage founded");
-      if (viewportWidth > thresholdMobile) {
-      }
       sec3_gsapScroll__init();
       sec3__Swiper();
       textSplit__init();
@@ -341,14 +365,18 @@ let resizeTimer;
 window.addEventListener("resize", function () {
    clearTimeout(resizeTimer);
 
-   resizeTimer = setTimeout(function () {
+   resizeTimer = setTimeout(() => {
       viewportWidth = window.innerWidth;
+      ScrollSmoother.kill();
+      ScrollTrigger.getAll().forEach((trigger) => {
+         trigger.kill();
+      });
+
       if (viewportWidth >= thresholdMobile) {
          sec3_gsapScroll__init();
+         ScrollSmoother__init();
       }
-      ScrollSmoother__init();
-      console.log("Resize done");
 
-      console.log(viewportWidth);
+      console.log("Resize done // ScrollTrigger reset");
    }, 200);
 });
