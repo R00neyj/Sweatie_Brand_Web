@@ -1,7 +1,17 @@
+//////////////////////////////////// global
 console.clear();
 AOS.init();
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+function HeaderbtnSwapContent() {
+  const btns = document.querySelectorAll(".header .menu-wrap a");
+  btns.forEach((el) => {
+    let content = el.querySelector("span").textContent;
+    el.querySelector("span").style.setProperty("--content", `"${content}"`);
+  });
+}
+
+//////////////////////////////////// mainpage
 function highlightAni__init() {
   const cardBox = document.querySelector(".sec-2 .scroll-ani");
   const cards = cardBox.querySelectorAll(".card");
@@ -68,14 +78,6 @@ function newsHover__init() {
 
 function sec4btnSwapContent() {
   const btns = document.querySelectorAll(".sec-4 .btn-wrap a");
-  btns.forEach((el) => {
-    let content = el.querySelector("span").textContent;
-    el.querySelector("span").style.setProperty("--content", `"${content}"`);
-  });
-}
-
-function HeaderbtnSwapContent() {
-  const btns = document.querySelectorAll(".header .menu-wrap a");
   btns.forEach((el) => {
     let content = el.querySelector("span").textContent;
     el.querySelector("span").style.setProperty("--content", `"${content}"`);
@@ -175,24 +177,142 @@ function sec3__Swiper() {
     });
   });
 }
+//////////////////////////////////// subpage 2
+
+function aos지연시간일일히적기귀찮아함수() {
+  const 적용할애들 = document.querySelectorAll(
+    `
+               [data-aos="fade-in"],
+               [data-aos="fade-left"],
+               [data-aos="fade-right"],
+               [data-aos="fade-up"],
+               [data-aos="fade-down"] `
+  );
+  let 지연시간 = 800;
+  let 오프셋 = 250;
+
+  적용할애들.forEach((엘리먼트) => {
+    let 지연시간이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-duration`);
+    let 오프셋이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-offset`);
+    let 불리언타입으로바꾸기 = (지연시간이미있는애찾기 == null) & (오프셋이미있는애찾기 == null);
+
+    if (불리언타입으로바꾸기) {
+      엘리먼트.setAttribute("data-aos-duration", 지연시간);
+      엘리먼트.setAttribute("data-aos-offset", 오프셋);
+    }
+  });
+}
+function gsap__init() {
+  ////////////////// sec-3
+  const target = document.querySelector(".sub2-sec-3");
+  const svgLine1 = document.querySelector("#sec-3-line");
+  let drawLineTl = gsap.timeline();
+
+  const trigger__1 = ScrollTrigger.create({
+    trigger: target,
+    animation: drawLineTl,
+    start: "0% 0%",
+    end: "100% 100%",
+    scrub: 3,
+    //  markers: true,
+  });
+  drawLineTl.fromTo(svgLine1, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
+
+  ////////////////// sec-4
+  const target2 = document.querySelector(".sub2-sec-4");
+  const svgLine2 = document.querySelector("#sec-4-line");
+  let drawLineTl2 = gsap.timeline();
+
+  const trigger__2 = ScrollTrigger.create({
+    trigger: target2,
+    animation: drawLineTl2,
+    start: "0% 0%",
+    end: "100% 100%",
+    scrub: 3,
+    //  markers: true,
+  });
+  drawLineTl2.fromTo(svgLine2, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
+
+  ////////////////// sec-5
+  const target3 = document.querySelector(".sub2-sec-5");
+  const svgLine3 = document.querySelector("#sec-5-line");
+  let drawLineTl3 = gsap.timeline();
+
+  const trigger__3 = ScrollTrigger.create({
+    trigger: target3,
+    animation: drawLineTl3,
+    start: "0% 0%",
+    end: "100% 100%",
+    scrub: 3,
+    //  markers: true,
+  });
+  drawLineTl3.fromTo(svgLine3, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
+}
+
+function AdvancedTextSplit__init() {
+  const target = document.querySelectorAll(`[data-split="true"]`);
+  target.forEach((el, index) => {
+    let char = el.textContent.split("");
+    el.textContent = "";
+
+    for (let i = 0; i < char.length; i++) {
+      let spans = document.createElement("span");
+      spans.textContent = char[i];
+
+      spans.classList.add(`splited`);
+      spans.classList.add(`splited_${char[i].replace(" ", "_")}`);
+      spans.setAttribute("data-splited-index", i + 1);
+
+      el.append(spans);
+    }
+
+    textAniDelay();
+  });
+}
+function textAniDelay() {
+  const target = document.querySelectorAll(".splited");
+
+  target.forEach((el) => {
+    let parentEl = el.parentElement.getAttribute("data-split");
+    if (parentEl) {
+      const index = el.getAttribute("data-splited-index");
+      el.style.animationDelay = `${index * 100 + 200}ms`;
+    }
+  });
+}
 
 ////////////////////////////////////
 // function load
 ////////////////////////////////////
 
 window.addEventListener("load", () => {
-  sec3_gsapScroll__init();
-  sec3__Swiper();
-  textSplit__init();
-  sec4btnSwapContent();
-  highlightAni__init();
-  newsHover__init();
+  /////////// global function
   HeaderbtnSwapContent();
-
   ScrollSmoother.create({
     smooth: 1.5,
     effects: true,
   });
+
+  /////////// vertify main page
+  if (document.querySelector("#mainPage") == null) {
+    console.log("mainpage not found");
+  } else {
+    sec3_gsapScroll__init();
+    sec3__Swiper();
+    textSplit__init();
+    sec4btnSwapContent();
+    highlightAni__init();
+    newsHover__init();
+  }
+
+  /////////// vertify subpage 2
+  if (document.querySelector("#subpage-2") == null) {
+    console.log("subpage-2 found");
+  } else {
+    aos지연시간일일히적기귀찮아함수();
+    AdvancedTextSplit__init();
+    gsap__init();
+  }
 });
 
 ////////////////////////////////////

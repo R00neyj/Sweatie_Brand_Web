@@ -14,11 +14,6 @@
 /*  */
 /*  */
 
-/* need to merge */
-.bottom-section > .footer {
-  margin-bottom: 8rem;
-}
-
 /* font-size adjustment */
 html {
   font-size: max(8px, 0.52083333vw);
@@ -187,13 +182,13 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(calc(17.1031rem + 2.3rem + 2rem) * -1));
+    transform: translateX(calc(calc(17.1031rem + 1rem + 2rem) * -1));
   }
 }
 
 .sec-3 {
   /* === section 3 variable === */
-  --section3-width: 570rem;
+  --section3-width: 550rem;
   --sec-3__left-width: 80rem;
   --sec-3__text-box-size: 133rem;
   --sec-3__text-left-position: 63.5rem;
@@ -233,7 +228,7 @@ body {
       }
 
       > .marquee-box {
-        margin: 50px 0 0 auto;
+        margin: 10rem 0 0 auto;
         font-size: 2.8rem;
         text-wrap: nowrap;
         width: 72rem;
@@ -246,6 +241,10 @@ body {
           display: flex;
           gap: 1rem;
           animation: sec-3-marquee 2s infinite linear reverse;
+
+          img {
+            width: 1rem;
+          }
         }
       }
     }
@@ -299,7 +298,7 @@ body {
 
     .right {
       /* === adjustment === */
-      --sec-3__card-gap: 2.4rem;
+      --sec-3__card-gap: 8rem;
       --sec-3__right-box-width: 62rem;
       --sec-3__card-width: 24rem;
       --sec-3__card-border-color: rgb(80, 80, 80);
@@ -312,7 +311,7 @@ body {
       gap: var(--sec-3__card-gap);
       position: absolute;
       top: 0;
-      left: calc(var(--sec-3__left-width) + var(--sec-3__text-box-size) + var(--sec-3__text-left-position));
+      left: calc(var(--sec-3__left-width) + var(--sec-3__text-left-position) + 110.5rem);
       color: var(--black);
 
       /* box componet setting */
@@ -326,7 +325,8 @@ body {
         align-items: center;
         gap: 1.2rem;
         text-align: center;
-        padding: 4rem 0;
+        padding: 4rem 0 2rem;
+        backdrop-filter: blur(0.5rem);
 
         > .chip {
           padding: 0.2rem 3rem;
@@ -451,7 +451,7 @@ body {
     /* cta buttons */
     .btn-wrap {
       position: absolute;
-      bottom: 2%;
+      bottom: 4%;
       left: 50%;
       display: flex;
       gap: 1.6rem;

@@ -21,10 +21,10 @@
     <link href="../css/won.css" rel="stylesheet" />
     <link href="../css/gyu.css" rel="stylesheet" />
   </head>
-  <body>
+  <body id="subpage-2">
     <header class="header">
       <div class="header-grid">
-        <a class="logo-wrap" href="#">
+        <a class="logo-wrap" href="../index.html">
           <img class="logo" src="../image/top-section/header/logo.svg" alt="logo" />
         </a>
         <ul class="menu-wrap">
@@ -59,7 +59,7 @@
               <img src="../image/subpage_2/sub2_sec1.jpeg" alt="subpage 2 main image" />
             </div>
             <div class="text-box">
-              <h2 data-split="true">Main Feature</h2>
+              <h2>Main Feature</h2>
             </div>
           </div>
         </section>
@@ -355,123 +355,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- 자바 여기다 일단 적으십쇼 -->
     <script src="../script.js"></script>
-    <script>
-      gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
-      AOS.init();
-
-      function gsap__init() {
-        ////////////////// sec-3
-        const target = document.querySelector(".sub2-sec-3");
-        const svgLine1 = document.querySelector("#sec-3-line");
-        let drawLineTl = gsap.timeline();
-
-        const trigger__1 = ScrollTrigger.create({
-          trigger: target,
-          animation: drawLineTl,
-          start: "0% 0%",
-          end: "100% 100%",
-          scrub: 3,
-          //  markers: true,
-        });
-        drawLineTl.fromTo(svgLine1, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
-
-        ////////////////// sec-4
-        const target2 = document.querySelector(".sub2-sec-4");
-        const svgLine2 = document.querySelector("#sec-4-line");
-        let drawLineTl2 = gsap.timeline();
-
-        const trigger__2 = ScrollTrigger.create({
-          trigger: target2,
-          animation: drawLineTl2,
-          start: "0% 0%",
-          end: "100% 100%",
-          scrub: 3,
-          //  markers: true,
-        });
-        drawLineTl2.fromTo(svgLine2, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
-
-        ////////////////// sec-5
-        const target3 = document.querySelector(".sub2-sec-5");
-        const svgLine3 = document.querySelector("#sec-5-line");
-        let drawLineTl3 = gsap.timeline();
-
-        const trigger__3 = ScrollTrigger.create({
-          trigger: target3,
-          animation: drawLineTl3,
-          start: "0% 0%",
-          end: "100% 100%",
-          scrub: 3,
-          //  markers: true,
-        });
-        drawLineTl3.fromTo(svgLine3, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
-      }
-
-      function AdvancedTextSplit__init() {
-        const target = document.querySelectorAll(`[data-split="true"]`);
-        target.forEach((el, index) => {
-          let char = el.textContent.split("");
-          el.textContent = "";
-
-          for (let i = 0; i < char.length; i++) {
-            let spans = document.createElement("span");
-            spans.textContent = char[i];
-
-            spans.classList.add(`splited`);
-            spans.classList.add(`splited_${char[i].replace(" ", "_")}`);
-            spans.setAttribute("data-splited-index", i + 1);
-
-            el.append(spans);
-          }
-
-          textAniDelay();
-        });
-      }
-      function textAniDelay() {
-        const target = document.querySelectorAll(".splited");
-
-        target.forEach((el) => {
-          let parentEl = el.parentElement.getAttribute("data-split");
-          if (parentEl) {
-            const index = el.getAttribute("data-splited-index");
-            el.style.animationDelay = `${index * 100 + 200}ms`;
-          }
-        });
-      }
-
-      function aos지연시간일일히적기귀찮아함수() {
-        const 적용할애들 = document.querySelectorAll(
-          `
-               [data-aos="fade-in"],
-               [data-aos="fade-left"],
-               [data-aos="fade-right"],
-               [data-aos="fade-up"],
-               [data-aos="fade-down"] `
-        );
-        let 지연시간 = 800;
-        let 오프셋 = 250;
-
-        적용할애들.forEach((엘리먼트) => {
-          let 지연시간이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-duration`);
-          let 오프셋이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-offset`);
-          let 불리언타입으로바꾸기 = (지연시간이미있는애찾기 == null) & (오프셋이미있는애찾기 == null);
-
-          if (불리언타입으로바꾸기) {
-            엘리먼트.setAttribute("data-aos-duration", 지연시간);
-            엘리먼트.setAttribute("data-aos-offset", 오프셋);
-          }
-        });
-      }
-
-      window.addEventListener("load", () => {
-        aos지연시간일일히적기귀찮아함수();
-        AdvancedTextSplit__init();
-        gsap__init();
-
-        ScrollSmoother.create({
-          smooth: 1.5,
-          effects: true,
-        });
-      });
-    </script>
+    <script></script>
   </body>
 </html>
