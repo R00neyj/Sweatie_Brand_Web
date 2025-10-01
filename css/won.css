@@ -103,7 +103,7 @@ body {
   /* card componet setting */
   .card {
     position: relative;
-    height: 50dvh;
+    height: 50svh;
     width: 100%;
     overflow: hidden;
     transition: all var(--transition-duration);
@@ -160,7 +160,7 @@ body {
   }
 
   .card.active {
-    height: 100dvh;
+    height: 100svh;
 
     > .img-box {
       &::after {
@@ -212,7 +212,7 @@ body {
 
   .content-wrap {
     width: var(--section3-width);
-    height: 100dvh;
+    height: 100svh;
     display: flex;
     position: relative;
 
@@ -319,7 +319,7 @@ body {
       /* ////// */
       margin-top: 4rem;
       width: 240rem;
-      height: 100dvh;
+      height: 100svh;
       top: 0;
       left: 102rem;
       color: var(--black);
@@ -418,7 +418,7 @@ body {
   > .content-wrap {
     position: relative;
     overflow: hidden;
-    height: 100dvh;
+    height: 100svh;
 
     .bg-video {
       height: 100%;
@@ -685,7 +685,7 @@ body {
   margin-top: 8rem;
 
   > .content-wrap {
-    height: calc(100dvh - 8rem);
+    height: calc(100svh - 8rem);
     overflow: hidden;
     position: relative;
   }
@@ -1050,7 +1050,7 @@ body {
     > .img-box-1 {
       display: flex;
       align-items: center;
-      height: 90dvh;
+      height: 90svh;
       overflow: hidden;
     }
 
@@ -1097,7 +1097,7 @@ body {
     --mFontS: 16px;
     --mFontXS: 14px;
     --mFontXS: 12px;
-    --sec-1-mobileHeight: 60dvh;
+    --sec-1-mobileHeight: 60svh;
   }
 
   .header {
@@ -1165,7 +1165,7 @@ body {
   /* ------------------------- section 2 ------------------------- */
   .sec-2 > .content-wrap .scroll-ani {
     .card {
-      height: 25dvh;
+      height: 25svh;
 
       > .img-box {
         &::after {
@@ -1207,7 +1207,7 @@ body {
 
     .content-wrap {
       width: auto;
-      height: 140dvh;
+      height: 140svh;
       display: flex;
       flex-direction: column;
       padding: 100px 0 24px;
@@ -1215,7 +1215,7 @@ body {
       .bg-white {
         background-color: var(--white);
         width: 100%;
-        height: 130dvh;
+        height: 130svh;
         left: 0;
         top: 38rem;
       }
@@ -1363,7 +1363,7 @@ body {
 
   /* ----------------------------- section 4 ----------------------------- */
   .sec-4 > .content-wrap {
-    height: 60dvh;
+    height: 60svh;
   }
 
   .sec-4 > .content-wrap {
@@ -1429,7 +1429,7 @@ body {
 
       display: flex;
       flex-direction: column;
-      height: 90dvh;
+      height: 90svh;
 
       .card.active {
         flex: 1 1 0;
@@ -1678,7 +1678,7 @@ body {
       transform: translateY(-15%);
       .img-box {
         display: block;
-        height: 100dvh;
+        height: 100svh;
         /* width: auto; */
         img {
           height: 100%;
