@@ -547,7 +547,6 @@ header.invert {
 }
 /* section-1 > text-wrapper ==================================== */
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper {
-  height: 0%;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -561,16 +560,6 @@ header.invert {
   white-space: nowrap;
   box-sizing: border-box;
   overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s ease-in-out;
-}
-
-.sub-1-main > .sub-section-1 > .slogun-text-wrapper.textSlider {
-  height: 40%;
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.5s ease-in-out;
 }
 
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper > h2 {
