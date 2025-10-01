@@ -119,6 +119,9 @@ function sec3_gsapScroll__init() {
   let horizontalScrollLength = pinWrapWidth - window.innerWidth;
   const header = document.querySelector(".header");
 
+  if (pinWrapWidth == null) {
+    return false;
+  }
   // Pinning and horizontal scrolling
 
   gsap.to(".sec-3 .content-wrap", {

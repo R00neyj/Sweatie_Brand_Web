@@ -6,867 +6,916 @@
 
 /* top-section ========================== */
 .top-section {
-   font-family: "Urbanist";
-   position: relative;
-   width: 100%;
-   height: calc(100dvh - 8rem);
-   margin: 0;
-   padding: 0;
-   color: #ffffff;
+  font-family: "Urbanist";
+  position: relative;
+  width: 100%;
+  height: calc(100dvh - 8rem);
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
 }
 /* top)video container ======================== */
 .top-section > .video-container {
-   width: 100%;
-   height: 100dvh;
-   margin: 0;
-   padding: 0;
-   overflow: hidden;
-   box-sizing: border-box;
-   position: relative;
-   margin-top: 8rem;
+  width: 100%;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 8rem;
 
-   > .filter {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(rgba(0, 0, 0, 0.25), #000);
-      transform: scale(1.02);
-   }
+  > .filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.25), #000);
+    transform: scale(1.02);
+  }
 }
 
 .top-section > .video-container > video {
-   width: 100vw;
+  width: 100vw;
 }
 /* top)header container ======================== */
 .header {
-   background-color: rgba(0, 0, 0, 1);
-   width: 100%;
-   height: 8rem;
-   position: fixed;
-   display: flex;
-   justify-content: center;
-   top: 0;
-   left: 0;
-   z-index: 10000;
-   box-sizing: border-box;
-   transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: 8rem;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  box-sizing: border-box;
+  transition: all 0.3s;
 }
 
 header.invert {
-   color: var(--black);
-   background-color: var(--white);
-   border-bottom: rgba(0, 0, 0, 0.3) solid 1px;
+  color: var(--black);
+  background-color: var(--white);
+  border-bottom: rgba(0, 0, 0, 0.3) solid 1px;
 
-   .translate-wrap {
-      > a {
-         border: 0.1rem solid var(--black) !important;
-      }
-   }
+  .translate-wrap {
+    > a {
+      border: 0.1rem solid var(--black) !important;
+    }
+  }
 
-   img {
-      filter: invert(100%);
-   }
+  img {
+    filter: invert(100%);
+  }
 }
 
 .header > .header-grid {
-   width: 164rem;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+  width: 164rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-   a {
-      span {
-         display: block;
-         position: relative;
-         transition: all 0.3s;
+  a {
+    span {
+      display: block;
+      position: relative;
+      transition: all 0.3s;
 
-         &::after {
-            content: var(--content);
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            font-size: 1.8rem;
-         }
+      &::after {
+        content: var(--content);
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        font-size: 1.8rem;
       }
-   }
+    }
+  }
 }
 /* header)logo lane ================================= */
 .header > .header-grid > .logo-wrap {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .header > .header-grid > .logo-wrap > .logo {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* header)menu lane ================================= */
 .header > .header-grid > .menu-wrap {
-   display: flex;
-   align-items: center;
-   gap: 12rem;
-   height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12rem;
+  height: 100%;
 }
 
 .header > .header-grid > .menu-wrap > li {
-   color: #ffffff;
+  color: #ffffff;
 }
 
 .header > .header-grid > .menu-wrap > li > a {
-   display: block;
-   height: 100%;
-   font-weight: bold;
-   font-size: 1.8rem;
-   overflow: hidden;
+  display: block;
+  height: 100%;
+  font-weight: bold;
+  font-size: 1.8rem;
+  overflow: hidden;
 }
 
 .header > .header-grid > .menu-wrap > li > a:hover > span {
-   transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 /* header)translate ================================= */
 .header > .header-grid > .translate-wrap {
-   margin: 0;
-   padding: 0;
-   height: 100%;
-   display: flex;
-   align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .header > .header-grid > .translate-wrap > a {
-   display: flex;
-   align-items: center;
-   gap: 1.2rem;
-   border: 0.1rem solid #ffffff;
-   border-radius: 6.4rem;
-   padding: 1rem 2rem;
-   transition: all 0.3s;
-   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border: 0.1rem solid #ffffff;
+  border-radius: 6.4rem;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+  font-weight: 600;
 
-   &:hover {
-      background-color: var(--primary);
-      color: var(--black);
-      border: 0.1rem solid var(--primary);
+  &:hover {
+    background-color: var(--primary);
+    color: var(--black);
+    border: 0.1rem solid var(--primary);
 
-      .img-box > img {
-         filter: invert(100%);
-      }
-   }
+    .img-box > img {
+      filter: invert(100%);
+    }
+  }
 }
 
 .header > .header-grid > .translate-wrap > a > .img-box {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   overflow: hidden;
-   transition: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: inherit;
 }
 
 .header > .header-grid > .translate-wrap > a > .img-box > img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   vertical-align: middle;
-   transition: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  transition: inherit;
 }
 
 .header > .header-grid > .translate-wrap > a > span {
-   font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 /* top)intro container ======================== */
 .top-section > .intro-container {
-   position: absolute;
-   margin: 0;
-   padding: 0;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   justify-content: center;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 
-   .intro-logo {
-      svg {
-         overflow: visible;
+  .intro-logo {
+    svg {
+      overflow: visible;
 
-         path {
-            filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.5));
-         }
+      path {
+        filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.5));
       }
-   }
+    }
+  }
 }
 
 .top-section > .intro-container > .intro-wrap {
-   width: 164rem;
-   display: flex;
-   align-items: flex-end;
-   padding-bottom: 4.2rem;
+  width: 164rem;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4.2rem;
 }
 
 .top-section > .intro-container > .intro-wrap > .intro-box {
-   width: 70.2rem;
-   height: 19.6rem;
-   display: flex;
-   flex-direction: column;
-   gap: 1.2rem;
+  width: 70.2rem;
+  height: 19.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .top-section > .intro-container > .intro-wrap > .intro-box > .intro-text {
-   display: flex;
-   align-items: center;
-   gap: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
 
 .top-section > .intro-container > .intro-wrap > .intro-box > .intro-text > h3 {
-   font-weight: bold;
-   font-size: 3.2rem;
-   white-space: nowrap;
+  font-weight: bold;
+  font-size: 3.2rem;
+  white-space: nowrap;
 }
 
 .top-section > .intro-container > .intro-wrap > .intro-box > .intro-text > .line-wrap {
-   flex: 1 1 0;
-   display: flex;
-   align-items: center;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
 }
 
 .top-section > .intro-container > .intro-wrap > .intro-box > .intro-text > .line-wrap > span {
-   background-color: var(--white);
-   width: 100%;
-   height: 0.1rem;
-   margin-top: 0.8rem;
+  background-color: var(--white);
+  width: 100%;
+  height: 0.1rem;
+  margin-top: 0.8rem;
 }
 /* sec-5 ========================== */
 .sec-5 {
-   font-family: "Urbanist";
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   gap: 4.8rem;
-   width: 100%;
-   height: 100vh;
-   margin: 0;
-   padding: 0;
-   color: #ffffff;
-   background-color: #000;
-   box-shadow: inset 5rem #000;
+  font-family: "Urbanist";
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4.8rem;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: #000;
+  box-shadow: inset 5rem #000;
 }
 /* section-5)text-wrapper ========== */
 .sec-5 > .partner-text-wrap {
-   width: 100%;
-   height: 12rem;
-   font-weight: bold;
-   font-size: 8rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  width: 100%;
+  height: 12rem;
+  font-weight: bold;
+  font-size: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sec-5 > .partner-text-wrap > .partner-text-box {
-   width: 90%;
-   height: 100%;
-   display: flex;
-   align-items: center;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 /* section-5)partners-container ============ */
 .sec-5 > .partners-container {
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   gap: 3.4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
 }
 
 .sec-5 > .partners-container > .marquee-slider {
-   display: flex;
+  display: flex;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span {
-   display: flex;
-   gap: 3rem;
+  display: flex;
+  gap: 3rem;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > div {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > div > img {
-   height: 80%;
-   vertical-align: middle;
-   object-fit: contain;
-   transition: all 0.2s ease-in-out;
+  height: 80%;
+  vertical-align: middle;
+  object-fit: contain;
+  transition: all 0.2s ease-in-out;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > .adidas-logo > img {
-   height: 50%;
+  height: 50%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > .nike-logo > img {
-   height: 50%;
+  height: 50%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > .pro-specs-logo > img {
-   height: 50%;
+  height: 50%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > .apple-logo > img {
-   height: 50%;
+  height: 50%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > .reebok-logo > img {
-   height: 60%;
+  height: 60%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > .samsung-logo > img {
-   width: 60%;
+  width: 60%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > .cocacola-logo > img {
-   width: 60%;
+  width: 60%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > .spaceX-logo > img {
-   width: 70%;
+  width: 70%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > .guiness-logo > img {
-   height: 70%;
+  height: 70%;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > div:hover {
-   background-color: #ffffff;
-   transition: all 0.2s ease-in-out;
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > div:hover > img {
-   filter: invert(100%);
-   transition: all 0.2s ease-in-out;
+  filter: invert(100%);
+  transition: all 0.2s ease-in-out;
 }
 
 .sec-5 > .partners-container > .marquee-slider > span > div {
-   margin: 0;
-   padding: 0;
-   width: 35rem;
-   height: 22.5rem;
-   background-color: #222222;
-   border-radius: 2.4rem;
-   box-sizing: border-box;
-   overflow: hidden;
-   flex-shrink: 0;
-   transition: all 0.2s ease-in-out;
+  margin: 0;
+  padding: 0;
+  width: 35rem;
+  height: 22.5rem;
+  background-color: #222222;
+  border-radius: 2.4rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: all 0.2s ease-in-out;
 }
 /* partners-marquee-1 =========================== */
 .sec-5 > .partners-container > .marquee-slider > .partners-marquee-1,
 .partners-marquee-2 {
-   padding-left: 2.8rem;
+  padding-left: 2.8rem;
 
-   -moz-transform: translateX(0%);
-   -webkit-transform: translateX(0%);
-   transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
 
-   -moz-animation: overwrap1 25s linear infinite;
-   -webkit-animation: overwrap1 25s linear infinite;
-   animation: overwrap1 25s linear infinite;
+  -moz-animation: overwrap1 25s linear infinite;
+  -webkit-animation: overwrap1 25s linear infinite;
+  animation: overwrap1 25s linear infinite;
 }
 /* Move tool(define the animation) ================ */
 @-moz-keyframes overwrap1 {
-   0% {
-      -moz-transform: translateX(0%);
-   }
-   100% {
-      -moz-transform: translateX(-100%);
-   }
+  0% {
+    -moz-transform: translateX(0%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+  }
 }
 
 @-webkit-keyframes overwrap1 {
-   0% {
-      -webkit-transform: translateX(0%);
-   }
-   100% {
-      -webkit-transform: translateX(-100%);
-   }
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
 }
 
 @keyframes overwrap1 {
-   0% {
-      -moz-transform: translateX(0%);
-      -webkit-transform: translateX(0%);
-      transform: translateX(0%);
-   }
-   100% {
-      -moz-transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-   }
+  0% {
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
 }
 /* partners-marquee-2 =========================== */
 .sec-5 > .partners-container > .marquee-slider > .partners-marquee-3,
-.partners-marquee-4 {
-   padding-right: 2.8rem;
-   display: flex;
-   flex-direction: row;
-   justify-content: flex-end;
+.partners-marquee-4,
+.partners-marquee-5 {
+  padding-right: 2.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 
-   -moz-transform: translateX(-100%);
-   -webkit-transform: translateX(-100%);
-   transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
 
-   -moz-animation: overwrap2 25s linear infinite;
-   -webkit-animation: overwrap2 25s linear infinite;
-   animation: overwrap2 25s linear infinite;
+  -moz-animation: overwrap2 25s linear infinite;
+  -webkit-animation: overwrap2 25s linear infinite;
+  animation: overwrap2 25s linear infinite;
 }
 
 @-moz-keyframes overwrap2 {
-   0% {
-      -moz-transform: translateX(-100%);
-   }
-   100% {
-      -moz-transform: translateX(0%);
-   }
+  0% {
+    -moz-transform: translateX(-100%);
+  }
+  100% {
+    -moz-transform: translateX(0%);
+  }
 }
 
 @-webkit-keyframes overwrap2 {
-   0% {
-      -webkit-transform: translateX(-100%);
-   }
-   100% {
-      -webkit-transform: translateX(0%);
-   }
+  0% {
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
 }
 
 @keyframes overwrap2 {
-   0% {
-      transform: translateX(-100%);
-   }
-   100% {
-      transform: translateX(0%);
-   }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 /* bottom-section ========================== */
 .bottom-section {
-   font-family: "Urbanist";
-   position: relative;
-   width: 100%;
-   height: 100%;
-   margin: 0;
-   padding: 0;
-   color: #ffffff;
-   background-color: #000;
-   display: flex;
-   justify-content: center;
+  font-family: "Urbanist";
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
 }
 
 .bottom-section > .footer {
-   width: 95%;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-end;
-   align-items: center;
-   list-style: none;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
 }
 
 .bottom-section > .footer > .footer-link-wrap {
-   width: 100%;
-   display: flex;
-   align-items: flex-end;
-   justify-content: space-between;
-   padding-top: 18rem;
-   padding-bottom: 12rem;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 18rem;
+  padding-bottom: 12rem;
 }
 
 .bottom-section > .footer > .footer-link-wrap > div {
-   line-height: 2;
-   font-size: 2.2rem;
-   font-weight: bold;
-   cursor: default;
+  line-height: 2;
+  font-size: 2.2rem;
+  font-weight: bold;
+  cursor: default;
 }
 
 .bottom-section > .footer > .footer-link-wrap > div > li > a:hover {
-   text-decoration: 0.15rem underline wavy #cafa00;
-   text-underline-offset: 0.5rem;
+  text-decoration: 0.15rem underline wavy #cafa00;
+  text-underline-offset: 0.5rem;
 }
 
 .bottom-section > .footer > .footer-logo-wrap {
-   width: 100%;
-   height: 100%;
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .bottom-section > .footer > .footer-logo-wrap > img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
 }
 /* subPage-1 ========================================= */
 /* main)section-1 ==================================== */
 .sub-1-main > .sub-section-1 {
-   position: relative;
-   margin: 0;
-   padding: 0;
-   width: 100%;
-   height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 /* section-1 > img-container ==================================== */
 .sub-1-main > .sub-section-1 > .img-container {
-   position: relative;
-   margin: 0;
-   padding: 0;
-   width: 100%;
-   height: 100%;
-   box-sizing: border-box;
-   overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .sub-1-main > .sub-section-1 > .img-container::after {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(0, 0, 0, 0.2);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .sub-1-main > .sub-section-1 > .img-container > img {
-   width: 100%;
-   vertical-align: middle;
-   object-fit: contain;
+  width: 100%;
+  vertical-align: middle;
+  object-fit: contain;
 }
 /* section-1 > text-wrapper ==================================== */
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper {
-   margin: 0;
-   padding: 0;
-   position: absolute;
-   top: 50%;
-   right: 50%;
-   transform: translate(110%, -40%);
-   display: flex;
-   flex-direction: column;
-   gap: 9rem;
-   text-align: end;
-   white-space: nowrap;
-   box-sizing: border-box;
-   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(110%, -40%);
+  display: flex;
+  flex-direction: column;
+  gap: 9rem;
+  text-align: end;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper > h2 {
-   line-height: 1.7;
+  line-height: 1.3;
 }
 
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper > h2 > p {
-   font-family: "Urbanist";
-   font-size: 9.6rem;
-   font-weight: 700;
+  font-family: "Urbanist";
+  font-size: 9.6rem;
+  font-weight: 700;
 }
 
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper > h3 {
-   font-family: "Pretendard";
-   font-size: 4.8rem;
-   font-weight: 700;
+  font-family: "Pretendard";
+  font-size: 4.8rem;
+  font-weight: 700;
 }
 /* main)section-2 ==================================== */
 .sub-1-main > .sub-section-2 {
-   width: 100%;
-   height: 100%;
-   background-color: #161616;
-   margin: 0;
-   padding: 0;
-   position: relative;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #161616;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 8rem;
+  padding: 10rem;
 }
 /* section-2 > banner-wrapper ==================================== */
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper {
-   display: flex;
-   flex-direction: column;
-   gap: 3.8rem;
-   line-height: 1.5;
-   font-family: "Urbanist";
-   letter-spacing: 0.2rem;
-   padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.8rem;
+  line-height: 1.5;
+  font-family: "Urbanist";
+  letter-spacing: 0.2rem;
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h1 {
-   font-weight: bold;
-   font-size: 6.4rem;
+  font-weight: bold;
+  font-size: 6.4rem;
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h3 {
-   font-weight: bold;
-   font-size: 2.8rem;
+  font-weight: bold;
+  font-size: 2.8rem;
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h4 {
-   font-family: "Pretendard" !important;
-   font-weight: medium;
-   font-size: 2.4rem;
+  font-family: "Pretendard" !important;
+  font-weight: medium;
+  font-size: 2.4rem;
 }
 /* section-2 > scroll-wrapper ==================================== */
-.sub-1-main > .sub-section-2 > .scroll-banner-container > .scroll-wrapper {
-   position: relative;
-   flex: 1;
-   width: 100%;
-   height: 50%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   padding: 3.6rem;
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
+  position: relative;
+  width: 100%;
+  height: 60rem;
+  border-radius: 1rem;
 }
 
-.sub-1-main > .sub-section-2 > .scroll-banner-container > .scroll-wrapper > .card {
-   position: relative;
-    width: 50%;
-    height: 10%;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    overflow: hidden;
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
-.sub-1-main > .sub-section-2 > .scroll-banner-container > .scroll-wrapper > .card > img {
-   width: 100%;
-   object-fit: contain;
-   vertical-align: middle;
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide.scaler {
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  filter: brightness(0.5);
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > img {
+  transform: scale(1);
+  filter: brightness(0.75);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > span > h3 {
+  font-family: "Urbanist";
+  font-weight: 600;
+  font-size: 3.6rem;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > span > h5 {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 2.4rem;
 }
 /* main)section-3 ==================================== */
 .sub-1-main > .sub-section-3 {
-   width: 99vw;
-   height: 100vh;
-   background-color: #161616;
-   margin: 0;
-   padding: 0;
-   position: relative;
-   border-top: 0.1rem solid #ffffff;
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-top: 0.1rem solid #ffffff;
 }
 /* main)section-4 ==================================== */
 .sub-1-main > .sub-section-4 {
-   width: 99vw;
-   height: 100vh;
-   background-color: #161616;
-   margin: 0;
-   padding: 0;
-   position: relative;
-   border-top: 0.1rem solid #ffffff;
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-top: 0.1rem solid #ffffff;
 }
 /* main)section-5 ==================================== */
 .sub-1-main > .sub-section-5 {
-   width: 100%;
-   height: 100%;
-   background-color: #000000;
-   margin: 0;
-   padding: 0;
-   position: relative;
-   top: 0;
-   left: 0;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sub-1-main > .sub-section-5 > .background-container {
-   position: relative;
-   top: 0;
-   left: 0;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 /* section-5 > img-wrapper ==================================== */
 .sub-1-main > .sub-section-5 > .background-container > .img-wrapper {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .sub-1-main > .sub-section-5 > .background-container > .img-wrapper > img {
-   width: 100%;
-   height: 100%;
-   vertical-align: middle;
-   object-fit: contain;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  object-fit: contain;
 }
 /* section-5 > text-wrapper ==================================== */
 .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper {
-   position: absolute;
-   top: 0;
-   left: 0;
-   transform: translate(20%, 60%);
-   margin: 0;
-   padding: 0;
-   display: flex;
-   flex-direction: column;
-   gap: 2.4rem;
-   box-sizing: border-box;
-   overflow: hidden;
-   white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(20%, 60%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h1 {
-   line-height: 1.2;
+  line-height: 1.2;
 }
 
 .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h1 > p {
-   font-family: "Urbanist";
-   font-weight: 700;
-   font-size: 8rem;
+  font-family: "Urbanist";
+  font-weight: 700;
+  font-size: 8rem;
 }
 
 .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h3 {
-   font-family: "Pretendard";
-   font-weight: 600;
-   font-size: 4.8rem;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 4.8rem;
 }
 /* section-5 > view-value-wrapper ==================================== */
 .sub-1-main > .sub-section-5 > .view-value-container {
-   position: relative;
-   top: 0;
-   left: 0;
-   width: 90%;
-   height: 90%;
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 2.4rem;
-   padding: 12.8rem 2rem 2rem 2rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4rem;
+  padding: 12.8rem 2rem 2rem 2rem;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div {
-   position: relative;
-   width: 100%;
-   height: 100%;
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   overflow: hidden;
-   border-radius: 1.8rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 1.8rem;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > img:hover {
-   transform: scale(1.2);
-   filter: brightness(0.75);
-   transition: all 0.3s ease-in-out;
-   overflow: hidden;
+  transform: scale(1.2);
+  filter: brightness(0.75);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > img {
-   border-radius: 1.8rem;
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   vertical-align: middle;
-   transform: scale(1);
-   filter: brightness(1.25);
-   transition: all 0.3s ease-in-out;
+  border-radius: 1.8rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  transform: scale(1);
+  filter: brightness(1.25);
+  transition: all 0.3s ease-in-out;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > span {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   margin: 0;
-   padding: 0;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 2.4rem;
-   box-sizing: border-box;
-   overflow: hidden;
-   white-space: nowrap;
-   z-index: 1000;
-   pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h1 {
-   font-family: "Pretendard";
-   font-weight: bold;
-   font-size: 13rem;
-   border-bottom: 0.2rem solid #ffffff;
+  font-family: "Pretendard";
+  font-weight: bold;
+  font-size: 13rem;
+  border-bottom: 0.2rem solid #ffffff;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h2 {
-   font-family: "Urbanist";
-   font-weight: 800;
-   font-size: 6rem;
+  font-family: "Urbanist";
+  font-weight: 800;
+  font-size: 6rem;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 {
-   line-height: 1.7;
-   text-align: center;
+  line-height: 1.7;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > span > h5.viewer {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.2s ease-in-out;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 > p:first-child {
-   font-family: "Urbanist";
-   font-weight: 600;
-   font-size: 2.2rem;
-   letter-spacing: 0.15rem;
+  font-family: "Urbanist";
+  font-weight: 600;
+  font-size: 2.2rem;
+  letter-spacing: 0.15rem;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 > p:last-child {
-   font-family: "Pretendard";
-   font-weight: 600;
-   font-size: 2.2rem;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 2.2rem;
 }
 /* section-5 > button-wrapper ==================================== */
 .sub-1-main > .sub-section-5 > .btn-wrapper > a {
-   padding: 2.8rem 4.8rem;
-   display: flex;
-   align-items: center;
-   gap: 1.8rem;
-   border-radius: 4.8rem;
-   background-color: #222222;
-   transition: all 0.2s ease-in-out;
-   margin-top: 4.8rem;
+  padding: 2.8rem 4.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  border-radius: 4.8rem;
+  background-color: #222222;
+  transition: all 0.2s ease-in-out;
+  margin-top: 4.8rem;
 }
 
 .sub-1-main > .sub-section-5 > .btn-wrapper > a:hover {
-   background-color: #cafa00;
-   color: #000000;
-   transition: all 0.2s ease-in-out;
+  background-color: #cafa00;
+  color: #000000;
+  transition: all 0.2s ease-in-out;
 }
 
 .sub-1-main > .sub-section-5 > .btn-wrapper > a:hover > span {
-   filter: invert(1);
-   transition: all 0.2s ease-in-out;
+  filter: invert(1);
+  transition: all 0.2s ease-in-out;
 }
 
 .sub-1-main > .sub-section-5 > .btn-wrapper > a > h2 {
-   font-family: "Urbanist";
-   font-weight: bold;
-   font-size: 2.4rem;
-   letter-spacing: 0.15rem;
+  font-family: "Urbanist";
+  font-weight: bold;
+  font-size: 2.4rem;
+  letter-spacing: 0.15rem;
 }
 
 .sub-1-main > .sub-section-5 > .btn-wrapper > a > span {
-   margin: 0;
-   padding: 0;
-   overflow: hidden;
-   box-sizing: border-box;
-   transition: all 0.2s ease-in-out;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
 }
 
 .sub-1-main > .sub-section-5 > .btn-wrapper > a > span > img {
-   width: 100%;
-   height: 100%;
-   object-fit: contain;
-   vertical-align: bottom;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  vertical-align: bottom;
 }
