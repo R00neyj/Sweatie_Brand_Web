@@ -671,15 +671,6 @@ body {
   > h2 {
     font-size: 17rem;
     line-height: 1;
-
-    > span {
-      display: inline-block;
-      letter-spacing: -0.4rem;
-      animation: mainfeatureAni 0.8s 1 both;
-    }
-    > span.splited__ {
-      width: 4rem;
-    }
   }
 }
 /* ----------------------------- sub2 section 2 ----------------------------- */
@@ -698,6 +689,7 @@ body {
     > p:nth-child(2) {
       font-size: 3.2rem;
       font-weight: 500;
+      margin-top: 2rem;
     }
     > h4 {
       font-size: 2.4rem;
@@ -750,6 +742,8 @@ body {
 
   > .text-box {
     font-size: var(--font-s);
+    line-height: 1.8;
+
     > h4 {
       font-size: var(--font-xl);
     }
@@ -948,6 +942,16 @@ body {
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
+
+  .text-box {
+    h4 {
+      line-height: 1.3;
+    }
+    h4.kr {
+      line-height: 1.6;
+      margin-top: 2rem;
+    }
+  }
 
   .img-box {
     width: 60rem;
