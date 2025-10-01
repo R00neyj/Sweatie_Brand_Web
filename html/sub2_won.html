@@ -18,8 +18,8 @@
 
     <!-- css -->
     <link href="../css/normalize.css" rel="stylesheet" />
-    <link href="../css/won.css" rel="stylesheet" />
     <link href="../css/gyu.css" rel="stylesheet" />
+    <link href="../css/won.css" rel="stylesheet" />
   </head>
   <body id="subpage-2">
     <header class="header">
@@ -49,7 +49,6 @@
         </div>
       </div>
     </header>
-
     <div id="smooth-wrapper" class="sub2-wrap">
       <div id="smooth-content" class="sub2-content">
         <!-- section 1 -->
@@ -178,6 +177,11 @@
               </div>
             </div>
             <div class="content-box box-4">
+              <div class="img-container img-container-2">
+                <div class="img-box" data-aos="fade-down" data-aos-offset="500">
+                  <img src="../image/subpage_2/analysis_1.png" alt="analysis screen 1" />
+                </div>
+              </div>
               <div class="img-container img-container-1">
                 <div class="img-box" data-aos="fade-right">
                   <img src="../image/subpage_2/analysis_2.png" alt="analysis screen 2" />
@@ -185,11 +189,6 @@
                 <div class="text-box kr" data-aos="fade-in">
                   주간, 월간, 연간 쌓인 데이터 속에서 <br />
                   당신의 꾸준한 성장을 발견하세요
-                </div>
-              </div>
-              <div class="img-container img-container-2">
-                <div class="img-box" data-aos="fade-down" data-aos-offset="500">
-                  <img src="../image/subpage_2/analysis_1.png" alt="analysis screen 1" />
                 </div>
               </div>
               <div class="img-container img-container-3">
@@ -211,8 +210,7 @@
                   d="M-2443 1035.58L1158.4 225.867C1514.49 145.807 1782.99 545.358 1574.33 844.807L-383.847 3655"
                   stroke="url(#paint0_linear_1736_1003)"
                   stroke-width="290"
-                  stroke-linecap="round"
-                />
+                  stroke-linecap="round" />
               </g>
               <defs>
                 <linearGradient id="paint0_linear_1736_1003" x1="-2443" y1="1827.5" x2="2845" y2="1828" gradientUnits="userSpaceOnUse">
@@ -275,8 +273,7 @@
                   d="M2634.5 10L543.712 665.16C245.651 758.558 270.965 1188.48 577.927 1246.26L1217.26 1366.59C1492.87 1415.98 2087.67 1597.44 2262 1928.15"
                   stroke="url(#paint0_linear_1736_1010)"
                   stroke-width="290"
-                  stroke-linecap="round"
-                />
+                  stroke-linecap="round" />
               </g>
               <defs>
                 <linearGradient id="paint0_linear_1736_1010" x1="-602" y1="1125.65" x2="4815.94" y2="1126.02" gradientUnits="userSpaceOnUse">
@@ -356,39 +353,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- 자바 여기다 일단 적으십쇼 -->
     <script src="../script.js"></script>
-    <script>
-      function sec_2Gsap__init() {
-        const target = document.querySelector(".sub2-sec-2 .content-wrap");
-        const spanEl = target.querySelectorAll("span.splited");
-
-        console.log(target);
-        console.log(spanEl);
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: target,
-            start: "top 70%",
-            end: "bottom 70%",
-            toggleActions: "play none none reverse",
-            // markers: true,
-            scrub: 1,
-          },
-        });
-        tl.fromTo(
-          spanEl,
-          {
-            opacity: 0.2,
-          },
-          {
-            opacity: 1,
-            duration: 1,
-            stagger: 0.05,
-          }
-        );
-      }
-      setTimeout(() => {
-        sec_2Gsap__init();
-      }, 10);
-    </script>
+    <script></script>
   </body>
 </html>

@@ -11,10 +11,25 @@ function HeaderbtnSwapContent() {
   });
 }
 
+let isSmomther = null;
+function ScrollSmoother__init() {
+  console.log("ScrollSmoother__init");
+  isSmomther = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.25,
+    effects: true,
+  });
+}
+
 //////////////////////////////////// mainpage
 function highlightAni__init() {
   const cardBox = document.querySelector(".sec-2 .scroll-ani");
   const cards = cardBox.querySelectorAll(".card");
+
+  if (isMobile) {
+    return;
+  }
 
   const HighlightObserver = new IntersectionObserver(
     function (entries) {
@@ -72,6 +87,10 @@ function newsHover__init() {
         cardDeactive.classList.remove("active");
       });
       el.classList.add("active");
+
+      if (isMobile) {
+        return;
+      }
     });
   });
 }
@@ -115,22 +134,28 @@ function textSplit__init() {
 }
 
 function sec3_gsapScroll__init() {
-  let pinWrap = document.querySelector(".sec-3 .content-wrap");
-  let pinWrapWidth = pinWrap.offsetWidth;
-  let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+  const pinWrap = document.querySelector(".sec-3 .content-wrap");
+  if (pinWrap == null) {
+    return;
+  }
+
   const header = document.querySelector(".header");
 
+  if (isMobile) {
+    console.log(`sec3_gsapScroll__init paused`);
+    return;
+  }
   // Pinning and horizontal scrolling
 
-  gsap.to(".sec-3 .content-wrap", {
+  gsap.to(pinWrap, {
     scrollTrigger: {
       scroller: "#smooth-wrapper",
-      scrub: true,
-      trigger: ".sec-3 .content-wrap",
+      scrub: 1,
+      trigger: pinWrap,
       pin: true,
       // anticipatePin: 1,
       start: "top top",
-      end: pinWrapWidth,
+      end: () => pinWrap.offsetWidth,
       onEnter: () => {
         header.classList.add("invert");
       },
@@ -144,14 +169,29 @@ function sec3_gsapScroll__init() {
         header.classList.remove("invert");
       },
     },
-    x: -horizontalScrollLength,
+    x: () => -(pinWrap.offsetWidth - window.innerWidth),
     ease: "none",
   });
 
-  ScrollTrigger.refresh();
+  console.log(`main/section3 gsap loaded`);
 }
 
 function sec3__Swiper() {
+  const swiperEl = document.querySelector(".sec-3 .right.swiper");
+  const outerSwiper = new Swiper(swiperEl, {
+    slidesPerView: 1,
+    spaceBetween: 100,
+    centeredslides: true,
+
+    breakpoints: {
+      770: {
+        slidesPerView: 4,
+        spaceBetween: 80,
+        centeredslides: false,
+      },
+    },
+  });
+
   const BoxesEl = document.querySelectorAll(".sec-3 .right .box");
 
   BoxesEl.forEach((box) => {
@@ -160,7 +200,7 @@ function sec3__Swiper() {
     let nextBtn = box.querySelector(".swiper-button-next");
     let prevBtn = box.querySelector(".swiper-button-prev");
 
-    const swiper = new Swiper(swiperBox, {
+    const innerSwiper = new Swiper(swiperBox, {
       loop: true,
       spaceBetween: 24,
       effect: "fade",
@@ -173,6 +213,9 @@ function sec3__Swiper() {
       navigation: {
         nextEl: nextBtn,
         prevEl: prevBtn,
+      },
+      breakpoints: {
+        770: { touchRatio: 0, grabCursor: false },
       },
     });
   });
@@ -188,27 +231,87 @@ function aos지연시간일일히적기귀찮아함수() {
                [data-aos="fade-up"],
                [data-aos="fade-down"] `
   );
-  let 지연시간 = 800;
-  let 오프셋 = 300;
+  if (적용할애들.length == 0) {
+    return;
+  }
+
+  const 메인페이지 = document.querySelector("#mainPage");
+  let 메인페이지있다 = !!메인페이지;
+
+  const 메인_오프셋 = 200;
+  const 듀레이션 = 800;
+  const 오프셋 = 300;
 
   적용할애들.forEach((엘리먼트) => {
-    let 지연시간이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-duration`);
+    let 듀레이션이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-duration`);
     let 오프셋이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-offset`);
-    let 불리언타입으로바꾸기 = (지연시간이미있는애찾기 == null) & (오프셋이미있는애찾기 == null);
+    let 둘다없는애 = (듀레이션이미있는애찾기 == null) & (오프셋이미있는애찾기 == null);
 
-    if (불리언타입으로바꾸기) {
-      엘리먼트.setAttribute("data-aos-duration", 지연시간);
-      엘리먼트.setAttribute("data-aos-offset", 오프셋);
+    if (둘다없는애) {
+      if (메인페이지있다) {
+        엘리먼트.setAttribute("data-aos-duration", 듀레이션);
+        엘리먼트.setAttribute("data-aos-offset", 메인_오프셋);
+      } else {
+        엘리먼트.setAttribute("data-aos-duration", 듀레이션);
+        엘리먼트.setAttribute("data-aos-offset", 오프셋);
+      }
+    }
+
+    if (isMobile) {
+      console.log("aos-offset reset");
+      엘리먼트.removeAttribute("data-aos-offset");
+      엘리먼트.setAttribute("data-aos-offset", "100");
     }
   });
 }
-function gsap__init() {
-  ////////////////// sec-3
+////////////////// sub2 sec-2
+function sec_2Gsap__init() {
+  const target = document.querySelector(".sub2-sec-2 .content-wrap");
+  if (target == null) {
+    console.log(`sec-2 gsap stoped ${target}`);
+    return;
+  }
+  const spanEl = target.querySelectorAll("span.splited");
+  if (spanEl.length == 0) {
+    setTimeout(() => {
+      sec_2Gsap__init();
+    }, 100);
+  } else {
+    console.log("sec-2 gsap init");
+    tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: target,
+        start: "top 70%",
+        end: "bottom 70%",
+        toggleActions: "play none none reverse",
+        // markers: true,
+        scrub: 1,
+      },
+    });
+    tl.fromTo(
+      spanEl,
+      {
+        opacity: 0.2,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        stagger: 0.05,
+      }
+    );
+  }
+}
+
+function sub2Gsap__init() {
+  ////////////////// sub2 sec-3
   const target = document.querySelector(".sub2-sec-3");
+  if (target == null) {
+    return;
+  }
   const svgLine1 = document.querySelector("#sec-3-line");
   let drawLineTl = gsap.timeline();
 
-  const trigger__1 = ScrollTrigger.create({
+  sub2Trigger__1 = ScrollTrigger.create({
     trigger: target,
     animation: drawLineTl,
     start: "0% 0%",
@@ -223,7 +326,7 @@ function gsap__init() {
   const svgLine2 = document.querySelector("#sec-4-line");
   let drawLineTl2 = gsap.timeline();
 
-  const trigger__2 = ScrollTrigger.create({
+  sub2Trigger__2 = ScrollTrigger.create({
     trigger: target2,
     animation: drawLineTl2,
     start: "0% 0%",
@@ -238,7 +341,7 @@ function gsap__init() {
   const svgLine3 = document.querySelector("#sec-5-line");
   let drawLineTl3 = gsap.timeline();
 
-  const trigger__3 = ScrollTrigger.create({
+  sub2Trigger__3 = ScrollTrigger.create({
     trigger: target3,
     animation: drawLineTl3,
     start: "0% 0%",
@@ -282,21 +385,22 @@ function textAniDelay() {
 }
 
 ////////////////////////////////////
-// function load
+////////// function load ///////////
 ////////////////////////////////////
+// ctrl + click function
 
-window.addEventListener("load", () => {
+function loadList() {
   /////////// global function
   HeaderbtnSwapContent();
-  ScrollSmoother.create({
-    smooth: 1.5,
-    effects: true,
-  });
+  aos지연시간일일히적기귀찮아함수();
+  if (!isMobile) {
+    ScrollSmoother__init();
+  }
 
-  /////////// vertify main page
+  /////////// main page
   if (document.querySelector("#mainPage") == null) {
-    console.log("mainpage not found");
   } else {
+    console.log("mainpage founded");
     sec3_gsapScroll__init();
     sec3__Swiper();
     textSplit__init();
@@ -305,26 +409,53 @@ window.addEventListener("load", () => {
     newsHover__init();
   }
 
-  /////////// vertify subpage 2
+  /////////// subpage 2
   if (document.querySelector("#subpage-2") == null) {
-    console.log("subpage-2 found");
   } else {
-    aos지연시간일일히적기귀찮아함수();
+    console.log("subpage-2 founded");
+    sec_2Gsap__init();
     AdvancedTextSplit__init();
-    gsap__init();
+    sub2Gsap__init();
   }
+}
+
+let viewportWidth = window.innerWidth;
+const thresholdMobile = 768;
+let isMobile = thresholdMobile >= viewportWidth;
+
+window.addEventListener("load", () => {
+  console.log(`isMobile : ${isMobile}`);
+  loadList();
 });
 
 ////////////////////////////////////
-// resize
+///////////// resize ///////////////
+// !!! GSAP scroll trigger MUST BE RELOADED !!!
 ////////////////////////////////////
 let resizeTimer;
-window.addEventListener("resize", function () {
+window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
 
-  resizeTimer = setTimeout(function () {
-    sec3_gsapScroll__init();
-    ScrollTrigger.refresh();
-    console.log("Resize done");
+  resizeTimer = setTimeout(() => {
+    viewportWidth = window.innerWidth;
+    if (isSmomther) {
+      isSmomther.kill();
+    }
+    isSmomther = null;
+    ScrollTrigger.getAll().forEach((trigger) => {
+      trigger.kill();
+      ScrollTrigger.refresh(true);
+    });
+    sub2Gsap__init();
+    sec_2Gsap__init();
+
+    // turned off on mobile
+    if (!isMobile) {
+      sec3_gsapScroll__init();
+      ScrollSmoother__init();
+    }
+    console.clear();
+    console.log(`isMobile : ${isMobile}`);
+    console.log("Resize done // ScrollTrigger reset");
   }, 200);
 });

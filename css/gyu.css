@@ -38,6 +38,8 @@
 
 .top-section > .video-container > video {
   width: 100vw;
+  height: 100%;
+  object-fit: cover;
 }
 /* top)header container ======================== */
 .header {
@@ -368,9 +370,9 @@ header.invert {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
 
-  -moz-animation: overwrap1 25s linear infinite;
-  -webkit-animation: overwrap1 25s linear infinite;
-  animation: overwrap1 25s linear infinite;
+  -moz-animation: overwrap1 40s linear infinite;
+  -webkit-animation: overwrap1 40s linear infinite;
+  animation: overwrap1 40s linear infinite;
 }
 /* Move tool(define the animation) ================ */
 @-moz-keyframes overwrap1 {
@@ -415,9 +417,9 @@ header.invert {
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
 
-  -moz-animation: overwrap2 25s linear infinite;
-  -webkit-animation: overwrap2 25s linear infinite;
-  animation: overwrap2 25s linear infinite;
+  -moz-animation: overwrap2 40s linear infinite;
+  -webkit-animation: overwrap2 40s linear infinite;
+  animation: overwrap2 40s linear infinite;
 }
 
 @-moz-keyframes overwrap2 {
@@ -483,13 +485,13 @@ header.invert {
   line-height: 2;
   font-size: 2.2rem;
   font-weight: bold;
-  cursor: default;
+  /* cursor: default; */
 }
 
-.bottom-section > .footer > .footer-link-wrap > div > li > a:hover {
+/* .bottom-section > .footer > .footer-link-wrap > div > li > a:hover {
   text-decoration: 0.15rem underline #fff;
   text-underline-offset: 0.5rem;
-}
+} */
 
 .bottom-section > .footer > .footer-logo-wrap {
   width: 100%;
