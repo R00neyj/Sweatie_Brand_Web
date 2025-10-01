@@ -189,7 +189,7 @@ function aos지연시간일일히적기귀찮아함수() {
                [data-aos="fade-down"] `
   );
   let 지연시간 = 800;
-  let 오프셋 = 250;
+  let 오프셋 = 300;
 
   적용할애들.forEach((엘리먼트) => {
     let 지연시간이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-duration`);
@@ -266,7 +266,7 @@ function AdvancedTextSplit__init() {
       el.append(spans);
     }
 
-    textAniDelay();
+    // textAniDelay();
   });
 }
 function textAniDelay() {

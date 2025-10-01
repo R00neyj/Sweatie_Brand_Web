@@ -52,6 +52,7 @@
 
     <div id="smooth-wrapper" class="sub2-wrap">
       <div id="smooth-content" class="sub2-content">
+        <!-- section 1 -->
         <section class="section sub2 sub2-sec-1">
           <div class="content-wrap">
             <div class="img-box bg-img">
@@ -59,36 +60,36 @@
               <img src="../image/subpage_2/sub2_sec1.jpeg" alt="subpage 2 main image" />
             </div>
             <div class="text-box">
-              <h2>Main Feature</h2>
+              <h2 data-aos="fade-right" data-aos-delay="200" data-aos-once="true" data-aos-duration="1200">Main Feature</h2>
             </div>
           </div>
         </section>
         <section class="section sub2 sub2-sec-2">
           <div class="content-wrap">
-            <h3 class="kr">모든 러너를 위한, 가장 특별한 플랫폼</h3>
+            <h3 class="kr" data-split="true">모든 러너를 위한, 가장 특별한 플랫폼</h3>
             <p class="kr">
-              SWEATIE와 함께 동기 부여, 기록 관리, 맞춤형 코스, 안전 그리고 커뮤니티까지, <br />
-              함께 성장하는 즐거움을 느껴보세요
+              <span data-split="true">SWEATIE와 함께 동기 부여, 기록 관리, 맞춤형 코스, 안전 그리고 커뮤니티까지,</span><br />
+              <span data-split="true">함께 성장하는 즐거움을 느껴보세요</span>
             </p>
-            <h4>The ultimate platform for all runners</h4>
+            <h4 data-split="true">The ultimate platform for all runners</h4>
             <p>
-              With <b>SWEATIE</b> , you can experience the joy of growth through motivation, record keeping, <br />
-              customized courses, safety, and community.
+              <span data-split="true">With <b>SWEATIE</b> , you can experience the joy of growth through motivation, record keeping,</span><br />
+              <span data-split="true">customized courses, safety, and community.</span>
             </p>
           </div>
           <div class="section-divider"></div>
         </section>
         <section class="section sub2 sub2-sec-3">
           <div class="section-header">
-            <h3>Runningmate Matching</h3>
-            <h4 class="kr">러닝 메이트 찾기</h4>
+            <h3 data-aos="fade-right">Runningmate Matching</h3>
+            <h4 class="kr" data-aos="fade-right" data-aos-delay="200">러닝 메이트 찾기</h4>
           </div>
           <div class="content-wrap">
             <div class="content-box box-1">
               <div class="text-box">
-                <h4>Together, the joy is doubled</h4>
-                <h4 class="kr">함께 하면 즐거움도 두 배</h4>
-                <p>
+                <h4 data-aos="fade-in">Together, the joy is doubled</h4>
+                <h4 class="kr" data-aos="fade-in">함께 하면 즐거움도 두 배</h4>
+                <p data-aos="fade-in">
                   당신에게 꼭 맞는 러닝 메이트를 <br />
                   쉽고 빠르게 찾아보세요
                 </p>
@@ -132,8 +133,8 @@
         </section>
         <section class="section sub2 sub2-sec-4">
           <div class="section-header">
-            <h3>Competition & Reword</h3>
-            <h4 class="kr">경쟁 & 보상</h4>
+            <h3 data-aos="fade-right">Competition & Reword</h3>
+            <h4 class="kr" data-aos="fade-right" data-aos-delay="200">경쟁 & 보상</h4>
           </div>
           <div class="content-wrap">
             <div class="content-box box-1">
@@ -161,8 +162,8 @@
               </div>
             </div>
             <div class="section-header">
-              <h3>Recording and Analysis</h3>
-              <h4 class="kr">기록과 분석</h4>
+              <h3 data-aos="fade-right">Recording and Analysis</h3>
+              <h4 class="kr" data-aos="fade-right" data-aos-delay="200">기록과 분석</h4>
             </div>
             <div class="content-box box-3">
               <div class="text-box">
@@ -227,8 +228,8 @@
         </section>
         <section class="section sub2 sub2-sec-5">
           <div class="section-header">
-            <h3>Community</h3>
-            <h4 class="kr">커뮤니티</h4>
+            <h3 data-aos="fade-right">Community</h3>
+            <h4 class="kr" data-aos="fade-right" data-aos-delay="200">커뮤니티</h4>
           </div>
           <div class="content-wrap">
             <div class="content-box box-1">
@@ -355,6 +356,39 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- 자바 여기다 일단 적으십쇼 -->
     <script src="../script.js"></script>
-    <script></script>
+    <script>
+      function sec_2Gsap__init() {
+        const target = document.querySelector(".sub2-sec-2 .content-wrap");
+        const spanEl = target.querySelectorAll("span.splited");
+
+        console.log(target);
+        console.log(spanEl);
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: target,
+            start: "top 70%",
+            end: "bottom 70%",
+            toggleActions: "play none none reverse",
+            // markers: true,
+            scrub: 1,
+          },
+        });
+        tl.fromTo(
+          spanEl,
+          {
+            opacity: 0.2,
+          },
+          {
+            opacity: 1,
+            duration: 1,
+            stagger: 0.05,
+          }
+        );
+      }
+      setTimeout(() => {
+        sec_2Gsap__init();
+      }, 10);
+    </script>
   </body>
 </html>
