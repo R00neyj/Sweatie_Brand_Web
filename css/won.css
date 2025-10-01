@@ -1615,8 +1615,9 @@ body {
 
     > .img-box {
       width: 800px;
-      position: static;
-      transform: translate(-30%, -5%);
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, -5%);
     }
   }
 
