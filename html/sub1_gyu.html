@@ -269,6 +269,12 @@
         });
       }
 
+      function textFlow__init() {
+        $("html").mouseenter(function () {
+          $(this).find("> body > .sub-1-main > .sub-section-1 > .slogun-text-wrapper").addClass("textSlider");
+        });
+      }
+
       function boxViewer__init() {
         $(".sub-1-main > .sub-section-5 > .view-value-container > div > img").hover(
           function () {
@@ -280,6 +286,7 @@
         );
       }
 
+      textFlow__init();
       sub1Swiper__init();
       boxViewer__init();
     </script>
