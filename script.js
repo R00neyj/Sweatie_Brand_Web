@@ -81,7 +81,6 @@ function HeaderbtnSwapContent() {
     el.querySelector("span").style.setProperty("--content", `"${content}"`);
   });
 }
-HeaderbtnSwapContent();
 
 function textSplit__init() {
   const target = document.querySelectorAll(".sec-4 .text-box span");
@@ -188,6 +187,7 @@ window.addEventListener("load", () => {
   sec4btnSwapContent();
   highlightAni__init();
   newsHover__init();
+  HeaderbtnSwapContent();
 
   ScrollSmoother.create({
     smooth: 1.5,
