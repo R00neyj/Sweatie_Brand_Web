@@ -485,13 +485,13 @@ header.invert {
   line-height: 2;
   font-size: 2.2rem;
   font-weight: bold;
-  cursor: default;
+  /* cursor: default; */
 }
 
-.bottom-section > .footer > .footer-link-wrap > div > li > a:hover {
+/* .bottom-section > .footer > .footer-link-wrap > div > li > a:hover {
   text-decoration: 0.15rem underline #fff;
   text-underline-offset: 0.5rem;
-}
+} */
 
 .bottom-section > .footer > .footer-logo-wrap {
   width: 100%;

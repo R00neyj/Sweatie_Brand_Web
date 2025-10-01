@@ -18,8 +18,8 @@
 
     <!-- css -->
     <link href="../css/normalize.css" rel="stylesheet" />
-    <link href="../css/won.css" rel="stylesheet" />
     <link href="../css/gyu.css" rel="stylesheet" />
+    <link href="../css/won.css" rel="stylesheet" />
   </head>
   <body id="subpage-2">
     <header class="header">
@@ -177,6 +177,11 @@
               </div>
             </div>
             <div class="content-box box-4">
+              <div class="img-container img-container-2">
+                <div class="img-box" data-aos="fade-down" data-aos-offset="500">
+                  <img src="../image/subpage_2/analysis_1.png" alt="analysis screen 1" />
+                </div>
+              </div>
               <div class="img-container img-container-1">
                 <div class="img-box" data-aos="fade-right">
                   <img src="../image/subpage_2/analysis_2.png" alt="analysis screen 2" />
@@ -184,11 +189,6 @@
                 <div class="text-box kr" data-aos="fade-in">
                   주간, 월간, 연간 쌓인 데이터 속에서 <br />
                   당신의 꾸준한 성장을 발견하세요
-                </div>
-              </div>
-              <div class="img-container img-container-2">
-                <div class="img-box" data-aos="fade-down" data-aos-offset="500">
-                  <img src="../image/subpage_2/analysis_1.png" alt="analysis screen 1" />
                 </div>
               </div>
               <div class="img-container img-container-3">
@@ -353,36 +353,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- 자바 여기다 일단 적으십쇼 -->
     <script src="../script.js"></script>
-    <script>
-      window.addEventListener("load", () => {
-        sec_2Gsap__init();
-      });
-      function sec_2Gsap__init() {
-        const target = document.querySelector(".sub2-sec-2 .content-wrap");
-        const spanEl = target.querySelectorAll("span.splited");
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: target,
-            start: "top 70%",
-            end: "bottom 70%",
-            toggleActions: "play none none reverse",
-            // markers: true,
-            scrub: 1,
-          },
-        });
-        tl.fromTo(
-          spanEl,
-          {
-            opacity: 0.2,
-          },
-          {
-            opacity: 1,
-            duration: 1,
-            stagger: 0.05,
-          }
-        );
-      }
-    </script>
+    <script></script>
   </body>
 </html>

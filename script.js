@@ -15,7 +15,7 @@ function ScrollSmoother__init() {
   ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
-    smooth: 1.5,
+    smooth: 1.25,
     effects: true,
   });
 }
@@ -225,22 +225,78 @@ function aos지연시간일일히적기귀찮아함수() {
                [data-aos="fade-up"],
                [data-aos="fade-down"] `
   );
-  let 지연시간 = 800;
-  let 오프셋 = 300;
+  if (적용할애들.length == 0) {
+    return;
+  }
+
+  const 메인페이지 = document.querySelector("#mainPage");
+  let 메인페이지있다 = !!메인페이지;
+
+  const 메인_오프셋 = 200;
+  const 듀레이션 = 800;
+  const 오프셋 = 300;
 
   적용할애들.forEach((엘리먼트) => {
-    let 지연시간이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-duration`);
+    let 듀레이션이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-duration`);
     let 오프셋이미있는애찾기 = 엘리먼트.getAttribute(`data-aos-offset`);
-    let 불리언타입으로바꾸기 = (지연시간이미있는애찾기 == null) & (오프셋이미있는애찾기 == null);
+    let 둘다없는애 = (듀레이션이미있는애찾기 == null) & (오프셋이미있는애찾기 == null);
 
-    if (불리언타입으로바꾸기) {
-      엘리먼트.setAttribute("data-aos-duration", 지연시간);
-      엘리먼트.setAttribute("data-aos-offset", 오프셋);
+    if (둘다없는애) {
+      if (메인페이지있다) {
+        엘리먼트.setAttribute("data-aos-duration", 듀레이션);
+        엘리먼트.setAttribute("data-aos-offset", 메인_오프셋);
+      } else {
+        엘리먼트.setAttribute("data-aos-duration", 듀레이션);
+        엘리먼트.setAttribute("data-aos-offset", 오프셋);
+      }
+    }
+
+    if (isMobile) {
+      console.log("aos-offset reset");
+      엘리먼트.removeAttribute("data-aos-offset");
+      엘리먼트.setAttribute("data-aos-offset", "1000");
     }
   });
 }
+////////////////// sub2 sec-2
+function sec_2Gsap__init() {
+  const target = document.querySelector(".sub2-sec-2 .content-wrap");
+  const spanEl = target.querySelectorAll("span.splited");
+  if (target == null) {
+    return;
+  }
+
+  if (spanEl.length == 0) {
+    setTimeout(() => {
+      sec_2Gsap__init();
+    }, 100);
+  } else {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: target,
+        start: "top 70%",
+        end: "bottom 70%",
+        toggleActions: "play none none reverse",
+        // markers: true,
+        scrub: 1,
+      },
+    });
+    tl.fromTo(
+      spanEl,
+      {
+        opacity: 0.2,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        stagger: 0.05,
+      }
+    );
+  }
+}
+
 function gsap__init() {
-  ////////////////// sec-3
+  ////////////////// sub2 sec-3
   const target = document.querySelector(".sub2-sec-3");
   const svgLine1 = document.querySelector("#sec-3-line");
   let drawLineTl = gsap.timeline();
@@ -323,13 +379,15 @@ function textAniDelay() {
 ////////////////////////////////////
 // ctrl + click function
 
-let viewportWidth = window.innerWidth;
+const viewportWidth = window.innerWidth;
 const thresholdMobile = 768;
+let isMobile = thresholdMobile >= viewportWidth;
 
 window.addEventListener("load", () => {
   /////////// global function
 
   HeaderbtnSwapContent();
+  aos지연시간일일히적기귀찮아함수();
   if (viewportWidth >= thresholdMobile) {
     ScrollSmoother__init();
   }
@@ -352,7 +410,7 @@ window.addEventListener("load", () => {
     console.log("subpage-2 not founded");
   } else {
     console.log("subpage-2 founded");
-    aos지연시간일일히적기귀찮아함수();
+    sec_2Gsap__init();
     AdvancedTextSplit__init();
     gsap__init();
   }
