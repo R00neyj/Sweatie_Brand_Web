@@ -1355,7 +1355,7 @@ header .side-bar-btn {
 
     .content-wrap {
       width: auto;
-      height: 140svh;
+      height: 150svh;
       display: flex;
       flex-direction: column;
       padding: 100px 0 24px;
