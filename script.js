@@ -22,6 +22,23 @@ function ScrollSmoother__init() {
   });
 }
 
+function sideBar__init() {
+  const headerEl = document.querySelector(".header");
+  const openBtn = headerEl.querySelector(".side-bar-btn");
+  const sideBarEl = document.querySelector(".mside-bar ");
+  const closeBtn = sideBarEl.querySelector(".close-btn");
+
+  openBtn.addEventListener("click", () => {
+    sideBarEl.classList.add("active");
+    headerEl.style.opacity = 0;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    sideBarEl.classList.remove("active");
+    headerEl.style.opacity = 1;
+  });
+}
+
 //////////////////////////////////// mainpage
 function highlightAni__init() {
   const cardBox = document.querySelector(".sec-2 .scroll-ani");
@@ -393,6 +410,9 @@ function loadList() {
   /////////// global function
   HeaderbtnSwapContent();
   aos지연시간일일히적기귀찮아함수();
+  sideBar__init();
+
+  // disable when mobile
   if (!isMobile) {
     ScrollSmoother__init();
   }

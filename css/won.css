@@ -31,6 +31,7 @@ html {
   background-color: var(--primary);
   color: var(--black);
 }
+
 /* ----------------------------- Variable ----------------------------- */
 :root {
   --primary: #cafa00;
@@ -52,8 +53,9 @@ body {
 }
 
 /* ----------------------------- component ----------------------------- */
-/* section header */
+
 .section {
+  /* section header */
   .section-header {
     max-width: 164rem;
     width: 100%;
@@ -82,6 +84,139 @@ body {
 /* kr letter spacing */
 .kr {
   letter-spacing: -0.05rem;
+}
+
+/* ----------------------------- header ----------------------------- */
+header .side-bar-btn {
+  display: none;
+}
+
+/* ----------------------------- side-bar ----------------------------- */
+.mside-bar {
+  --side-bar-padding: 24px;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: 10001;
+  padding: 12px var(--side-bar-padding);
+  background-color: #000;
+  font-size: var(--mFontL);
+  transition: all 0.6s;
+  /*  */
+  opacity: 0;
+  right: -100%;
+
+  .side-bar-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo-box {
+      flex: 1 1 0;
+      opacity: 0;
+      transition: all 0.8s 0.6s;
+      > a {
+        > .svg-box > svg {
+          width: 140px;
+        }
+      }
+    }
+
+    .language-btn {
+      a {
+        padding: 6px 15px;
+        border: var(--white) solid 1px;
+        border-radius: 99px;
+        font-size: var(--mFontS);
+        transition: all 0.3s;
+        img {
+          transition: all 0.3s;
+        }
+
+        &:hover {
+          background-color: var(--primary);
+          border: var(--primary) solid 1px;
+          color: #000;
+
+          img {
+            filter: invert(1);
+          }
+        }
+      }
+    }
+
+    .close-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  > .side-menu-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 52px;
+    font-weight: 700;
+    gap: 24px;
+
+    li {
+      display: flex;
+      justify-content: end;
+
+      a {
+        display: flex;
+        transition: all 0.3s;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 0.2rem;
+          background-color: var(--white);
+          transform: scaleX(0);
+          transition: inherit;
+        }
+      }
+
+      &:hover {
+        > a {
+          color: var(--primary);
+
+          &::after {
+            transform: scaleX(1.05);
+            background-color: var(--primary);
+          }
+        }
+      }
+    }
+
+    .menu-5 {
+      a {
+        align-items: center;
+        gap: 6px;
+      }
+    }
+  }
 }
 
 /* ----------------------------- section 2 ----------------------------- */
@@ -1100,6 +1235,7 @@ body {
     --sec-1-mobileHeight: 60svh;
   }
 
+  /* header */
   .header {
     width: auto;
     right: 0;
@@ -1116,6 +1252,18 @@ body {
         display: none;
       }
     }
+
+    .side-bar-btn {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  /* side-bar */
+  .mside-bar.active {
+    /* set animation here! */
+    right: 0;
+    opacity: 1;
   }
 
   /* section header mobile component */
