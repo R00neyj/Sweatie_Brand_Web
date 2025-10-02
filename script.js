@@ -31,11 +31,13 @@ function sideBar__init() {
   openBtn.addEventListener("click", () => {
     sideBarEl.classList.add("active");
     headerEl.style.opacity = 0;
+    headerEl.style.transform = `translateY(-200%)`;
   });
 
   closeBtn.addEventListener("click", () => {
     sideBarEl.classList.remove("active");
     headerEl.style.opacity = 1;
+    headerEl.style.transform = `translateY(0%)`;
   });
 }
 

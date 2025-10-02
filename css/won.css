@@ -103,7 +103,7 @@ header .side-bar-btn {
   padding: 12px var(--side-bar-padding);
   background-color: #000;
   font-size: var(--mFontL);
-  transition: all 0.6s;
+  transition: all 0.6s 0.2s;
   /*  */
   opacity: 0;
   right: -100%;
@@ -112,6 +112,8 @@ header .side-bar-btn {
     display: flex;
     align-items: center;
     gap: 12px;
+    transform: translate(0, -150%);
+    transition: all 0.6s 0s;
 
     a {
       display: flex;
@@ -122,7 +124,8 @@ header .side-bar-btn {
     .logo-box {
       flex: 1 1 0;
       opacity: 0;
-      transition: all 0.8s 0.6s;
+      transition: all 0.3s 0s;
+
       > a {
         > .svg-box > svg {
           width: 140px;
@@ -1239,6 +1242,7 @@ header .side-bar-btn {
   .header {
     width: auto;
     right: 0;
+    transition: all 0.6s;
 
     > .header-grid {
       width: 100%;
@@ -1264,6 +1268,15 @@ header .side-bar-btn {
     /* set animation here! */
     right: 0;
     opacity: 1;
+
+    .side-bar-head {
+      transform: translate(0, 0%);
+      transition: all 0.6s 0.4s;
+
+      .logo-box {
+        opacity: 1;
+      }
+    }
   }
 
   /* section header mobile component */
