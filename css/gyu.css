@@ -57,7 +57,7 @@
 header.invert {
   color: var(--black);
   background-color: var(--white);
-  border-bottom: rgba(0, 0, 0, 0.3) solid 1px;
+  border-bottom: rgba(0, 0, 0, 0.3) solid 0.1rem;
 
   .translate-wrap {
     > a {
@@ -196,7 +196,7 @@ header.invert {
       overflow: visible;
 
       path {
-        filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.5));
+        filter: drop-shadow(0rem 0rem 0.4rem rgba(255, 255, 255, 0.5));
       }
     }
   }
@@ -370,8 +370,8 @@ header.invert {
 }
 /* marquee-tool ============================= */
 .slider {
-  -webkit-box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.125);
-  box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 0 0rem 0rem 0rem rgba(0, 0, 0, 0.125);
+  box-shadow: 0 0rem 0rem 0rem rgba(0, 0, 0, 0.125);
   margin: auto;
   overflow: hidden;
   position: relative;
@@ -583,8 +583,8 @@ header.invert {
   padding: 0;
   position: absolute;
   top: 50%;
-  right: 50%;
-  transform: translate(105%, -30%);
+  left: 100%;
+  transform: translate(-117%, -30%);
   display: flex;
   flex-direction: column;
   gap: 9rem;
@@ -934,10 +934,9 @@ header.invert {
 }
 
 .sub-1-main > .section-divider > .division {
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
-  gap: 8.4rem;
   justify-content: center;
   align-items: center;
 }
@@ -946,7 +945,7 @@ header.invert {
   text-align: center;
   font-family: "Urbanist";
   display: flex;
-  gap: 2.8rem;
+  gap: 1.6rem;
   font-weight: bold;
   font-size: 6rem;
 }
@@ -955,8 +954,7 @@ header.invert {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 18rem;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -965,8 +963,7 @@ header.invert {
 
 .sub-1-main > .section-divider > .division-logo > img {
   display: block;
-  width: 10rem;
-  height: 10rem;
+  width: 6rem;
   object-fit: cover;
   filter: invert(1);
 }
@@ -1200,13 +1197,59 @@ header.invert {
   object-fit: contain;
   vertical-align: bottom;
 }
-
-@media screen and (max-width: 1600px) {
-  .sub-1-main {
-    display: block;
+/* media events ====================== */
+@media screen and (max-width: 1200px) {
+  .header {
+    display: flex;
     opacity: 1;
     visibility: visible;
-    min-width: 160rem;
+    min-width: 120rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sub-1-main {
+    opacity: 1;
+    visibility: visible;
+    min-width: 120rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .view-value-container {
+    opacity: 1;
+    visibility: visible;
+    min-width: 120rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .view-value-container > div > span > h1 {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    height: 100%;
     text-align: center;
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .view-value-container > div > span > h2,
+  h5 {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .bottom-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    min-width: 120rem;
   }
 }
