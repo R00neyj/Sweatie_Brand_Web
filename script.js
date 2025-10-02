@@ -43,12 +43,11 @@ function sideBar__init() {
 
 //////////////////////////////////// mainpage
 function highlightAni__init() {
-  const cardBox = document.querySelector(".sec-2 .scroll-ani");
-  const cards = cardBox.querySelectorAll(".card");
-
   if (isMobile) {
     return;
   }
+  const cardBox = document.querySelector(".sec-2 .scroll-ani");
+  const cards = cardBox.querySelectorAll(".card");
 
   const HighlightObserver = new IntersectionObserver(
     function (entries) {
@@ -102,15 +101,29 @@ function newsHover__init() {
 
   cards.forEach((el) => {
     el.addEventListener("pointerenter", (e) => {
+      if (isMobile) {
+        cards.forEach((cardDeactive) => {
+          cardDeactive.classList.remove("active");
+        });
+        return;
+      }
       cards.forEach((cardDeactive) => {
         cardDeactive.classList.remove("active");
       });
       el.classList.add("active");
-
-      if (isMobile) {
-        return;
-      }
     });
+  });
+
+  new Swiper(cardBox, {
+    slidesPerView: 1.2,
+    spaceBetween: 0,
+    speed: 600,
+
+    breakpoints: {
+      770: {
+        slidesPerView: "auto",
+      },
+    },
   });
 }
 
@@ -403,6 +416,40 @@ function textAniDelay() {
   });
 }
 
+// main mobile section 2
+function mainMobile() {
+  if (!isMobile) {
+    return;
+  }
+  const cards = document.querySelectorAll(".scroll-ani > .card");
+
+  let firstCardST = ScrollTrigger.create({
+    trigger: cards[0],
+    start: "center center",
+  });
+
+  let lastCardST = ScrollTrigger.create({
+    trigger: cards[cards.length - 1],
+    start: "center center",
+  });
+
+  cards.forEach((card, index) => {
+    let scaleSet = 1 - (cards.length - index) * 0.025;
+    let scaleDown = gsap.to(card, { scale: scaleSet, "transform-origin": '"50% ' + lastCardST.start + '"' });
+
+    ScrollTrigger.create({
+      trigger: card,
+      start: "center center",
+      end: () => lastCardST.start,
+      pin: true,
+      pinSpacing: false,
+      ease: "none",
+      animation: scaleDown,
+      toggleActions: "restart none none reverse",
+    });
+  });
+}
+
 ////////////////////////////////////
 ////////// function load ///////////
 ////////////////////////////////////
@@ -419,7 +466,9 @@ function loadList() {
     ScrollSmoother__init();
   }
 
-  /////////// main page
+  /////////////////////////////////
+  /////////// main page ///////////
+  /////////////////////////////////
   if (document.querySelector("#mainPage") == null) {
   } else {
     console.log("mainpage founded");
@@ -429,9 +478,12 @@ function loadList() {
     sec4btnSwapContent();
     highlightAni__init();
     newsHover__init();
+    mainMobile();
   }
 
-  /////////// subpage 2
+  /////////////////////////////////
+  /////////// subpage 2 ///////////
+  /////////////////////////////////
   if (document.querySelector("#subpage-2") == null) {
   } else {
     console.log("subpage-2 founded");

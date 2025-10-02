@@ -174,13 +174,14 @@ header .side-bar-btn {
   > .side-menu-box {
     display: flex;
     flex-direction: column;
-    margin-top: 52px;
+    padding-top: 124px;
+    height: 100%;
     font-weight: 700;
     gap: 24px;
 
     li {
       display: flex;
-      justify-content: end;
+      justify-content: center;
 
       a {
         display: flex;
@@ -201,19 +202,23 @@ header .side-bar-btn {
         }
       }
 
-      &:hover {
-        > a {
-          color: var(--primary);
+      > a:hover {
+        color: var(--primary);
 
-          &::after {
-            transform: scaleX(1.05);
-            background-color: var(--primary);
-          }
+        &::after {
+          transform: scaleX(1.05);
+          background-color: var(--primary);
         }
       }
     }
 
     .menu-5 {
+      padding: 14rem 0 0;
+      gap: 24px;
+      font-weight: 500;
+      font-size: var(--mFontM);
+      color: var(--mono-gray-7);
+
       a {
         align-items: center;
         gap: 6px;
@@ -540,6 +545,7 @@ header .side-bar-btn {
         }
         .swiper-button-prev {
           left: 15%;
+          transform: rotate(180deg);
         }
       }
     }
@@ -716,7 +722,8 @@ header .side-bar-btn {
         }
 
         p {
-          margin-top: 1.2rem;
+          opacity: 0;
+          margin-top: 0rem;
           font-size: 1.6rem;
           font-weight: 500;
           letter-spacing: -0.05rem;
@@ -752,6 +759,8 @@ header .side-bar-btn {
         }
 
         p {
+          margin-top: 1.2rem;
+          opacity: 1;
           font-size: 3.2rem;
           font-weight: 600;
         }
@@ -1325,8 +1334,11 @@ header .side-bar-btn {
 
   /* ------------------------- section 2 ------------------------- */
   .sec-2 > .content-wrap .scroll-ani {
+    padding: 0 12px;
     .card {
-      height: 25svh;
+      height: 60svh;
+      transition: all 0s;
+      border-radius: 16px;
 
       > .img-box {
         &::after {
@@ -1368,17 +1380,17 @@ header .side-bar-btn {
 
     .content-wrap {
       width: auto;
-      height: 150svh;
+      height: max-content;
       display: flex;
       flex-direction: column;
-      padding: 100px 0 24px;
+      padding: 30rem 0 24px;
 
       .bg-white {
         background-color: var(--white);
         width: 100%;
         height: 130svh;
         left: 0;
-        top: 38rem;
+        top: 55rem;
       }
       /* ===== left ===== */
       .left {
@@ -1418,11 +1430,11 @@ header .side-bar-btn {
           font-weight: 700;
         }
         .text-front {
-          color: var(--white);
-          top: 74%;
+          color: var(--black);
+          top: 116%;
           left: 50%;
           transform: translateX(-50%);
-          mix-blend-mode: difference;
+
           z-index: 2;
         }
         .text-back {
@@ -1433,13 +1445,13 @@ header .side-bar-btn {
           z-index: 1;
           overflow: hidden;
           width: 90%;
-          margin: -73px auto 0;
+          margin: -66px auto 0;
         }
       }
 
       .right {
         /* ////// */
-        margin-top: 12.5rem;
+        margin-top: 31.5rem;
         display: flex;
         align-items: start;
         height: auto;
@@ -1512,10 +1524,10 @@ header .side-bar-btn {
             }
           }
           .swiper-button-next {
-            right: 10%;
+            right: 4%;
           }
           .swiper-button-prev {
-            left: 10%;
+            left: 4%;
           }
         }
       }
@@ -1587,13 +1599,28 @@ header .side-bar-btn {
 
     .card-box {
       --bgBlack: rgba(0, 0, 0, 0.25);
+      overflow: visible;
 
-      display: flex;
-      flex-direction: column;
-      height: 90svh;
+      .card {
+        flex: 0 0 auto;
+        transition: all 0s;
+
+        .img-box::after {
+          background-color: var(--bgBlack);
+        }
+
+        .text-box {
+          h3 {
+            font-size: var(--mFontL);
+          }
+          p {
+            font-size: var(--mFontM);
+          }
+        }
+      }
 
       .card.active {
-        flex: 1 1 0;
+        flex: 0 0 auto;
 
         .img-box {
           img {
@@ -1615,26 +1642,18 @@ header .side-bar-btn {
         }
       }
 
-      .card {
-        .img-box::after {
-          background-color: var(--bgBlack);
-        }
-
-        .text-box {
-          h3 {
-            font-size: var(--mFontL);
-          }
-          p {
-            font-size: var(--mFontM);
-          }
-        }
-      }
-
       .card.card-1 {
         border-radius: 2.4rem;
       }
       .card.card-4 {
         border-radius: 2.4rem;
+      }
+
+      .card.swiper-slide-active {
+        p {
+          opacity: 1;
+          margin-top: 1.2rem;
+        }
       }
     }
   }
@@ -1643,7 +1662,7 @@ header .side-bar-btn {
     text-wrap: nowrap;
     flex-wrap: wrap;
     gap: 36px;
-    padding: 50px 24px 12px;
+    padding: 64px 24px;
 
     div {
       font-size: var(--mFontS);
@@ -1691,7 +1710,7 @@ header .side-bar-btn {
 
   .sub2-sec-2 {
     > .content-wrap {
-      padding: 48px 24px;
+      padding: 16rem 24px 48px;
 
       p {
         margin-top: 0.6rem;
@@ -1720,6 +1739,10 @@ header .side-bar-btn {
   }
 
   .section.sub2 .section-header {
+    margin: 20rem auto 3.6rem;
+    padding: 0 12px;
+    text-align: center;
+
     h3 {
       font-size: var(--mFontXXL);
       line-height: 1.5;
@@ -1733,7 +1756,9 @@ header .side-bar-btn {
   .sub2 > .content-wrap > .content-box {
     flex-direction: column;
     position: relative;
+
     > .text-box {
+      text-align: center;
       font-size: var(--mFontS);
       text-wrap: auto;
 
@@ -1769,6 +1794,7 @@ header .side-bar-btn {
     display: block;
 
     > .text-box {
+      text-align: center;
       position: static;
       top: 16rem;
       left: 0;
@@ -1897,16 +1923,9 @@ header .side-bar-btn {
   /* ========================== mobile subpage 6 ==========================*/
   .sub2-sec-6 {
     > .content-wrap {
-      > .img-box-1 {
-        img {
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-  }
-  .sub2-sec-6 {
-    > .content-wrap {
+      padding-top: 30rem;
+      background: linear-gradient(0deg, black, var(--bgColor) 76%, black);
+
       > .img-container {
         flex-direction: column;
         margin-top: 0;
@@ -1915,6 +1934,13 @@ header .side-bar-btn {
         }
         .img-box-3 {
           margin: 0;
+        }
+      }
+
+      > .img-box-1 {
+        img {
+          height: 100%;
+          object-fit: cover;
         }
       }
     }
