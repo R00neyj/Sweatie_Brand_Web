@@ -496,7 +496,7 @@ function mainMobile() {
 }
 
 ////////////////////////////////////
-////////// function load ///////////
+// ========= function load =========
 ////////////////////////////////////
 // ctrl + click function
 
@@ -544,16 +544,34 @@ window.addEventListener("load", () => {
 });
 
 ////////////////////////////////////
-///////////// resize ///////////////
-// !!! GSAP scroll trigger MUST BE RELOADED !!!
+//============= resize =============
 ////////////////////////////////////
+
+function reSizeLoadList() {
+  const body = document.querySelector("body");
+  if (document.querySelector("#mainPage") == null) {
+  } else {
+    highlightAni__init();
+    newsHover__init();
+    mainMobile();
+    sec3_gsapScroll__init();
+  }
+  if (document.querySelector("#subpage-2") == null) {
+    sec_2Gsap__init();
+  } else {
+  }
+  if (document.querySelector("#subpage-3") == null) {
+  } else {
+  }
+}
+
 let resizeTimer;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
 
   resizeTimer = setTimeout(() => {
-    // add below here
-    viewportWidth = window.innerWidth;
+    let currentWidth = window.innerWidth;
+    viewportWidth = currentWidth;
     isMobile = thresholdMobile >= viewportWidth;
     if (isSmomther) {
       isSmomther.kill();
@@ -561,16 +579,9 @@ window.addEventListener("resize", () => {
     isSmomther = null;
     ScrollTrigger.getAll().forEach((trigger) => {
       trigger.kill();
-      ScrollTrigger.refresh();
     });
-
-    loadList();
-    // highlightAni__init();
-    // sub2Gsap__init();
-    // sec_2Gsap__init();
-    // sec3_gsapScroll__init();
-    // ScrollSmoother__init();
-    // newsHover__init();
+    ScrollTrigger.refresh(true);
+    reSizeLoadList();
 
     console.clear();
     console.log(`isMobile : ${isMobile}`);

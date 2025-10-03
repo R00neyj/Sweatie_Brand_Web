@@ -9,7 +9,7 @@
 /*  */
 /*  */
 /*  */
-/* main - section 2 , 3 , 4 , 6  */
+/* main - section 2 , 3 , 4 , 6 / sub page 2 / sub page 3*/
 /*  */
 /*  */
 /*  */
@@ -22,7 +22,7 @@
   }
 }
 body .header {
-  height: max(8rem, 80px);
+  height: var(--header-height);
 }
 
 /* font-size adjustment */
@@ -45,6 +45,8 @@ html {
   --mono-gray-3: #3c3c3c;
   --mono-gray-5: #666;
   --mono-gray-7: #a7a7a7;
+
+  --header-height: max(8rem, 80px);
 }
 
 body {
@@ -69,7 +71,9 @@ body {
 }
 /* dm-serif */
 .dm-serif {
-  font-family: "Dm Serif", serif;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
   letter-spacing: -0.1rem;
 }
 /* img-box */
@@ -835,10 +839,10 @@ header .side-bar-btn {
 
 /* ----------------------------- sub2 section 1 ----------------------------- */
 .sub2-sec-1 {
-  margin-top: 8rem;
+  margin-top: var(--header-height);
 
   > .content-wrap {
-    height: calc(100svh - 8rem);
+    height: calc(100svh - var(--header-height));
     overflow: hidden;
     position: relative;
   }
@@ -1228,13 +1232,81 @@ header .side-bar-btn {
   }
 }
 
-/*  */
-/*  */
-/*  */
 /* ---------------------------------------------------------------------- */
+/* ---------------------------- sub page3 ------------------------------- */
+/* ---------------------------------------------------------------------- */
+
+/* ------------------------- subpage3 section 1 ------------------------- */
+.sub3-sec-1 {
+  margin-top: var(--header-height);
+  position: relative;
+  height: 70rem;
+  overflow: hidden;
+
+  .content-wrap {
+    width: 100%;
+    height: 100%;
+
+    .text-box {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      > div {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      .left {
+        left: 5%;
+        h2 {
+          font-size: 8rem;
+          line-height: 1.3;
+          span:nth-child(1) {
+            display: inline-block;
+            font-size: 12rem;
+            letter-spacing: -0.4rem;
+            padding-right: 1rem;
+          }
+        }
+      }
+
+      .right {
+        right: 5%;
+        h4 {
+          font-size: 6.4rem;
+        }
+      }
+    }
+
+    .bg-img {
+      width: 100%;
+      height: 100%;
+      img {
+        filter: brightness(0.75);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+/* ------------------------- subpage3 section 2 ------------------------- */
+
+/* ---------------------- subpage3 section 2 modal ---------------------- */
+
+/* ------------------------- subpage3 section 3 ------------------------- */
+
+/*  */
+/*  */
+/* ====================================================================== */
+/* ====================================================================== */
 /* ============================= mobile ================================= */
-/* ---------------------------------------------------------------------- */
-/*  */
+/* ====================================================================== */
+/* ====================================================================== */
 /*  */
 /*  */
 
@@ -1798,7 +1870,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ========================== mobile subpage 3 ==========================*/
+  /* ========================== mobile subpage 2 section  3 ==========================*/
   .sub2-sec-3 {
     height: auto;
   }
@@ -1838,7 +1910,7 @@ header .side-bar-btn {
     flex-direction: column-reverse;
   }
 
-  /* ========================== mobile subpage 4 ==========================*/
+  /* ========================== mobile subpage 2 section  4 ==========================*/
   .sub2-sec-4 {
     overflow: hidden;
     height: auto;
@@ -1900,7 +1972,7 @@ header .side-bar-btn {
     transform: translateX(-0%);
   }
 
-  /* ========================== mobile subpage 5 ==========================*/
+  /* ========================== mobile subpage 2 section  5 ==========================*/
   .sub2-sec-5 {
     height: auto;
     overflow: hidden;
@@ -1937,7 +2009,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ========================== mobile subpage 6 ==========================*/
+  /* ========================== mobile subpage 2 section  6 ==========================*/
   .sub2-sec-6 {
     > .content-wrap {
       padding-top: 30rem;
