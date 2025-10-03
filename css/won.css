@@ -51,7 +51,7 @@ html {
 
 body {
   background-color: black;
-  color: #f5f5f5;
+  color: #fff;
 }
 #smooth-wrapper {
   overflow-x: hidden;
@@ -1295,6 +1295,234 @@ header .side-bar-btn {
   }
 }
 /* ------------------------- subpage3 section 2 ------------------------- */
+.sub3-sec-2 {
+  .content-wrap {
+    width: 100%;
+    max-width: 164rem;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+  }
+}
+
+.sub3-sec-2 > .content-wrap > .left {
+  flex: 3 1 0;
+  > .faq-header {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 6rem;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 2.8rem;
+    }
+  }
+
+  .filter {
+    margin-top: auto;
+
+    > ul {
+      display: flex;
+      gap: 1rem;
+
+      .button {
+        width: 15rem;
+        height: 5.6rem;
+        padding: 2rem 0;
+        text-align: center;
+        font-size: 1.8rem;
+        border-radius: 99rem;
+        background-color: var(--black);
+        color: var(--mono-gray-7);
+        border: 0px;
+        cursor: pointer;
+      }
+
+      .button.active {
+        background-color: var(--primary);
+        color: var(--black);
+        font-weight: 700;
+      }
+    }
+  }
+
+  > .faq {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+
+    li {
+      padding: 1.2rem 0;
+      margin-top: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: var(--mono-gray-7);
+      transition: all 0.3s;
+
+      &::before {
+        content: "";
+        display: inline-flex;
+        background-image: url(../image/subpage_3/list_marker.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 2.4rem;
+        height: 2rem;
+        margin: 0 1.2rem 0 0;
+        transition: inherit;
+      }
+      &::after {
+        content: "";
+        display: inline-flex;
+        background-image: url(../image/subpage_3/add_btn.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(0.6);
+        width: 2.4rem;
+        height: 2.4rem;
+        margin: 0 0 0 auto;
+        transition: inherit;
+      }
+
+      /* list hover */
+      &:hover {
+        color: white;
+        &::after {
+          filter: brightness(1);
+        }
+        &::before {
+          filter: brightness(1.5);
+        }
+      }
+    }
+
+    .faq-account {
+      display: none;
+    }
+  }
+}
+
+.sub3-sec-2 > .content-wrap > .right {
+  flex: 2 1 0;
+  padding-top: 6rem;
+
+  .search-box {
+    font-size: 1.8rem;
+    position: relative;
+
+    input {
+      padding: 0 2rem;
+      width: 100%;
+      height: 5.6rem;
+      background-color: var(--black);
+      border: none;
+      border-radius: 99rem;
+      color: #fff;
+      transition: all 0.3s;
+    }
+    input:focus {
+      outline: none;
+      background-color: var(--mono-gray-3);
+    }
+    button {
+      cursor: pointer;
+      padding: 1rem;
+      position: absolute;
+      top: 50%;
+      right: 1%;
+      background-color: transparent;
+      border: none;
+      transform: translateY(-50%);
+    }
+  }
+
+  .btn-wrap {
+    height: 71%;
+    display: flex;
+    gap: 2rem;
+
+    .btn-box {
+      flex: 1 1 0;
+      padding: 2rem 0 0;
+
+      .btn {
+        height: 100%;
+        position: relative;
+        transition: all 0.3s;
+
+        > a {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          > p {
+            font-size: 2.4rem;
+          }
+          > h4 {
+            font-size: 3.6rem;
+          }
+        }
+
+        > .img-box {
+          width: 100%;
+          height: 100%;
+          border-radius: 3rem;
+          overflow: hidden;
+          transition: inherit;
+
+          > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: inherit;
+            filter: blur(3px);
+          }
+        }
+
+        &:hover {
+          > .img-box {
+            border-radius: 1.2rem;
+            > img {
+              transform: scale(1.1);
+              filter: blur(0.1px);
+            }
+          }
+        }
+      }
+    }
+
+    .box-1 {
+      .btn {
+        a {
+          h4 {
+            font-size: 4.8rem;
+          }
+        }
+      }
+    }
+
+    .box-2 {
+      flex: 1 1 0;
+
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      > .btn {
+        flex: 1 1 0;
+        height: 50%;
+      }
+    }
+  }
+}
 
 /* ---------------------- subpage3 section 2 modal ---------------------- */
 
@@ -1379,8 +1607,8 @@ header .side-bar-btn {
       margin: 16rem auto 3.6rem;
     }
   }
-  /* ----------------------------- main --------------------------------- */
-  /* ------------------------- section 1 ------------------------- */
+  /* ----------------------------- mobile main --------------------------------- */
+  /* ------------------------- mobile section 1 ------------------------- */
   .top-section {
     height: calc(var(--sec-1-mobileHeight) - 0rem);
     margin-top: 8rem;
@@ -1421,7 +1649,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ------------------------- section 2 ------------------------- */
+  /* ------------------------- mobile section 2 ------------------------- */
   .sec-2 > .content-wrap .scroll-ani {
     padding: 0 12px;
     .card {
@@ -1456,7 +1684,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ----------------------------- section 3 ----------------------------- */
+  /* ----------------------------- mobile section 3 ----------------------------- */
   .sec-3 {
     /* === section 3 variable === */
     --section3-width: 550rem;
@@ -1623,7 +1851,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ----------------------------- section 4 ----------------------------- */
+  /* ----------------------------- mobile section 4 ----------------------------- */
   .sec-4 > .content-wrap {
     height: 60svh;
   }
@@ -1657,7 +1885,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ----------------------------- section 5 ----------------------------- */
+  /* ----------------------------- mobile section 5 ----------------------------- */
   .sec-5 {
     margin-top: 14rem;
     height: 70vh;
@@ -1681,7 +1909,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ----------------------------- section 6 ----------------------------- */
+  /* ----------------------------- mobile section 6 ----------------------------- */
   .sec-6 {
     .content-wrap {
       .card-box {
@@ -1746,7 +1974,7 @@ header .side-bar-btn {
       }
     }
   }
-
+  /* ----------------------------- mobile footer ----------------------------- */
   .bottom-section > .footer > .footer-link-wrap {
     text-wrap: nowrap;
     flex-wrap: wrap;

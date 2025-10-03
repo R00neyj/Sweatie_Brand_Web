@@ -153,87 +153,84 @@
             <h2>Customer Support</h2>
           </div>
           <div class="content-wrap">
-            <div class="box-container">
-              <div class="box left">
-                <div class="faq-header">
-                  <div class="text-box">
-                    <h3>FAQ</h3>
-                    <p class="kr">자주 묻는 질문</p>
-                  </div>
-                  <div class="filter kr">
-                    <ul>
-                      <li>
-                        <div class="button service">서비스 문의</div>
-                      </li>
-                      <li>
-                        <div class="button account">계정 문의</div>
-                      </li>
-                    </ul>
-                  </div>
+            <div class="box left">
+              <div class="faq-header">
+                <div class="text-box">
+                  <h3>FAQ</h3>
+                  <p class="kr">자주 묻는 질문</p>
                 </div>
-                <div class="faq">
-                  <ul class="faq-service kr">
-                    <li>서비스를 어떻게 시작하나요?</li>
-                    <li>이 서비스는 무료인가요?</li>
-                    <li>어떤 기기에서 사용할 수 있나요?</li>
-                    <li>오류가 발생했어요</li>
-                    <li>구독을 해지하고 싶어요</li>
-                    <li>서비스 이용 시 주의사항이 있나요?</li>
-                    <li>개인정보는 안전하게 보호되나요?</li>
-                    <li>화면이 보이지 않아요</li>
-                  </ul>
-                  <ul class="faq-account kr">
-                    <li>비밀번호를 잊어버렸어요. 어떻게 재설정하나요?</li>
-                    <li>이메일 주소를 변경하고 싶습니다</li>
-                    <li>계정을 탈퇴(삭제)하려면 어떻게 해야 하나요?</li>
-                    <li>로그인 시 '이미 등록된 계정'이라고 나옵니다</li>
-                    <li>소셜 계정(카카오, 네이버 등)으로 로그인했는데, 비밀번호가 무엇인가요?</li>
+                <div class="filter kr">
+                  <ul>
+                    <li class="">
+                      <button class="button service active">서비스 문의</button>
+                    </li>
+                    <li class="">
+                      <button class="button account">계정 문의</button>
+                    </li>
                   </ul>
                 </div>
               </div>
-              <div class="box right">
-                <div class="search-box">
-                  <form action="/search" method="get" class="search-form" onsubmit="return false;">
-                    <input type="text" name="query" placeholder="궁금한 점을 검색해 보세요" class="search-input" />
-                    <button type="submit" class="search-button">검색</button>
-                  </form>
-                </div>
-                <div class="btn-wrap">
-                  <div class="btn-box box-1">
-                    <div class="btn support">
-                      <div class="text-box">
-                        <a href="#">
-                          <p>Online Support</p>
-                          <h4 class="kr">문의하기</h4>
-                          <div class="img-box">
-                            <img src="../image/subpage_3/onlie-suport.jpeg" alt="" />
-                          </div>
-                        </a>
-                      </div>
+              <div class="faq">
+                <ul class="faq-service faq-content kr">
+                  <li>서비스를 어떻게 시작하나요?</li>
+                  <li>이 서비스는 무료인가요?</li>
+                  <li>어떤 기기에서 사용할 수 있나요?</li>
+                  <li>오류가 발생했어요</li>
+                  <li>구독을 해지하고 싶어요</li>
+                  <li>서비스 이용 시 주의사항이 있나요?</li>
+                  <li>개인정보는 안전하게 보호되나요?</li>
+                  <li>화면이 보이지 않아요</li>
+                </ul>
+                <ul class="faq-account faq-content kr">
+                  <li>비밀번호를 잊어버렸어요. 어떻게 재설정하나요?</li>
+                  <li>이메일 주소를 변경하고 싶습니다</li>
+                  <li>계정을 탈퇴(삭제)하려면 어떻게 해야 하나요?</li>
+                  <li>로그인 시 '이미 등록된 계정'이라고 나옵니다</li>
+                  <li>소셜 계정(카카오, 네이버 등)으로 로그인했는데, 비밀번호가 무엇인가요?</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box right">
+              <div class="search-box">
+                <form action="/search" method="get" class="search-form" onsubmit="return false;">
+                  <input type="text" name="query" placeholder="궁금한 점을 검색해 보세요" class="search-input" />
+                  <button type="submit" class="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                      <path
+                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+              <div class="btn-wrap">
+                <div class="btn-box box-1">
+                  <div class="btn support">
+                    <a href="#">
+                      <p>Online Support</p>
+                      <h4 class="kr">문의하기</h4>
+                    </a>
+                    <div class="img-box">
+                      <img src="../image/subpage_3/onlie-suport.jpeg" alt="" />
                     </div>
                   </div>
-                  <div class="btn-box box-2">
-                    <div class="btn news">
-                      <div class="text-box">
-                        <a href="#">
-                          <p>News & Notice</p>
-                          <h4 class="kr">뉴스 & 공지사항</h4>
-                          <div class="img-box">
-                            <img src="../image/subpage_3/track.webp" alt="" />
-                          </div>
-                        </a>
-                      </div>
+                </div>
+                <div class="btn-box box-2">
+                  <div class="btn news">
+                    <a href="#">
+                      <p>News & Notice</p>
+                      <h4 class="kr">뉴스 & 공지사항</h4>
+                    </a>
+                    <div class="img-box">
+                      <img src="../image/subpage_3/track.webp" alt="" />
                     </div>
-                    <div class="btn terms">
-                      <div class="text-box">
-                        <a href="#">
-                          <p>Terms of Service</p>
-                          <h4 class="kr">사용자 이용 약관</h4>
-                          <div class="img-box">
-                            <img src="../image/subpage_3/poster_blur.webp" alt="" />
-                          </div>
-                        </a>
-                      </div>
+                  </div>
+                  <div class="btn terms">
+                    <a href="#">
+                      <p>Terms of Service</p>
+                      <h4 class="kr">사용자 이용 약관</h4>
+                    </a>
+                    <div class="img-box">
+                      <img src="../image/subpage_3/poster_blur.webp" alt="" />
                     </div>
                   </div>
                 </div>
