@@ -3,6 +3,7 @@ console.clear();
 AOS.init();
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+// header after content swap
 function HeaderbtnSwapContent() {
   const btns = document.querySelectorAll(".header .menu-wrap a");
   btns.forEach((el) => {
@@ -11,8 +12,13 @@ function HeaderbtnSwapContent() {
   });
 }
 
+// scrollsmoother
 let isSmomther = null;
 function ScrollSmoother__init() {
+  if (isMobile) {
+    return;
+  }
+
   console.log("ScrollSmoother__init");
   isSmomther = ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
@@ -22,6 +28,7 @@ function ScrollSmoother__init() {
   });
 }
 
+// side bar
 function sideBar__init() {
   const headerEl = document.querySelector(".header");
   const openBtn = headerEl.querySelector(".side-bar-btn");
@@ -41,219 +48,7 @@ function sideBar__init() {
   });
 }
 
-//////////////////////////////////// mainpage
-function highlightAni__init() {
-  if (isMobile) {
-    return;
-  }
-  const cardBox = document.querySelector(".sec-2 .scroll-ani");
-  const cards = cardBox.querySelectorAll(".card");
-
-  const HighlightObserver = new IntersectionObserver(
-    function (entries) {
-      entries.forEach((entry) => {
-        let isIntersecting = entry.isIntersecting;
-        if (isIntersecting) {
-          cards.forEach((el) => {
-            el.classList.remove("active");
-          });
-          entry.target.classList.add("active");
-          ScrollTrigger.refresh();
-        }
-      });
-    },
-    {
-      root: null,
-      threshold: 0.6,
-    }
-  );
-
-  cards.forEach((el) => {
-    HighlightObserver.observe(el);
-  });
-
-  cards.forEach((card) => {
-    card.addEventListener("click", (e) => {
-      cards.forEach((el) => {
-        el.classList.remove("active");
-      });
-      card.classList.add("active");
-
-      let Yaxis;
-      let delay;
-      clearTimeout(delay);
-      let delayTime = 600;
-      delay = setTimeout(() => {
-        Yaxis = card.offsetTop;
-        console.log(card, Yaxis);
-        window.scrollTo({
-          top: Yaxis,
-          behavior: "smooth",
-        });
-      }, delayTime);
-    });
-  });
-}
-
-function newsHover__init() {
-  const cardBox = document.querySelector(".sec-6 .card-box");
-  const cards = cardBox.querySelectorAll(".card");
-
-  cards.forEach((el) => {
-    el.addEventListener("pointerenter", (e) => {
-      if (isMobile) {
-        cards.forEach((cardDeactive) => {
-          cardDeactive.classList.remove("active");
-        });
-        return;
-      }
-      cards.forEach((cardDeactive) => {
-        cardDeactive.classList.remove("active");
-      });
-      el.classList.add("active");
-    });
-  });
-
-  new Swiper(cardBox, {
-    slidesPerView: 1.2,
-    spaceBetween: 0,
-    speed: 600,
-
-    breakpoints: {
-      770: {
-        slidesPerView: "auto",
-      },
-    },
-  });
-}
-
-function sec4btnSwapContent() {
-  const btns = document.querySelectorAll(".sec-4 .btn-wrap a");
-  btns.forEach((el) => {
-    let content = el.querySelector("span").textContent;
-    el.querySelector("span").style.setProperty("--content", `"${content}"`);
-  });
-}
-
-function textSplit__init() {
-  const target = document.querySelectorAll(".sec-4 .text-box span");
-  let charArr = [];
-  let spanEl;
-
-  target.forEach((el, index) => {
-    char = el.textContent.split("");
-
-    charArr.push(char);
-    el.innerText = "";
-
-    for (let i = 0; i < char.length; i++) {
-      let spans = document.createElement("span");
-      spans.textContent = charArr[index][i];
-      spans.classList.add(charArr[index][i]);
-
-      el.append(spans);
-    }
-  });
-
-  // set- data-aos-delay
-  const target2 = document.querySelectorAll(".sec-4 .text-box span span");
-  target2.forEach((el, index) => {
-    el.setAttribute("data-aos", "fade-in");
-    el.setAttribute("data-aos-duration", "500");
-    el.setAttribute("data-aos-once", "true");
-    el.setAttribute("data-aos-delay", (index + 1) * 100);
-  });
-}
-
-function sec3_gsapScroll__init() {
-  const pinWrap = document.querySelector(".sec-3 .content-wrap");
-  if (pinWrap == null) {
-    return;
-  }
-
-  const header = document.querySelector(".header");
-
-  if (isMobile) {
-    console.log(`sec3_gsapScroll__init paused`);
-    return;
-  }
-  // Pinning and horizontal scrolling
-
-  gsap.to(pinWrap, {
-    scrollTrigger: {
-      scroller: "#smooth-wrapper",
-      scrub: 1,
-      trigger: pinWrap,
-      pin: true,
-      // anticipatePin: 1,
-      start: "top top",
-      end: () => pinWrap.offsetWidth,
-      onEnter: () => {
-        header.classList.add("invert");
-      },
-      onEnterBack: () => {
-        header.classList.add("invert");
-      },
-      onLeave: () => {
-        header.classList.remove("invert");
-      },
-      onLeaveBack: () => {
-        header.classList.remove("invert");
-      },
-    },
-    x: () => -(pinWrap.offsetWidth - window.innerWidth),
-    ease: "none",
-  });
-
-  console.log(`main/section3 gsap loaded`);
-}
-
-function sec3__Swiper() {
-  const swiperEl = document.querySelector(".sec-3 .right.swiper");
-  const outerSwiper = new Swiper(swiperEl, {
-    slidesPerView: 1,
-    spaceBetween: 100,
-    centeredslides: true,
-
-    breakpoints: {
-      770: {
-        slidesPerView: 4,
-        spaceBetween: 80,
-        centeredslides: false,
-      },
-    },
-  });
-
-  const BoxesEl = document.querySelectorAll(".sec-3 .right .box");
-
-  BoxesEl.forEach((box) => {
-    let swiperBox = box.querySelector(".swiper");
-    let paginationEl = box.querySelector(".swiper-pagination");
-    let nextBtn = box.querySelector(".swiper-button-next");
-    let prevBtn = box.querySelector(".swiper-button-prev");
-
-    const innerSwiper = new Swiper(swiperBox, {
-      loop: true,
-      spaceBetween: 24,
-      effect: "fade",
-      grabCursor: true,
-
-      pagination: {
-        el: paginationEl,
-        clickable: true,
-      },
-      navigation: {
-        nextEl: nextBtn,
-        prevEl: prevBtn,
-      },
-      breakpoints: {
-        770: { touchRatio: 0, grabCursor: false },
-      },
-    });
-  });
-}
-//////////////////////////////////// subpage 2
-
+// AOS 지연시간일일히적기너무귀찮음
 function aos지연시간일일히적기귀찮아함수() {
   const 적용할애들 = document.querySelectorAll(
     `
@@ -296,7 +91,245 @@ function aos지연시간일일히적기귀찮아함수() {
     }
   });
 }
-////////////////// sub2 sec-2
+
+//
+//////////////////////////////////// mainpage
+//
+
+// main sec2 highlight
+let HighlightObserver = null;
+function highlightAni__init() {
+  const cardBox = document.querySelector(".sec-2 .scroll-ani");
+  const cards = cardBox.querySelectorAll(".card");
+
+  if (!HighlightObserver) {
+    HighlightObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach((entry) => {
+          let isIntersecting = entry.isIntersecting;
+          if (isIntersecting) {
+            cards.forEach((el) => {
+              el.classList.remove("active");
+            });
+            entry.target.classList.add("active");
+            setTimeout(() => {
+              ScrollTrigger.refresh();
+            }, 500);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.6,
+      }
+    );
+  }
+
+  if (isMobile) {
+    cards.forEach((el) => {
+      el.classList.remove("active");
+      HighlightObserver.unobserve(el);
+    });
+  } else {
+    cards.forEach((el) => {
+      HighlightObserver.observe(el);
+    });
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      cards.forEach((el) => {
+        el.classList.remove("active");
+      });
+      card.classList.add("active");
+
+      let Yaxis;
+      let delay;
+      clearTimeout(delay);
+      let delayTime = 600;
+      delay = setTimeout(() => {
+        Yaxis = card.offsetTop;
+        console.log(card, Yaxis);
+        window.scrollTo({
+          top: Yaxis,
+          behavior: "smooth",
+        });
+      }, delayTime);
+    });
+  });
+}
+
+// main sec6 news
+function newsHover__init() {
+  const cardBox = document.querySelector(".sec-6 .card-box");
+  const cards = cardBox.querySelectorAll(".card");
+
+  if (isMobile) {
+    cards.forEach((cardDeactive) => {
+      cardDeactive.classList.remove("active");
+    });
+
+    new Swiper(cardBox, {
+      slidesPerView: 1.1,
+      spaceBetween: 0,
+      speed: 600,
+
+      breakpoints: {
+        770: {
+          slidesPerView: "auto",
+        },
+      },
+    });
+  } else {
+    cards.forEach((el) => {
+      el.addEventListener("pointerenter", (e) => {
+        cards.forEach((cardDeactive) => {
+          cardDeactive.classList.remove("active");
+        });
+        el.classList.add("active");
+      });
+    });
+  }
+}
+
+// main sec4 btn after content swap
+function sec4btnSwapContent() {
+  const btns = document.querySelectorAll(".sec-4 .btn-wrap a");
+  btns.forEach((el) => {
+    let content = el.querySelector("span").textContent;
+    el.querySelector("span").style.setProperty("--content", `"${content}"`);
+  });
+}
+
+// text split for sec 4
+function textSplit__init() {
+  const target = document.querySelectorAll(".sec-4 .text-box span");
+  let charArr = [];
+  let spanEl;
+
+  target.forEach((el, index) => {
+    char = el.textContent.split("");
+
+    charArr.push(char);
+    el.innerText = "";
+
+    for (let i = 0; i < char.length; i++) {
+      let spans = document.createElement("span");
+      spans.textContent = charArr[index][i];
+      spans.classList.add(charArr[index][i]);
+
+      el.append(spans);
+    }
+  });
+
+  // set- data-aos-delay
+  const target2 = document.querySelectorAll(".sec-4 .text-box span span");
+  target2.forEach((el, index) => {
+    el.setAttribute("data-aos", "fade-in");
+    el.setAttribute("data-aos-duration", "500");
+    el.setAttribute("data-aos-once", "true");
+    el.setAttribute("data-aos-delay", (index + 1) * 100);
+  });
+}
+
+// sec3 gsap
+function sec3_gsapScroll__init() {
+  const pinWrap = document.querySelector(".sec-3 .content-wrap");
+  if (pinWrap == null) {
+    return;
+  }
+
+  const header = document.querySelector(".header");
+
+  if (isMobile) {
+    console.log(`sec3_gsapScroll__init paused`);
+    return;
+  }
+  // Pinning and horizontal scrolling
+
+  gsap.to(pinWrap, {
+    scrollTrigger: {
+      scroller: "#smooth-wrapper",
+      scrub: 1,
+      trigger: pinWrap,
+      pin: true,
+      // anticipatePin: 1,
+      start: "top top",
+      end: () => pinWrap.offsetWidth + 200,
+      onEnter: () => {
+        header.classList.add("invert");
+      },
+      onEnterBack: () => {
+        header.classList.add("invert");
+      },
+      onLeave: () => {
+        header.classList.remove("invert");
+      },
+      onLeaveBack: () => {
+        header.classList.remove("invert");
+      },
+    },
+    x: () => -(pinWrap.offsetWidth - window.innerWidth),
+    ease: "none",
+  });
+
+  console.log(`main/section3 gsap loaded`);
+}
+
+// sec3 swiper
+function sec3__Swiper() {
+  const swiperEl = document.querySelector(".sec-3 .right.swiper");
+  const outerSwiper = new Swiper(swiperEl, {
+    slidesPerView: 1,
+    spaceBetween: 100,
+    centeredslides: true,
+
+    breakpoints: {
+      770: {
+        slidesPerView: 4,
+        spaceBetween: 80,
+        centeredslides: false,
+      },
+    },
+  });
+
+  const BoxesEl = document.querySelectorAll(".sec-3 .right .box");
+
+  BoxesEl.forEach((box) => {
+    let swiperBox = box.querySelector(".swiper");
+    let paginationEl = box.querySelector(".swiper-pagination");
+    let nextBtn = box.querySelector(".swiper-button-next");
+    let prevBtn = box.querySelector(".swiper-button-prev");
+
+    const innerSwiper = new Swiper(swiperBox, {
+      loop: true,
+      spaceBetween: 24,
+      effect: "fade",
+      grabCursor: false,
+
+      pagination: {
+        el: paginationEl,
+        clickable: true,
+      },
+      navigation: {
+        nextEl: nextBtn,
+        prevEl: prevBtn,
+      },
+      breakpoints: {
+        770: {
+          touchRatio: 0.8,
+          grabCursor: true,
+        },
+      },
+    });
+  });
+}
+
+//
+//////////////////////////////////// subpage 2
+//
+
+// sub2 sec-2 text animation
 function sec_2Gsap__init() {
   const target = document.querySelector(".sub2-sec-2 .content-wrap");
   if (target == null) {
@@ -334,6 +367,7 @@ function sec_2Gsap__init() {
   }
 }
 
+// subpage 2 sec3,4,5 drawsvg
 function sub2Gsap__init() {
   ////////////////// sub2 sec-3
   const target = document.querySelector(".sub2-sec-3");
@@ -384,8 +418,12 @@ function sub2Gsap__init() {
   drawLineTl3.fromTo(svgLine3, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
 }
 
+// text spliter
 function AdvancedTextSplit__init() {
   const target = document.querySelectorAll(`[data-split="true"]`);
+  if ((target.length = 0)) {
+    return;
+  }
   target.forEach((el, index) => {
     let char = el.textContent.split("");
     el.textContent = "";
@@ -401,19 +439,26 @@ function AdvancedTextSplit__init() {
       el.append(spans);
     }
 
-    // textAniDelay();
+    textAniDelay();
   });
 }
+
+// text spliter add delay
 function textAniDelay() {
   const target = document.querySelectorAll(".splited");
-
-  target.forEach((el) => {
-    let parentEl = el.parentElement.getAttribute("data-split");
-    if (parentEl) {
-      const index = el.getAttribute("data-splited-index");
-      el.style.animationDelay = `${index * 100 + 200}ms`;
-    }
-  });
+  let targetHas = !!target.getAttribute("data-split-delay");
+  if (targetHas) {
+    return;
+  } else {
+    target.forEach((el) => {
+      // check span has parent span
+      let parentEl = el.parentElement.getAttribute("data-split");
+      if (parentEl) {
+        const index = el.getAttribute("data-splited-index");
+        el.style.animationDelay = `${index * 100 + 200}ms`;
+      }
+    });
+  }
 }
 
 // main mobile section 2
@@ -460,11 +505,7 @@ function loadList() {
   HeaderbtnSwapContent();
   aos지연시간일일히적기귀찮아함수();
   sideBar__init();
-
-  // disable when mobile
-  if (!isMobile) {
-    ScrollSmoother__init();
-  }
+  ScrollSmoother__init();
 
   /////////////////////////////////
   /////////// main page ///////////
@@ -511,23 +552,26 @@ window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
 
   resizeTimer = setTimeout(() => {
+    // add below here
     viewportWidth = window.innerWidth;
+    isMobile = thresholdMobile >= viewportWidth;
     if (isSmomther) {
       isSmomther.kill();
     }
     isSmomther = null;
     ScrollTrigger.getAll().forEach((trigger) => {
       trigger.kill();
-      ScrollTrigger.refresh(true);
+      ScrollTrigger.refresh();
     });
-    sub2Gsap__init();
-    sec_2Gsap__init();
 
-    // turned off on mobile
-    if (!isMobile) {
-      sec3_gsapScroll__init();
-      ScrollSmoother__init();
-    }
+    loadList();
+    // highlightAni__init();
+    // sub2Gsap__init();
+    // sec_2Gsap__init();
+    // sec3_gsapScroll__init();
+    // ScrollSmoother__init();
+    // newsHover__init();
+
     console.clear();
     console.log(`isMobile : ${isMobile}`);
     console.log("Resize done // ScrollTrigger reset");
