@@ -389,42 +389,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <!-- 자바 여기다 일단 적으십쇼 -->
     <script src="../script.js"></script>
-    <script>
-      const faqFilter = document.querySelectorAll(".filter .button");
-      const faqContent = document.querySelectorAll(".faq .faq-content");
-
-      faqFilter.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-          faqFilter.forEach((filterEl) => {
-            filterEl.classList.remove("active");
-          });
-
-          faqContent.forEach((ContentEl) => {
-            ContentEl.classList.remove("active");
-          });
-
-          btn.classList.add("active");
-          faqContent[index].classList.add("active");
-        });
-      });
-
-      const btnSupport = document.querySelector(".sub3-sec-2 .btn.support");
-      const sub3__modal = document.querySelector(".sub3-contact--modal");
-      const btn__sub3__modalClose = sub3__modal.querySelector(".head .btn-close");
-      const btn__sub3__modalSubmit = sub3__modal.querySelector(".body .submit");
-
-      btnSupport.addEventListener("click", () => {
-        sub3__modal.classList.add("active");
-      });
-      btn__sub3__modalClose.addEventListener("click", () => {
-        sub3__modal.classList.remove("active");
-      });
-      btn__sub3__modalSubmit.addEventListener("click", () => {
-        sub3__modal.classList.remove("active");
-        alert(`문의 완료염~~`);
-      });
-    </script>
   </body>
 </html>

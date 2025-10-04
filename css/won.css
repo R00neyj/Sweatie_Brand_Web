@@ -57,18 +57,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ----------------------------- component ----------------------------- */
-
-.section {
-  /* section header */
-  .section-header {
-    max-width: 164rem;
-    width: 100%;
-    margin: 10rem auto 3.6rem;
-    font-weight: 700;
-    font-size: 8rem;
-  }
-}
+/* ----------------------------- libs ----------------------------- */
 /* dm-serif */
 .dm-serif {
   font-family: "DM Serif Display", serif;
@@ -92,7 +81,20 @@ body {
 .kr {
   letter-spacing: -0.05rem;
 }
-
+/* ----------------------------- component ----------------------------- */
+.section {
+  /* section header */
+  .section-header {
+    max-width: 164rem;
+    width: 100%;
+    margin: 10rem auto 3.6rem;
+    font-weight: 700;
+    font-size: 8rem;
+    > h2 {
+      font-size: 8rem;
+    }
+  }
+}
 /* ----------------------------- header ----------------------------- */
 header .side-bar-btn {
   display: none;
@@ -1285,6 +1287,20 @@ header .side-bar-btn {
     .bg-img {
       width: 100%;
       height: 100%;
+      position: relative;
+
+      /* img filter */
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(0deg, black, transparent 30%);
+      }
+
       img {
         filter: brightness(0.75);
         width: 100%;
@@ -1362,7 +1378,7 @@ header .side-bar-btn {
 
   /* faq */
   > .faq {
-    margin-top: 2rem;
+    margin-top: 2.8rem;
     font-size: 1.8rem;
 
     > .faq-content {
@@ -1602,7 +1618,7 @@ header .side-bar-btn {
         "company company company brand brand brand"
         "ask ask ask ask ask ask"
         "terms terms . . . submit";
-      margin-top: 5rem;
+      padding-top: 5rem;
       gap: 3.2rem 4rem;
 
       /* font size */
@@ -1819,7 +1835,7 @@ header .side-bar-btn {
     --mFontM: 20px;
     --mFontS: 16px;
     --mFontXS: 14px;
-    --mFontXS: 12px;
+    --mFontXXS: 12px;
     --sec-1-mobileHeight: 60svh;
   }
 
@@ -1869,8 +1885,12 @@ header .side-bar-btn {
     .section-header {
       font-weight: 700;
       font-size: var(--mFontXXL);
-      padding-left: 24px;
+      padding: 0 24px;
       margin: 16rem auto 3.6rem;
+      text-align: center;
+      > h2 {
+        font-size: var(--mFontXXL);
+      }
     }
   }
   /* ----------------------------- mobile main --------------------------------- */
@@ -2524,6 +2544,134 @@ header .side-bar-btn {
         img {
           height: 100%;
           object-fit: cover;
+        }
+      }
+    }
+  }
+
+  /*  */
+  /* ========================== mobile subpage 3 ==========================*/
+  /*  */
+  .sub3 {
+    .content-wrap {
+      padding: 0 3rem;
+    }
+  }
+
+  /* ========================== mobile subpage 3 section 1 ==========================*/
+  .sub3-sec-1 {
+    overflow: visible;
+    .content-wrap {
+      padding: 0;
+
+      .text-box {
+        > .left {
+          left: 50%;
+          top: 90%;
+          transform: translate(-50%, -50%);
+
+          h2 {
+            text-align: center;
+            font-size: var(--mFontXXL);
+            span:nth-child(1) {
+              font-size: 42px;
+            }
+          }
+        }
+
+        > .right {
+          display: none;
+        }
+      }
+    }
+  }
+  /* ========================== mobile subpage 3 section 2 ==========================*/
+  .sub3-sec-2 {
+    .content-wrap {
+      flex-direction: column;
+    }
+  }
+  .sub3-sec-2 > .content-wrap > .left {
+    > .faq {
+      font-size: var(--mFontS);
+    }
+  }
+  /* ========================== mobile subpage 3 section 3 ==========================*/
+  .sub3-sec-3 {
+    .content-wrap {
+      > .text-box {
+        > .number-box {
+          gap: 0;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  .sub3-sec-3 {
+    > .bg-img {
+      img {
+        object-position: 75%;
+        filter: brightness(0.6) blur(2px);
+      }
+    }
+    .content-wrap {
+      > .text-box {
+        justify-content: center;
+        padding: 0;
+        font-size: var(--mFontM);
+        .head {
+          h2 {
+            font-size: var(--mFontXXL);
+          }
+        }
+      }
+    }
+  }
+  /* ========================== mobile subpage 3 footer ==========================*/
+  #subpage-3 {
+    & .footer {
+      > .footer-logo-wrap {
+        padding: 0 24px;
+      }
+    }
+  }
+
+  /* ========================== mobile subpage 3 sec-2 modal ==========================*/
+  .sub3-contact--modal {
+    height: 100%;
+    padding: 24px;
+    overflow-y: auto;
+
+    /* hide scrollbar in modal */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > .head {
+      h2 {
+        font-size: var(--mFontXXL);
+      }
+      h4 {
+        font-size: var(--mFontL);
+      }
+    }
+
+    > .body {
+      > .grid {
+        display: grid;
+        grid-template-areas:
+          "name name"
+          "number number"
+          "email email"
+          "company company"
+          "brand brand "
+          "ask ask"
+          "terms submit";
+
+        font-size: var(--mFontS);
+
+        .terms-info {
+          font-size: var(--mFontXXS);
         }
       }
     }
