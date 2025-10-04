@@ -610,6 +610,30 @@ header .side-bar-btn {
           margin-left: -0.5rem;
         }
       }
+      .text-front {
+        color: var(--white);
+        top: 5rem;
+        left: var(--sec-3__text-left-position);
+        z-index: 2;
+      }
+      .text-back {
+        color: var(--black);
+        top: 5rem;
+        left: var(--sec-3__text-left-position);
+        z-index: 0;
+      }
+      .img-container {
+        position: absolute;
+        z-index: 1;
+        overflow: hidden;
+        width: var(--sec-3__text-box-size);
+
+        .img-box {
+          overflow: hidden;
+          border-radius: 2.4rem;
+        }
+      }
+    }
 
       &.left {
         top: 50%;
@@ -1226,6 +1250,7 @@ header .side-bar-btn {
           border-radius: 3.6rem;
         }
       }
+    }
 
       .img-box-3 {
         margin: 22rem 0 0;

@@ -59,7 +59,7 @@
 header.invert {
   color: var(--black);
   background-color: var(--white);
-  border-bottom: rgba(0, 0, 0, 0.3) solid 1px;
+  border-bottom: rgba(0, 0, 0, 0.3) solid 0.1rem;
 
   .translate-wrap {
     > a {
@@ -117,12 +117,15 @@ header.invert {
   height: 100%;
 }
 
+.header > .header-grid > .menu-wrap > li {
+  color: #ffffff;
+}
+
 .header > .header-grid > .menu-wrap > li > a {
   display: block;
   height: 100%;
   font-weight: bold;
   font-size: 1.8rem;
-
   overflow: hidden;
 }
 
@@ -195,7 +198,7 @@ header.invert {
       overflow: visible;
 
       path {
-        filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.5));
+        filter: drop-shadow(0rem 0rem 0.4rem rgba(255, 255, 255, 0.5));
       }
     }
   }
@@ -255,6 +258,7 @@ header.invert {
   color: #ffffff;
   background-color: #000;
   box-shadow: inset 5rem #000;
+  overflow-x: hidden;
 }
 /* section-5)text-wrapper ========== */
 .sec-5 > .partner-text-wrap {
@@ -349,6 +353,11 @@ header.invert {
   transition: all 0.2s ease-in-out;
 }
 
+.sec-5 > .partners-container > .marquee-slider > .partners-marquee-2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .sec-5 > .partners-container > .marquee-slider > span > div {
   margin: 0;
   padding: 0;
@@ -361,91 +370,113 @@ header.invert {
   flex-shrink: 0;
   transition: all 0.2s ease-in-out;
 }
-/* partners-marquee-1 =========================== */
-.sec-5 > .partners-container > .marquee-slider > .partners-marquee-1,
-.partners-marquee-2 {
-  padding-left: 2.8rem;
-
-  -moz-transform: translateX(0%);
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
-
-  -moz-animation: overwrap1 40s linear infinite;
-  -webkit-animation: overwrap1 40s linear infinite;
-  animation: overwrap1 40s linear infinite;
+/* marquee-tool ============================= */
+.slider {
+  -webkit-box-shadow: 0 0rem 0rem 0rem rgba(0, 0, 0, 0.125);
+  box-shadow: 0 0rem 0rem 0rem rgba(0, 0, 0, 0.125);
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
-/* Move tool(define the animation) ================ */
-@-moz-keyframes overwrap1 {
-  0% {
-    -moz-transform: translateX(0%);
-  }
-  100% {
-    -moz-transform: translateX(-100%);
-  }
+.slide img {
+  width: 100%;
+}
+.slider::before,
+.slider::after {
+  content: "";
+  height: 17.5rem;
+  position: absolute;
+  width: 20rem;
+  z-index: 2;
 }
 
-@-webkit-keyframes overwrap1 {
-  0% {
-    -webkit-transform: translateX(0%);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-  }
+.slider::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
 }
 
-@keyframes overwrap1 {
-  0% {
-    -moz-transform: translateX(0%);
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%);
-  }
-  100% {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
+.slider::before {
+  left: 0;
+  top: 0;
 }
-/* partners-marquee-2 =========================== */
-.sec-5 > .partners-container > .marquee-slider > .partners-marquee-3,
-.partners-marquee-4 {
-  padding-right: 2.8rem;
+
+.slider-1 .tracker {
+  -webkit-animation: logo-scroll-1 linear infinite;
+  animation: logo-scroll-1 linear infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-
-  -moz-transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-
-  -moz-animation: overwrap2 40s linear infinite;
-  -webkit-animation: overwrap2 40s linear infinite;
-  animation: overwrap2 40s linear infinite;
+  width: calc(25rem * 14);
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
 }
 
-@-moz-keyframes overwrap2 {
+.slider-2 .tracker {
+  -webkit-animation: logo-scroll-2 linear infinite;
+  animation: logo-scroll-2 linear infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(25rem * 14);
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+.slider .slide {
+  flex: 0 0 40rem;
+  height: 15rem;
+  width: 18rem;
+  padding: 5rem;
+}
+/* webkit-keyframes-1 ===================== */
+@-webkit-keyframes logo-scroll-1 {
   0% {
-    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
+
   100% {
-    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(calc(-25rem * 7));
+    transform: translateX(calc(-25rem * 7));
   }
 }
 
-@-webkit-keyframes overwrap2 {
+@keyframes logo-scroll-1 {
   0% {
-    -webkit-transform: translateX(-100%);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
+
   100% {
-    -webkit-transform: translateX(0%);
+    -webkit-transform: translateX(calc(-25rem * 7));
+    transform: translateX(calc(-25rem * 7));
+  }
+}
+/* webkit-keyframes-2 ===================== */
+@-webkit-keyframes logo-scroll-2 {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(calc(25rem * 7));
+    transform: translateX(calc(25rem * 7));
   }
 }
 
-@keyframes overwrap2 {
+@keyframes logo-scroll-2 {
   0% {
-    transform: translateX(-100%);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
+
   100% {
-    transform: translateX(0%);
+    -webkit-transform: translateX(calc(25rem * 7));
+    transform: translateX(calc(25rem * 7));
   }
 }
 /* bottom-section ========================== */
@@ -485,13 +516,13 @@ header.invert {
   line-height: 2;
   font-size: 2.2rem;
   font-weight: bold;
-  /* cursor: default; */
+  cursor: default;
 }
 
-/* .bottom-section > .footer > .footer-link-wrap > div > li > a:hover {
-  text-decoration: 0.15rem underline #fff;
+.bottom-section > .footer > .footer-link-wrap > div > li > a:hover {
+  text-decoration: 0.15rem underline wavy #cafa00;
   text-underline-offset: 0.5rem;
-} */
+}
 
 .bottom-section > .footer > .footer-logo-wrap {
   width: 100%;
@@ -507,4 +538,720 @@ header.invert {
   height: 100%;
   object-fit: cover;
   vertical-align: middle;
+}
+/* subPage-1 ========================================= */
+.sub-1-main {
+  white-space: nowrap;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+/* main)section-1 ==================================== */
+.sub-1-main > .sub-section-1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+/* section-1 > img-container ==================================== */
+.sub-1-main > .sub-section-1 > .img-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sub-1-main > .sub-section-1 > .img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sub-1-main > .sub-section-1 > .img-container > img {
+  width: 100%;
+  vertical-align: middle;
+  object-fit: contain;
+}
+/* section-1 > text-wrapper ==================================== */
+.sub-1-main > .sub-section-1 > .slogun-text-wrapper {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-117%, -30%);
+  display: flex;
+  flex-direction: column;
+  gap: 9rem;
+  text-align: end;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sub-1-main > .sub-section-1 > .slogun-text-wrapper > h2 {
+  line-height: 1.3;
+}
+
+.sub-1-main > .sub-section-1 > .slogun-text-wrapper > h2 > p {
+  font-family: "Urbanist";
+  font-size: 9.6rem;
+  font-weight: 700;
+}
+
+.sub-1-main > .sub-section-1 > .slogun-text-wrapper > h3 {
+  font-family: "Pretendard";
+  font-size: 4.8rem;
+  font-weight: 700;
+}
+/* main)section-2 ==================================== */
+.sub-1-main > .sub-section-2 {
+  width: 100%;
+  height: 100%;
+  background-color: #161616;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 13rem;
+  padding: 10rem;
+}
+/* section-2 > banner-wrapper ==================================== */
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.8rem;
+  line-height: 1.5;
+  font-family: "Urbanist";
+  letter-spacing: 0.2rem;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h3 {
+  font-weight: bold;
+  font-size: 2.8rem;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h4 {
+  font-family: "Pretendard" !important;
+  font-weight: medium;
+  font-size: 2.4rem;
+}
+/* section-2 > scroll-wrapper ==================================== */
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
+  position: relative;
+  width: 100%;
+  height: 60rem;
+  border-radius: 2rem;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  filter: brightness(0.5);
+  cursor: pointer;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > img {
+  transform: scale(1);
+  filter: brightness(0.75);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0.2rem 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > span > h3 {
+  font-family: "Urbanist";
+  font-weight: 600;
+  font-size: 3.6rem;
+}
+
+.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > span > h5 {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+/* main)between-section ==================================== */
+.sub-1-main > .between-section {
+  width: 100%;
+  height: 100%;
+  background-color: #161616;
+  margin: 0;
+  padding: 0;
+  padding-top: 14rem 0 8rem 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-1-main > .between-section > .text-banner-wrapper {
+  width: 88.5%;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 3.2rem 2rem 6.4rem 2rem;
+  white-space: nowrap;
+}
+
+.sub-1-main > .between-section > .text-banner-wrapper > h1 {
+  width: 80rem;
+  display: inline-flex;
+  font-family: "Urbanist";
+  font-weight: bold;
+  font-size: 6.4rem;
+  padding-top: 3.6rem;
+  border-top: 0.2rem solid #ffffff;
+}
+
+.sub-1-main > .between-section > .text-banner-wrapper > h3 {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 4.8rem;
+}
+
+.sub-1-main > .between-section > .text-banner-wrapper > h5 {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.6;
+}
+/* main)section-3 ==================================== */
+.sub-1-main > .sub-section-3 {
+  width: 100%;
+  height: 100%;
+  background-color: #161616;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4.8rem;
+}
+
+.sub-1-main > .sub-section-3 > .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.sub-1-main > .sub-section-3 > .card {
+  position: relative;
+  background: #fff;
+  border-radius: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.sub-1-main > .sub-section-3 > .card::before {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  background: #192459;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.sub-1-main > .sub-section-3 > .card > .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.sub-1-main > .sub-section-3 > .card > .image {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  padding: 0.3rem;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.sub-1-main > .sub-section-3 > .card > .image > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.3rem solid #fff;
+}
+
+@media screen and (max-width: 1440px) {
+  .sub-1-main > .sub-section-3 > .swiper {
+    width: 96rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .sub-1-main > .sub-section-3 > .swiper {
+    width: 80rem;
+  }
+}
+@media screen and (max-width: 960px) {
+  .sub-1-main > .sub-section-3 > .swiper {
+    width: 75rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sub-1-main > .sub-section-3 > .swiper {
+    width: 52rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .sub-1-main > .sub-section-3 > .swiper {
+    width: 28rem;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/* main)section-4 ==================================== */
+.sub-1-main > .sub-section-4 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #161616;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sub-1-main > .sub-section-4 > video {
+  display: block;
+  filter: brightness(0.75);
+  width: 100%;
+  height: 97.5vh;
+  object-fit: cover;
+}
+
+.sub-1-main > .sub-section-4 > .video-text-wrapper {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+.sub-1-main > .sub-section-4 > .video-text-wrapper > h1 {
+  font-family: "Urbanist";
+  font-weight: bold;
+  font-size: 6.4rem;
+  text-shadow: 0.2rem 0.2rem 0.6rem rgba(0, 0, 0, 0.5);
+}
+
+.sub-1-main > .sub-section-4 > .video-text-wrapper > h4 {
+  text-align: center;
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.6;
+}
+/* main)section-divider ==================================== */
+.sub-1-main > .section-divider {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 3.6rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #161616;
+
+  -webkit-animation: logo-scroll-1 linear infinite;
+  animation: logo-scroll-1 linear infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(25rem * 14);
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+.sub-1-main > .section-divider > .division {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-1-main > .section-divider > .division > h1 {
+  text-align: center;
+  font-family: "Urbanist";
+  display: flex;
+  gap: 1.6rem;
+  font-weight: bold;
+  font-size: 6rem;
+}
+
+.sub-1-main > .section-divider > .division-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sub-1-main > .section-divider > .division-logo > img {
+  display: block;
+  width: 6rem;
+  object-fit: cover;
+  filter: invert(1);
+}
+
+@-webkit-keyframes logo-scroll-1 {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(calc(-25rem * 7));
+    transform: translateX(calc(-25rem * 7));
+  }
+}
+
+@keyframes logo-scroll-1 {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(calc(-25rem * 7));
+    transform: translateX(calc(-33% - 3.6rem));
+  }
+}
+/* main)section-5 ==================================== */
+.sub-1-main > .sub-section-5 {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sub-1-main > .sub-section-5 > .background-container {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+/* section-5 > img-wrapper ==================================== */
+.sub-1-main > .sub-section-5 > .background-container > .img-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sub-1-main > .sub-section-5 > .background-container > .img-wrapper > img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  object-fit: contain;
+}
+/* section-5 > text-wrapper ==================================== */
+.sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper {
+  position: absolute;
+  top: 0;
+  left: -1.5%;
+  transform: translate(20%, 60%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h1 {
+  line-height: 1.2;
+}
+
+.sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h1 > p {
+  font-family: "Urbanist";
+  font-weight: 700;
+  font-size: 8rem;
+}
+
+.sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h3 {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 4.8rem;
+}
+/* section-5 > view-value-wrapper ==================================== */
+.sub-1-main > .sub-section-5 > .view-value-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4rem;
+  padding: 12.8rem 2rem 2rem 2rem;
+}
+.sub-1-main > .sub-section-5 > .view-value-container > div {
+  position: relative;
+  width: 100%;
+  height: 25vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 1.8rem;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > img:hover {
+  transform: scale(1.2);
+  filter: brightness(0.75);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > img {
+  border-radius: 1.8rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  transform: scale(1);
+  filter: brightness(1.25);
+  transition: all 0.3s ease-in-out;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > span > h1 {
+  font-family: "Pretendard";
+  font-weight: bold;
+  font-size: 9.75rem;
+  border-bottom: 0.2rem solid #ffffff;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > span > h2 {
+  font-family: "Urbanist";
+  font-weight: 800;
+  font-size: 4.5rem;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 {
+  line-height: 1.7;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > span > h5.viewer {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.2s ease-in-out;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 > p:first-child {
+  font-family: "Urbanist";
+  font-weight: 600;
+  font-size: 1.65rem;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 > p:last-child {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1.65rem;
+}
+/* section-5 > button-wrapper ==================================== */
+.sub-1-main > .sub-section-5 > .btn-wrapper > a {
+  padding: 2.2rem 4.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  border-radius: 4.8rem;
+  background-color: #222222;
+  transition: all 0.2s ease-in-out;
+  margin-top: 4.8rem;
+}
+
+.sub-1-main > .sub-section-5 > .btn-wrapper > a:hover {
+  background-color: #cafa00;
+  color: #000000;
+  transition: all 0.2s ease-in-out;
+}
+
+.sub-1-main > .sub-section-5 > .btn-wrapper > a:hover > span {
+  filter: invert(1);
+  transition: all 0.2s ease-in-out;
+}
+
+.sub-1-main > .sub-section-5 > .btn-wrapper > a > h2 {
+  font-family: "Urbanist";
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+
+.sub-1-main > .sub-section-5 > .btn-wrapper > a > span {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+.sub-1-main > .sub-section-5 > .btn-wrapper > a > span > img {
+  width: 1.4rem;
+  height: 1.4rem;
+  object-fit: contain;
+  vertical-align: bottom;
+}
+/* media events ====================== */
+@media screen and (max-width: 1200px) {
+  .header {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    min-width: 120rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sub-1-main {
+    opacity: 1;
+    visibility: visible;
+    min-width: 120rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .view-value-container {
+    opacity: 1;
+    visibility: visible;
+    min-width: 120rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .view-value-container > div > span > h1 {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .view-value-container > div > span > h2,
+  h5 {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .bottom-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    min-width: 120rem;
+  }
 }
