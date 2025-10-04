@@ -9,7 +9,7 @@
 /*  */
 /*  */
 /*  */
-/* main - section 2 , 3 , 4 , 6  */
+/* main - section 2 , 3 , 4 , 6 / sub page 2 / sub page 3*/
 /*  */
 /*  */
 /*  */
@@ -22,7 +22,7 @@
   }
 }
 body .header {
-  height: max(8rem, 80px);
+  height: var(--header-height);
 }
 
 /* font-size adjustment */
@@ -45,31 +45,24 @@ html {
   --mono-gray-3: #3c3c3c;
   --mono-gray-5: #666;
   --mono-gray-7: #a7a7a7;
+
+  --header-height: max(8rem, 80px);
 }
 
 body {
   background-color: black;
-  color: #f5f5f5;
+  color: #fff;
 }
 #smooth-wrapper {
   overflow-x: hidden;
 }
 
-/* ----------------------------- component ----------------------------- */
-
-.section {
-  /* section header */
-  .section-header {
-    max-width: 164rem;
-    width: 100%;
-    margin: 10rem auto 3.6rem;
-    font-weight: 700;
-    font-size: 8rem;
-  }
-}
+/* ----------------------------- libs ----------------------------- */
 /* dm-serif */
 .dm-serif {
-  font-family: "Dm Serif", serif;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
   letter-spacing: -0.1rem;
 }
 /* img-box */
@@ -88,7 +81,20 @@ body {
 .kr {
   letter-spacing: -0.05rem;
 }
-
+/* ----------------------------- component ----------------------------- */
+.section {
+  /* section header */
+  .section-header {
+    max-width: 164rem;
+    width: 100%;
+    margin: 10rem auto 3.6rem;
+    font-weight: 700;
+    font-size: 8rem;
+    > h2 {
+      font-size: 8rem;
+    }
+  }
+}
 /* ----------------------------- header ----------------------------- */
 header .side-bar-btn {
   display: none;
@@ -835,10 +841,10 @@ header .side-bar-btn {
 
 /* ----------------------------- sub2 section 1 ----------------------------- */
 .sub2-sec-1 {
-  margin-top: 8rem;
+  margin-top: var(--header-height);
 
   > .content-wrap {
-    height: calc(100svh - 8rem);
+    height: calc(100svh - var(--header-height));
     overflow: hidden;
     position: relative;
   }
@@ -1228,13 +1234,589 @@ header .side-bar-btn {
   }
 }
 
-/*  */
-/*  */
-/*  */
 /* ---------------------------------------------------------------------- */
+/* ---------------------------- sub page3 ------------------------------- */
+/* ---------------------------------------------------------------------- */
+
+/* ------------------------- subpage3 section 1 ------------------------- */
+.sub3-sec-1 {
+  margin-top: var(--header-height);
+  position: relative;
+  height: 70rem;
+  overflow: hidden;
+
+  .content-wrap {
+    width: 100%;
+    height: 100%;
+
+    .text-box {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      > div {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      .left {
+        left: 5%;
+        h2 {
+          font-size: 8rem;
+          line-height: 1.3;
+          span:nth-child(1) {
+            display: inline-block;
+            font-size: 12rem;
+            letter-spacing: -0.4rem;
+            padding-right: 1rem;
+          }
+        }
+      }
+
+      .right {
+        right: 5%;
+        h4 {
+          font-size: 6.4rem;
+        }
+      }
+    }
+
+    .bg-img {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      /* img filter */
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(0deg, black, transparent 30%);
+      }
+
+      img {
+        filter: brightness(0.75);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+/* ------------------------- subpage3 section 2 ------------------------- */
+.sub3-sec-2 {
+  .content-wrap {
+    width: 100%;
+    max-width: 164rem;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+  }
+}
+
+.sub3-sec-2 > .content-wrap > .left {
+  flex: 3 1 0;
+  > .faq-header {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 6rem;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 2.8rem;
+    }
+  }
+
+  /* tab filter */
+  .filter {
+    margin-top: auto;
+
+    > ul {
+      display: flex;
+      gap: 1rem;
+
+      > li {
+        transition: all 0.3s;
+
+        .button {
+          width: 15rem;
+          height: 5.6rem;
+          padding: 2rem 0;
+          text-align: center;
+          font-size: 1.8rem;
+          border-radius: 99rem;
+          background-color: var(--black);
+          color: var(--mono-gray-7);
+          border: 0px;
+          cursor: pointer;
+          transition: inherit;
+        }
+
+        .button.active {
+          background-color: var(--primary);
+          color: var(--black);
+          font-weight: 700;
+        }
+
+        &:hover {
+          .button:not(.active) {
+            background-color: var(--mono-gray-3);
+          }
+        }
+      }
+    }
+  }
+
+  /* faq */
+  > .faq {
+    margin-top: 2.8rem;
+    font-size: 1.8rem;
+
+    > .faq-content {
+      display: none;
+    }
+    > .faq-content.active {
+      display: block;
+    }
+
+    li {
+      padding: 1.2rem 0;
+      margin-top: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: var(--mono-gray-7);
+      transition: all 0.3s;
+
+      /* marker */
+      &::before {
+        content: "";
+        display: inline-flex;
+        background-image: url(../image/subpage_3/list_marker.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 2.4rem;
+        height: 2rem;
+        margin: 0 1.2rem 0 0;
+        transition: inherit;
+      }
+
+      /* plus btn */
+      &::after {
+        content: "";
+        display: inline-flex;
+        background-image: url(../image/subpage_3/add_btn.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(0.6);
+        width: 2.4rem;
+        height: 2.4rem;
+        margin: 0 0 0 auto;
+        transition: inherit;
+      }
+
+      /* list hover */
+      &:hover {
+        color: white;
+        &::after {
+          filter: brightness(1);
+        }
+        &::before {
+          filter: brightness(1.5);
+        }
+      }
+    }
+
+    .faq-account {
+      display: none;
+    }
+  }
+}
+
+/* sub3 sec2 right */
+.sub3-sec-2 > .content-wrap > .right {
+  flex: 2 1 0;
+  padding-top: 6rem;
+
+  /* search box */
+  .search-box {
+    font-size: 1.8rem;
+    position: relative;
+
+    input {
+      padding: 0 2rem;
+      width: 100%;
+      height: 5.6rem;
+      background-color: var(--black);
+      border: none;
+      border-radius: 99rem;
+      color: #fff;
+      transition: all 0.3s;
+    }
+    input:focus {
+      outline: none;
+      background-color: var(--mono-gray-3);
+    }
+    button {
+      cursor: pointer;
+      padding: 1rem;
+      position: absolute;
+      top: 50%;
+      right: 1%;
+      background-color: transparent;
+      border: none;
+      transform: translateY(-50%);
+    }
+  }
+
+  /* btns */
+  .btn-wrap {
+    height: 71%;
+    display: flex;
+    gap: 2rem;
+
+    .btn-box {
+      flex: 1 1 0;
+      padding: 2rem 0 0;
+
+      .btn {
+        height: 100%;
+        position: relative;
+        transition: all 0.3s;
+
+        > a {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          > p {
+            font-size: 2.4rem;
+          }
+          > h4 {
+            font-size: 3.6rem;
+          }
+        }
+
+        > .img-box {
+          width: 100%;
+          height: 100%;
+          border-radius: 3rem;
+          overflow: hidden;
+          transition: inherit;
+
+          > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: inherit;
+            filter: blur(3px) brightness(0.7);
+          }
+        }
+
+        /* btn hover */
+        &:hover {
+          > .img-box {
+            border-radius: 1.2rem;
+            > img {
+              transform: scale(1.1);
+              filter: blur(0.1px);
+            }
+          }
+        }
+      }
+    }
+
+    .box-1 {
+      .btn {
+        a {
+          h4 {
+            font-size: 4.8rem;
+          }
+        }
+      }
+    }
+
+    .box-2 {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      > .btn {
+        flex: 1 1 0;
+        height: 50%;
+      }
+    }
+  }
+}
+
+/* ---------------------- subpage3 section 2 modal ---------------------- */
+.sub3-contact--modal {
+  position: fixed;
+  visibility: hidden;
+  width: 100%;
+  height: 100dvh;
+  background-color: #000;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.sub3-contact--modal.active {
+  visibility: visible;
+  top: 0;
+  left: 0;
+  z-index: 10002;
+  opacity: 1;
+}
+
+.sub3-contact--modal {
+  height: 100dvh;
+  padding: 5rem 14rem;
+  > .head {
+    position: relative;
+    h2 {
+      font-size: 8rem;
+      line-height: 1.3;
+    }
+    h4 {
+      font-size: 3.2rem;
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 2rem;
+      right: 0;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .body {
+    > .grid {
+      display: grid;
+      grid-template-areas:
+        "name name number number email email"
+        "company company company brand brand brand"
+        "ask ask ask ask ask ask"
+        "terms terms . . . submit";
+      padding-top: 5rem;
+      gap: 3.2rem 4rem;
+
+      /* font size */
+      font-size: 1.6rem;
+      h4 {
+        font-size: 2.4rem;
+        > span {
+          color: var(--primary);
+        }
+      }
+
+      /* box component */
+      .box {
+        /* box component head */
+
+        > .head {
+          display: flex;
+          align-items: baseline;
+          gap: 1rem;
+          margin-bottom: 0.4rem;
+
+          > span {
+            color: var(--mono-gray-7);
+          }
+        }
+        /* box component body */
+        > .body {
+          input {
+            width: 100%;
+            height: 7rem;
+            background-color: var(--black);
+            color: white;
+            border: none;
+            padding: 2rem 1.2rem;
+            margin: 0;
+            box-sizing: border-box;
+            border-radius: 1.2rem;
+            transition: all 0.3s;
+          }
+          input:focus {
+            outline: none;
+            background-color: var(--mono-gray-3);
+          }
+          textarea {
+            width: 100%;
+            height: 20rem;
+            background-color: var(--black);
+            color: white;
+            border: none;
+            padding: 2rem 1.2rem;
+            border-radius: 1.2rem;
+            transition: all 0.3s;
+          }
+          textarea:focus {
+            outline: none;
+            background-color: var(--mono-gray-3);
+          }
+        }
+      }
+
+      /* set gird area */
+      .box.name {
+        grid-area: name;
+      }
+      .box.number {
+        grid-area: number;
+      }
+      .box.email {
+        grid-area: email;
+      }
+      .box.company {
+        grid-area: company;
+      }
+      .box.brand {
+        grid-area: brand;
+      }
+      .box.ask {
+        grid-area: ask;
+      }
+      .submit {
+        grid-area: submit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 7rem;
+        border-radius: 99rem;
+        background-color: var(--primary);
+        font-size: 2.4rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          filter: brightness(0.85);
+        }
+      }
+      .terms-info {
+        grid-area: terms;
+        font-size: 1.4rem;
+        opacity: 0.5;
+
+        > a {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+        }
+      }
+    }
+  }
+}
+/* ------------------------- subpage3 section 3 ------------------------- */
+.sub3-sec-3 {
+  position: relative;
+  height: 76vh;
+  overflow: hidden;
+
+  /* bg-img */
+  > .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 164rem;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    /* text box */
+    > .text-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      height: 100%;
+      padding: 0 0 10rem;
+      font-size: 2.4rem;
+
+      .sub-head {
+        margin-left: 0.7rem;
+      }
+      .head {
+        h2 {
+          font-size: 6.4rem;
+        }
+      }
+
+      > .number-box {
+        padding: 3rem 0 0 0.7rem;
+        display: flex;
+        gap: 20.5rem;
+
+        > .box {
+          color: var(--mono-gray-7);
+          font-size: 1.8rem;
+          b {
+            font-size: 2.4rem;
+            letter-spacing: 0;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ------------------------- subpage3 footer ------------------------- */
+#subpage-3 {
+  .footer {
+    padding-top: 18rem;
+    > .footer-logo-wrap {
+      > img {
+        width: 30rem;
+      }
+    }
+    > .footer-link-wrap {
+      padding-top: 3rem;
+    }
+  }
+}
+
+/*  */
+/*  */
+/* ====================================================================== */
+/* ====================================================================== */
 /* ============================= mobile ================================= */
-/* ---------------------------------------------------------------------- */
-/*  */
+/* ====================================================================== */
+/* ====================================================================== */
 /*  */
 /*  */
 
@@ -1253,7 +1835,7 @@ header .side-bar-btn {
     --mFontM: 20px;
     --mFontS: 16px;
     --mFontXS: 14px;
-    --mFontXS: 12px;
+    --mFontXXS: 12px;
     --sec-1-mobileHeight: 60svh;
   }
 
@@ -1303,12 +1885,16 @@ header .side-bar-btn {
     .section-header {
       font-weight: 700;
       font-size: var(--mFontXXL);
-      padding-left: 24px;
+      padding: 0 24px;
       margin: 16rem auto 3.6rem;
+      text-align: center;
+      > h2 {
+        font-size: var(--mFontXXL);
+      }
     }
   }
-  /* ----------------------------- main --------------------------------- */
-  /* ------------------------- section 1 ------------------------- */
+  /* ----------------------------- mobile main --------------------------------- */
+  /* ------------------------- mobile section 1 ------------------------- */
   .top-section {
     height: calc(var(--sec-1-mobileHeight) - 0rem);
     margin-top: 8rem;
@@ -1349,7 +1935,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ------------------------- section 2 ------------------------- */
+  /* ------------------------- mobile section 2 ------------------------- */
   .sec-2 > .content-wrap .scroll-ani {
     padding: 0 12px;
     .card {
@@ -1384,7 +1970,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ----------------------------- section 3 ----------------------------- */
+  /* ----------------------------- mobile section 3 ----------------------------- */
   .sec-3 {
     /* === section 3 variable === */
     --section3-width: 550rem;
@@ -1551,7 +2137,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ----------------------------- section 4 ----------------------------- */
+  /* ----------------------------- mobile section 4 ----------------------------- */
   .sec-4 > .content-wrap {
     height: 60svh;
   }
@@ -1585,7 +2171,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ----------------------------- section 5 ----------------------------- */
+  /* ----------------------------- mobile section 5 ----------------------------- */
   .sec-5 {
     margin-top: 14rem;
     height: 70vh;
@@ -1609,7 +2195,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ----------------------------- section 6 ----------------------------- */
+  /* ----------------------------- mobile section 6 ----------------------------- */
   .sec-6 {
     .content-wrap {
       .card-box {
@@ -1674,7 +2260,7 @@ header .side-bar-btn {
       }
     }
   }
-
+  /* ----------------------------- mobile footer ----------------------------- */
   .bottom-section > .footer > .footer-link-wrap {
     text-wrap: nowrap;
     flex-wrap: wrap;
@@ -1798,7 +2384,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ========================== mobile subpage 3 ==========================*/
+  /* ========================== mobile subpage 2 section  3 ==========================*/
   .sub2-sec-3 {
     height: auto;
   }
@@ -1838,7 +2424,7 @@ header .side-bar-btn {
     flex-direction: column-reverse;
   }
 
-  /* ========================== mobile subpage 4 ==========================*/
+  /* ========================== mobile subpage 2 section  4 ==========================*/
   .sub2-sec-4 {
     overflow: hidden;
     height: auto;
@@ -1900,7 +2486,7 @@ header .side-bar-btn {
     transform: translateX(-0%);
   }
 
-  /* ========================== mobile subpage 5 ==========================*/
+  /* ========================== mobile subpage 2 section  5 ==========================*/
   .sub2-sec-5 {
     height: auto;
     overflow: hidden;
@@ -1937,7 +2523,7 @@ header .side-bar-btn {
     }
   }
 
-  /* ========================== mobile subpage 6 ==========================*/
+  /* ========================== mobile subpage 2 section  6 ==========================*/
   .sub2-sec-6 {
     > .content-wrap {
       padding-top: 30rem;
@@ -1958,6 +2544,134 @@ header .side-bar-btn {
         img {
           height: 100%;
           object-fit: cover;
+        }
+      }
+    }
+  }
+
+  /*  */
+  /* ========================== mobile subpage 3 ==========================*/
+  /*  */
+  .sub3 {
+    .content-wrap {
+      padding: 0 3rem;
+    }
+  }
+
+  /* ========================== mobile subpage 3 section 1 ==========================*/
+  .sub3-sec-1 {
+    overflow: visible;
+    .content-wrap {
+      padding: 0;
+
+      .text-box {
+        > .left {
+          left: 50%;
+          top: 90%;
+          transform: translate(-50%, -50%);
+
+          h2 {
+            text-align: center;
+            font-size: var(--mFontXXL);
+            span:nth-child(1) {
+              font-size: 42px;
+            }
+          }
+        }
+
+        > .right {
+          display: none;
+        }
+      }
+    }
+  }
+  /* ========================== mobile subpage 3 section 2 ==========================*/
+  .sub3-sec-2 {
+    .content-wrap {
+      flex-direction: column;
+    }
+  }
+  .sub3-sec-2 > .content-wrap > .left {
+    > .faq {
+      font-size: var(--mFontS);
+    }
+  }
+  /* ========================== mobile subpage 3 section 3 ==========================*/
+  .sub3-sec-3 {
+    .content-wrap {
+      > .text-box {
+        > .number-box {
+          gap: 0;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  .sub3-sec-3 {
+    > .bg-img {
+      img {
+        object-position: 75%;
+        filter: brightness(0.6) blur(2px);
+      }
+    }
+    .content-wrap {
+      > .text-box {
+        justify-content: center;
+        padding: 0;
+        font-size: var(--mFontM);
+        .head {
+          h2 {
+            font-size: var(--mFontXXL);
+          }
+        }
+      }
+    }
+  }
+  /* ========================== mobile subpage 3 footer ==========================*/
+  #subpage-3 {
+    & .footer {
+      > .footer-logo-wrap {
+        padding: 0 24px;
+      }
+    }
+  }
+
+  /* ========================== mobile subpage 3 sec-2 modal ==========================*/
+  .sub3-contact--modal {
+    height: 100%;
+    padding: 24px;
+    overflow-y: auto;
+
+    /* hide scrollbar in modal */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > .head {
+      h2 {
+        font-size: var(--mFontXXL);
+      }
+      h4 {
+        font-size: var(--mFontL);
+      }
+    }
+
+    > .body {
+      > .grid {
+        display: grid;
+        grid-template-areas:
+          "name name"
+          "number number"
+          "email email"
+          "company company"
+          "brand brand "
+          "ask ask"
+          "terms submit";
+
+        font-size: var(--mFontS);
+
+        .terms-info {
+          font-size: var(--mFontXXS);
         }
       }
     }

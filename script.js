@@ -495,8 +495,47 @@ function mainMobile() {
   });
 }
 
+// sub3 sec 2 filter
+function sub3__sec2Filter() {
+  const faqFilter = document.querySelectorAll(".filter .button");
+  const faqContent = document.querySelectorAll(".faq .faq-content");
+
+  faqFilter.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      faqFilter.forEach((filterEl) => {
+        filterEl.classList.remove("active");
+      });
+
+      faqContent.forEach((ContentEl) => {
+        ContentEl.classList.remove("active");
+      });
+
+      btn.classList.add("active");
+      faqContent[index].classList.add("active");
+    });
+  });
+}
+// sub3 sec 2 modal popup
+function sub3__sec2Modal() {
+  const btnSupport = document.querySelector(".sub3-sec-2 .btn.support");
+  const sub3__modal = document.querySelector(".sub3-contact--modal");
+  const btn__sub3__modalClose = sub3__modal.querySelector(".head .btn-close");
+  const btn__sub3__modalSubmit = sub3__modal.querySelector(".body .submit");
+
+  btnSupport.addEventListener("click", () => {
+    sub3__modal.classList.add("active");
+  });
+  btn__sub3__modalClose.addEventListener("click", () => {
+    sub3__modal.classList.remove("active");
+  });
+  btn__sub3__modalSubmit.addEventListener("click", () => {
+    sub3__modal.classList.remove("active");
+    alert(`문의 완료염~~`);
+  });
+}
+
 ////////////////////////////////////
-////////// function load ///////////
+// ========= function load =========
 ////////////////////////////////////
 // ctrl + click function
 
@@ -523,6 +562,14 @@ function loadList() {
   }
 
   /////////////////////////////////
+  /////////// subpage 1 ///////////
+  /////////////////////////////////
+  if (document.querySelector("#subpage-1") == null) {
+  } else {
+    console.log("subpage-1 founded");
+  }
+
+  /////////////////////////////////
   /////////// subpage 2 ///////////
   /////////////////////////////////
   if (document.querySelector("#subpage-2") == null) {
@@ -531,6 +578,16 @@ function loadList() {
     sec_2Gsap__init();
     AdvancedTextSplit__init();
     sub2Gsap__init();
+  }
+
+  /////////////////////////////////
+  /////////// subpage 3 ///////////
+  /////////////////////////////////
+  if (document.querySelector("#subpage-3") == null) {
+  } else {
+    console.log("subpage-3 founded");
+    sub3__sec2Filter();
+    sub3__sec2Modal();
   }
 }
 
@@ -544,16 +601,34 @@ window.addEventListener("load", () => {
 });
 
 ////////////////////////////////////
-///////////// resize ///////////////
-// !!! GSAP scroll trigger MUST BE RELOADED !!!
+//============= resize =============
 ////////////////////////////////////
+
+function reSizeLoadList() {
+  const body = document.querySelector("body");
+  if (document.querySelector("#mainPage") == null) {
+  } else {
+    highlightAni__init();
+    newsHover__init();
+    mainMobile();
+    sec3_gsapScroll__init();
+  }
+  if (document.querySelector("#subpage-2") == null) {
+    sec_2Gsap__init();
+  } else {
+  }
+  if (document.querySelector("#subpage-3") == null) {
+  } else {
+  }
+}
+
 let resizeTimer;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
 
   resizeTimer = setTimeout(() => {
-    // add below here
-    viewportWidth = window.innerWidth;
+    let currentWidth = window.innerWidth;
+    viewportWidth = currentWidth;
     isMobile = thresholdMobile >= viewportWidth;
     if (isSmomther) {
       isSmomther.kill();
@@ -561,16 +636,9 @@ window.addEventListener("resize", () => {
     isSmomther = null;
     ScrollTrigger.getAll().forEach((trigger) => {
       trigger.kill();
-      ScrollTrigger.refresh();
     });
-
-    loadList();
-    // highlightAni__init();
-    // sub2Gsap__init();
-    // sec_2Gsap__init();
-    // sec3_gsapScroll__init();
-    // ScrollSmoother__init();
-    // newsHover__init();
+    ScrollTrigger.refresh(true);
+    reSizeLoadList();
 
     console.clear();
     console.log(`isMobile : ${isMobile}`);
