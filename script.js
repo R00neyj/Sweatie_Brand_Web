@@ -467,32 +467,61 @@ function mainMobile() {
     return;
   }
   const cards = document.querySelectorAll(".scroll-ani > .card");
-
-  let firstCardST = ScrollTrigger.create({
-    trigger: cards[0],
-    start: "center center",
-  });
-
-  let lastCardST = ScrollTrigger.create({
-    trigger: cards[cards.length - 1],
-    start: "center center",
-  });
+  const lastCard = cards[cards.length - 1];
 
   cards.forEach((card, index) => {
+    // 💡 scaleSet은 최종 스케일 값으로 사용됨
     let scaleSet = 1 - (cards.length - index) * 0.025;
-    let scaleDown = gsap.to(card, { scale: scaleSet, "transform-origin": '"50% ' + lastCardST.start + '"' });
 
-    ScrollTrigger.create({
-      trigger: card,
-      start: "center center",
-      end: () => lastCardST.start,
-      pin: true,
-      pinSpacing: false,
+    gsap.to(card, {
+      // ⭐ 1. 스크롤에 따라 scale이 1에서 scaleSet으로 변하도록 설정
+      scale: scaleSet,
       ease: "none",
-      animation: scaleDown,
-      toggleActions: "restart none none reverse",
+
+      scrollTrigger: {
+        trigger: card,
+
+        // Pin 시작: 뷰포트 중앙에 도달하면 핀 시작
+        start: "center center",
+
+        // ⭐ 2. Pin 종료 지점을 마지막 카드 요소의 시작 지점으로 설정
+        // 마지막 카드가 뷰포트 상단에 도달할 때 핀 해제
+        endTrigger: lastCard,
+        end: "center center", // 마지막 카드의 상단이 뷰포트 중앙에 올 때까지 핀 유지
+
+        pin: true,
+        pinSpacing: false,
+        scrub: true, // ⭐ 스크롤에 동기화
+        // markers: true
+      },
     });
   });
+  // 제미니야 고맙다!
+  // let firstCardST = ScrollTrigger.create({
+  //   trigger: cards[0],
+  //   start: "center center",
+  // });
+
+  // let lastCardST = ScrollTrigger.create({
+  //   trigger: cards[cards.length - 1],
+  //   start: "center center",
+  // });
+
+  // cards.forEach((card, index) => {
+  //   let scaleSet = 1 - (cards.length - index) * 0.025;
+  //   let scaleDown = gsap.to(card, { scale: scaleSet, "transform-origin": '"50% ' + lastCardST.start + '"' });
+
+  //   ScrollTrigger.create({
+  //     trigger: card,
+  //     start: "center center",
+  //     end: () => lastCardST.start,
+  //     pin: true,
+  //     pinSpacing: false,
+  //     ease: "none",
+  //     animation: scaleDown,
+  //     toggleActions: "restart none none reverse",
+  //   });
+  // });
 }
 
 // sub3 sec 2 filter
@@ -537,7 +566,7 @@ function sub3__sec2Modal() {
 ////////////////////////////////////
 // ========= function load =========
 ////////////////////////////////////
-// ctrl + click function
+// ctrl + click  jump to function
 
 function loadList() {
   /////////// global function
