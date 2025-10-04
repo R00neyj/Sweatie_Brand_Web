@@ -1426,10 +1426,12 @@ header .side-bar-btn {
   }
 }
 
+/* sub3 sec2 right */
 .sub3-sec-2 > .content-wrap > .right {
   flex: 2 1 0;
   padding-top: 6rem;
 
+  /* search box */
   .search-box {
     font-size: 1.8rem;
     position: relative;
@@ -1460,6 +1462,7 @@ header .side-bar-btn {
     }
   }
 
+  /* btns */
   .btn-wrap {
     height: 71%;
     display: flex;
@@ -1510,6 +1513,7 @@ header .side-bar-btn {
           }
         }
 
+        /* btn hover */
         &:hover {
           > .img-box {
             border-radius: 1.2rem;
@@ -1534,7 +1538,6 @@ header .side-bar-btn {
 
     .box-2 {
       flex: 1 1 0;
-
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -1542,6 +1545,171 @@ header .side-bar-btn {
       > .btn {
         flex: 1 1 0;
         height: 50%;
+      }
+    }
+  }
+}
+
+/* sub3 sec2 contact modal */
+.sub3-contact--modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: #000;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.sub3-contact--modal.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10002;
+  opacity: 1;
+}
+
+.sub3-contact--modal {
+  height: 100dvh;
+  padding: 5rem 14rem;
+  > .head {
+    position: relative;
+    h2 {
+      font-size: 8rem;
+      line-height: 1.3;
+    }
+    h4 {
+      font-size: 3.2rem;
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 2rem;
+      right: 0;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .body {
+    > .grid {
+      display: grid;
+      grid-template-areas:
+        "name name number number email email"
+        "company company company brand brand brand"
+        "ask ask ask ask ask ask"
+        "terms terms . . . submit";
+      margin-top: 5rem;
+      gap: 3.2rem 4rem;
+
+      /* font size */
+      font-size: 1.6rem;
+      h4 {
+        font-size: 2.4rem;
+        > span {
+          color: var(--primary);
+        }
+      }
+
+      /* box component */
+      .box {
+        /* box component head */
+
+        > .head {
+          display: flex;
+          align-items: baseline;
+          gap: 1rem;
+          margin-bottom: 0.4rem;
+
+          > span {
+            color: var(--mono-gray-7);
+          }
+        }
+        /* box component body */
+        > .body {
+          input {
+            width: 100%;
+            height: 7rem;
+            background-color: var(--black);
+            color: white;
+            border: none;
+            padding: 2rem 1.2rem;
+            margin: 0;
+            box-sizing: border-box;
+            border-radius: 1.2rem;
+            transition: all 0.3s;
+          }
+          input:focus {
+            outline: none;
+            background-color: var(--mono-gray-3);
+          }
+          textarea {
+            width: 100%;
+            height: 20rem;
+            background-color: var(--black);
+            color: white;
+            border: none;
+            padding: 2rem 1.2rem;
+            border-radius: 1.2rem;
+            transition: all 0.3s;
+          }
+          textarea:focus {
+            outline: none;
+            background-color: var(--mono-gray-3);
+          }
+        }
+      }
+
+      /* set gird area */
+      .box.name {
+        grid-area: name;
+      }
+      .box.number {
+        grid-area: number;
+      }
+      .box.email {
+        grid-area: email;
+      }
+      .box.company {
+        grid-area: company;
+      }
+      .box.brand {
+        grid-area: brand;
+      }
+      .box.ask {
+        grid-area: ask;
+      }
+      .submit {
+        grid-area: submit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 7rem;
+        border-radius: 99rem;
+        background-color: var(--primary);
+        font-size: 2.4rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          filter: brightness(0.85);
+        }
+      }
+      .terms-info {
+        grid-area: terms;
+        font-size: 1.4rem;
+        opacity: 0.5;
+
+        > a {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+        }
       }
     }
   }

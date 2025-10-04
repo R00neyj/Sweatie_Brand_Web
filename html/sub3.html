@@ -205,7 +205,7 @@
               <div class="btn-wrap">
                 <div class="btn-box box-1">
                   <div class="btn support">
-                    <a href="#">
+                    <a href="#" onclick="return false;">
                       <p>Online Support</p>
                       <h4 class="kr">문의하기</h4>
                     </a>
@@ -238,67 +238,6 @@
             </div>
           </div>
         </section>
-
-        <!-- section 2 contact modal -->
-        <div class="sub3-contact--modal">
-          <div class="head">
-            <h2>Contact</h2>
-            <h4>SWEATIE<span class="kr">에 문의하기</span></h4>
-            <div class="close-btn">
-              <div class="svg-box"></div>
-            </div>
-          </div>
-          <div class="body">
-            <div class="grid">
-              <div class="box name">
-                <div class="head">
-                  <h4>Name *</h4>
-                  <span>담당자 성함/직책</span>
-                </div>
-                <div class="body"><input type="text" placeholder="담당자 성함/직책을 입력해주세요" /></div>
-              </div>
-              <div class="box number">
-                <div class="head">
-                  <h4>Number *</h4>
-                  <span>연락처</span>
-                </div>
-                <div class="body"><input type="text" placeholder="연락처를 입력해주세요" /></div>
-              </div>
-              <div class="box email">
-                <div class="head">
-                  <h4>E-mail *</h4>
-                  <span>이메일 주소</span>
-                </div>
-                <div class="body"><input type="text" placeholder="이메일 주소를 입력해주세요" /></div>
-              </div>
-              <div class="box company">
-                <div class="head">
-                  <h4>Company</h4>
-                  <span>회사명 (선택사항)</span>
-                </div>
-                <div class="body"><input type="text" placeholder="회사명을 입력해주세요(선택사항)" /></div>
-              </div>
-              <div class="box brand">
-                <div class="head">
-                  <h4>Brand name</h4>
-                  <span>브랜드명 (선택사항)</span>
-                </div>
-                <div class="body"><input type="text" placeholder="브랜드명을 입력해주세요(선택사항)" /></div>
-              </div>
-              <div class="box ask">
-                <div class="head">
-                  <h4>Feel free to ask</h4>
-                  <span>문의사항</span>
-                </div>
-                <div class="body"><textarea type="text" placeholder="문의사항을 입력해주세요"></textarea></div>
-              </div>
-            </div>
-            <div class="terms-info">
-              <a href="#"><span class="kr">개인정보 수집 및 이용에 대한 안내</span></a>
-            </div>
-            <button><span class="kr">문의하기</span></button>
-          </div>
-        </div>
 
         <!-- section3 -->
         <section class="section sub3 sub3-sec-3">
@@ -361,6 +300,79 @@
         </footer>
       </div>
     </div>
+    <!-- section 2 contact modal -->
+    <div class="sub3-contact--modal">
+      <div class="head">
+        <h2>Contact</h2>
+        <h4>SWEATIE<span class="kr">에 문의하기</span></h4>
+        <div class="btn-close">
+          <div class="svg-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="4.8rem" viewBox="0 -960 960 960" fill="currentColor">
+              <path
+                d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <form class="grid">
+          <div class="box name">
+            <div class="head">
+              <h4>Name <span>*</span></h4>
+              <span>담당자 성함/직책</span>
+            </div>
+            <div class="body"><input type="text" placeholder="담당자 성함/직책을 입력해주세요" /></div>
+          </div>
+          <div class="box number">
+            <div class="head">
+              <h4>Number <span>*</span></h4>
+              <span>연락처</span>
+            </div>
+            <div class="body"><input type="text" placeholder="연락처를 입력해주세요" /></div>
+          </div>
+          <div class="box email">
+            <div class="head">
+              <h4>E-mail <span>*</span></h4>
+              <span>이메일 주소</span>
+            </div>
+            <div class="body"><input type="text" placeholder="이메일 주소를 입력해주세요" /></div>
+          </div>
+          <div class="box company">
+            <div class="head">
+              <h4>Company</h4>
+              <span>회사명 (선택사항)</span>
+            </div>
+            <div class="body"><input type="text" placeholder="회사명을 입력해주세요(선택사항)" /></div>
+          </div>
+          <div class="box brand">
+            <div class="head">
+              <h4>Brand name</h4>
+              <span>브랜드명 (선택사항)</span>
+            </div>
+            <div class="body"><input type="text" placeholder="브랜드명을 입력해주세요(선택사항)" /></div>
+          </div>
+          <div class="box ask">
+            <div class="head">
+              <h4>Feel free to ask</h4>
+              <span>문의사항</span>
+            </div>
+            <div class="body"><textarea type="text" placeholder="문의사항을 입력해주세요"></textarea></div>
+          </div>
+          <div class="terms-info">
+            <a href="#"
+              ><div class="svg-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="2.4rem" fill="currentColor">
+                  <path
+                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+                </svg>
+              </div>
+              <span class="kr">개인정보 수집 및 이용에 대한 안내</span></a
+            >
+          </div>
+          <button class="submit"><span class="kr">문의하기</span></button>
+        </form>
+      </div>
+    </div>
 
     <!-- AOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -391,9 +403,22 @@
 
           btn.classList.add("active");
           faqContent[index].classList.add("active");
-
-          console.log(index);
         });
+      });
+
+      const btnSupport = document.querySelector(".sub3-sec-2 .btn.support");
+      const sub3__modal = document.querySelector(".sub3-contact--modal");
+      const btn__sub3__modalClose = sub3__modal.querySelector(".head .btn-close");
+      const btn__sub3__modalSubmit = sub3__modal.querySelector(".body .submit");
+
+      btnSupport.addEventListener("click", () => {
+        sub3__modal.classList.add("active");
+      });
+      btn__sub3__modalClose.addEventListener("click", () => {
+        sub3__modal.classList.remove("active");
+      });
+      btn__sub3__modalSubmit.addEventListener("click", () => {
+        alert(`문의 완료염~~`);
       });
     </script>
   </body>
