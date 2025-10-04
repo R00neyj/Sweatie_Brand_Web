@@ -643,8 +643,9 @@ function reSizeLoadList() {
     sec3_gsapScroll__init();
   }
   if (document.querySelector("#subpage-2") == null) {
-    sec_2Gsap__init();
   } else {
+    sub2Gsap__init();
+    sec_2Gsap__init();
   }
   if (document.querySelector("#subpage-3") == null) {
   } else {
@@ -656,9 +657,15 @@ window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
 
   resizeTimer = setTimeout(() => {
+    // 리사이즈시 너비값 변동 없으면 중지 <= 이거 없으면 모바일에서 계속 리사이즈됨
     let currentWidth = window.innerWidth;
+    if (currentWidth == viewportWidth) {
+      return;
+    }
+
     viewportWidth = currentWidth;
     isMobile = thresholdMobile >= viewportWidth;
+
     if (isSmomther) {
       isSmomther.kill();
     }
@@ -669,7 +676,7 @@ window.addEventListener("resize", () => {
     ScrollTrigger.refresh(true);
     reSizeLoadList();
 
-    console.clear();
+    // console.clear();
     console.log(`isMobile : ${isMobile}`);
     console.log("Resize done // ScrollTrigger reset");
   }, 200);
