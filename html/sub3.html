@@ -171,7 +171,7 @@
                 </div>
               </div>
               <div class="faq">
-                <ul class="faq-service faq-content kr">
+                <ul class="faq-service faq-content kr active">
                   <li>서비스를 어떻게 시작하나요?</li>
                   <li>이 서비스는 무료인가요?</li>
                   <li>어떤 기기에서 사용할 수 있나요?</li>
@@ -375,6 +375,26 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- 자바 여기다 일단 적으십쇼 -->
     <script src="../script.js"></script>
-    <script></script>
+    <script>
+      const faqFilter = document.querySelectorAll(".filter .button");
+      const faqContent = document.querySelectorAll(".faq .faq-content");
+
+      faqFilter.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          faqFilter.forEach((filterEl) => {
+            filterEl.classList.remove("active");
+          });
+
+          faqContent.forEach((ContentEl) => {
+            ContentEl.classList.remove("active");
+          });
+
+          btn.classList.add("active");
+          faqContent[index].classList.add("active");
+
+          console.log(index);
+        });
+      });
+    </script>
   </body>
 </html>
