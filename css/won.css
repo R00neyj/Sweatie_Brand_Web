@@ -1550,11 +1550,10 @@ header .side-bar-btn {
   }
 }
 
-/* sub3 sec2 contact modal */
+/* ---------------------- subpage3 section 2 modal ---------------------- */
 .sub3-contact--modal {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  visibility: hidden;
   width: 100%;
   height: 100dvh;
   background-color: #000;
@@ -1562,7 +1561,7 @@ header .side-bar-btn {
   opacity: 0;
 }
 .sub3-contact--modal.active {
-  position: fixed;
+  visibility: visible;
   top: 0;
   left: 0;
   z-index: 10002;
@@ -1714,10 +1713,86 @@ header .side-bar-btn {
     }
   }
 }
-
-/* ---------------------- subpage3 section 2 modal ---------------------- */
-
 /* ------------------------- subpage3 section 3 ------------------------- */
+.sub3-sec-3 {
+  position: relative;
+  height: 76vh;
+  overflow: hidden;
+
+  /* bg-img */
+  > .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 164rem;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    /* text box */
+    > .text-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      height: 100%;
+      padding: 0 0 10rem;
+      font-size: 2.4rem;
+
+      .sub-head {
+        margin-left: 0.7rem;
+      }
+      .head {
+        h2 {
+          font-size: 6.4rem;
+        }
+      }
+
+      > .number-box {
+        padding: 3rem 0 0 0.7rem;
+        display: flex;
+        gap: 20.5rem;
+
+        > .box {
+          color: var(--mono-gray-7);
+          font-size: 1.8rem;
+          b {
+            font-size: 2.4rem;
+            letter-spacing: 0;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ------------------------- subpage3 footer ------------------------- */
+#subpage-3 {
+  .footer {
+    padding-top: 18rem;
+    > .footer-logo-wrap {
+      > img {
+        width: 30rem;
+      }
+    }
+    > .footer-link-wrap {
+      padding-top: 3rem;
+    }
+  }
+}
 
 /*  */
 /*  */
