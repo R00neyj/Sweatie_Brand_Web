@@ -418,7 +418,7 @@ function sub2Gsap__init() {
   drawLineTl3.fromTo(svgLine3, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
 }
 
-// text spliter
+// text spliter // it can be used all section
 function AdvancedTextSplit__init() {
   const target = document.querySelectorAll(`[data-split="true"]`);
   if ((target.length = 0)) {
@@ -443,10 +443,10 @@ function AdvancedTextSplit__init() {
   });
 }
 
-// text spliter add delay
+// text spliter add delay //// this for main sec4
 function textAniDelay() {
   const target = document.querySelectorAll(".splited");
-  let targetHas = !!target.getAttribute("data-split-delay");
+  let targetHas = !!target[0].getAttribute("data-split-delay");
   if (targetHas) {
     return;
   } else {
