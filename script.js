@@ -135,28 +135,6 @@ function highlightAni__init() {
       HighlightObserver.observe(el);
     });
   }
-
-  // cards.forEach((card) => {
-  //   card.addEventListener("click", (e) => {
-  //     cards.forEach((el) => {
-  //       el.classList.remove("active");
-  //     });
-  //     card.classList.add("active");
-
-  //     let Yaxis;
-  //     let delay;
-  //     clearTimeout(delay);
-  //     let delayTime = 600;
-  //     delay = setTimeout(() => {
-  //       Yaxis = card.offsetTop;
-  //       console.log(card, Yaxis);
-  //       window.scrollTo({
-  //         top: Yaxis,
-  //         behavior: "smooth",
-  //       });
-  //     }, delayTime);
-  //   });
-  // });
 }
 
 // main sec6 news
