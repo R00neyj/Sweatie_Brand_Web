@@ -135,28 +135,6 @@ function highlightAni__init() {
       HighlightObserver.observe(el);
     });
   }
-
-  cards.forEach((card) => {
-    card.addEventListener("click", (e) => {
-      cards.forEach((el) => {
-        el.classList.remove("active");
-      });
-      card.classList.add("active");
-
-      let Yaxis;
-      let delay;
-      clearTimeout(delay);
-      let delayTime = 600;
-      delay = setTimeout(() => {
-        Yaxis = card.offsetTop;
-        console.log(card, Yaxis);
-        window.scrollTo({
-          top: Yaxis,
-          behavior: "smooth",
-        });
-      }, delayTime);
-    });
-  });
 }
 
 // main sec6 news
@@ -549,7 +527,7 @@ function sub3__sec2Modal() {
   const btnSupport = document.querySelector(".sub3-sec-2 .btn.support");
   const sub3__modal = document.querySelector(".sub3-contact--modal");
   const btn__sub3__modalClose = sub3__modal.querySelector(".head .btn-close");
-  const btn__sub3__modalSubmit = sub3__modal.querySelector(".body .submit");
+  const form = sub3__modal.querySelector("form.grid");
 
   btnSupport.addEventListener("click", () => {
     sub3__modal.classList.add("active");
@@ -557,9 +535,11 @@ function sub3__sec2Modal() {
   btn__sub3__modalClose.addEventListener("click", () => {
     sub3__modal.classList.remove("active");
   });
-  btn__sub3__modalSubmit.addEventListener("click", () => {
-    sub3__modal.classList.remove("active");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
     alert(`문의 완료염~~`);
+    form.reset();
+    sub3__modal.classList.remove("active");
   });
 }
 

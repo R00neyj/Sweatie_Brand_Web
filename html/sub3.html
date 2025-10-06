@@ -131,13 +131,13 @@
           <div class="content-wrap">
             <div class="text-box">
               <div class="left">
-                <h2>
+                <h2 data-aos="fade-right" data-aos-once="true" data-aos-duration="1500">
                   <span>SWEATIE</span><span class="kr">가</span><br />
                   <span class="kr">도와드리겠습니다</span>
                 </h2>
               </div>
               <div class="right">
-                <h4>SWEATIE <span class="dm-serif">with</span> us</h4>
+                <h4 data-aos="fade-in" data-aos-once="true" data-aos-duration="1000">SWEATIE <span class="dm-serif">with</span> us</h4>
               </div>
             </div>
 
@@ -150,9 +150,9 @@
         <!-- section2 -->
         <section class="section sub3 sub3-sec-2">
           <div class="section-header">
-            <h2>Customer Support</h2>
+            <h2 data-aos="fade-right">Customer Support</h2>
           </div>
-          <div class="content-wrap">
+          <div class="content-wrap" data-aos="fade-right">
             <div class="box left">
               <div class="faq-header">
                 <div class="text-box">
@@ -321,46 +321,46 @@
       <div class="body">
         <form class="grid">
           <div class="box name">
-            <div class="head">
+            <label for="name" class="head">
               <h4>Name <span>*</span></h4>
               <span>담당자 성함/직책</span>
-            </div>
-            <div class="body"><input type="text" placeholder="담당자 성함/직책을 입력해주세요" /></div>
+            </label>
+            <div class="body"><input type="text" id="name" autocomplete="name" placeholder="담당자 성함/직책을 입력해주세요" required /></div>
           </div>
           <div class="box number">
-            <div class="head">
+            <label for="phoneNumber" class="head">
               <h4>Number <span>*</span></h4>
               <span>연락처</span>
-            </div>
-            <div class="body"><input type="tel" placeholder="연락처를 입력해주세요 " /></div>
+            </label>
+            <div class="body"><input type="tel" id="phoneNumber" autocomplete="tel-national" placeholder="연락처를 입력해주세요" required /></div>
           </div>
           <div class="box email">
-            <div class="head">
+            <label for="email" class="head">
               <h4>E-mail <span>*</span></h4>
               <span>이메일 주소</span>
-            </div>
-            <div class="body"><input type="email" placeholder="이메일 주소를 입력해주세요" /></div>
+            </label>
+            <div class="body"><input type="email" id="email" autocomplete="email" placeholder="이메일 주소를 입력해주세요" required /></div>
           </div>
           <div class="box company">
-            <div class="head">
+            <label for="companyName" class="head">
               <h4>Company</h4>
               <span>회사명 (선택사항)</span>
-            </div>
-            <div class="body"><input type="text" placeholder="회사명을 입력해주세요(선택사항)" /></div>
+            </label>
+            <div class="body"><input type="text" id="companyName" autocomplete="off" placeholder="회사명을 입력해주세요(선택사항)" /></div>
           </div>
           <div class="box brand">
-            <div class="head">
+            <label for="brandName" class="head">
               <h4>Brand name</h4>
               <span>브랜드명 (선택사항)</span>
-            </div>
-            <div class="body"><input type="text" placeholder="브랜드명을 입력해주세요(선택사항)" /></div>
+            </label>
+            <div class="body"><input type="text" id="brandName" placeholder="브랜드명을 입력해주세요(선택사항)" /></div>
           </div>
           <div class="box ask">
-            <div class="head">
+            <label for="ask" class="head">
               <h4>Feel free to ask</h4>
               <span>문의사항</span>
-            </div>
-            <div class="body"><textarea type="text" placeholder="문의사항을 입력해주세요"></textarea></div>
+            </label>
+            <div class="body"><textarea type="text" id="ask" placeholder="문의사항을 입력해주세요" required></textarea></div>
           </div>
           <div class="terms-info">
             <a href="#"
@@ -373,7 +373,7 @@
               <span class="kr">개인정보 수집 및 이용에 대한 안내</span></a
             >
           </div>
-          <button class="submit" type="submit"><span class="kr">문의하기</span></button>
+          <button id="askSubmit" class="submit" type="submit"><span class="kr">문의하기</span></button>
         </form>
       </div>
     </div>
