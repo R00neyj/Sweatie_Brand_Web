@@ -13,18 +13,18 @@ function HeaderbtnSwapContent() {
 }
 
 // scrollsmoother
-let isSmomther = null;
-function ScrollSmoother__init() {
-  if (isMobile) {
-    return;
-  }
+function scrollSmoother__init() {
+  gsap.matchMedia().add("(min-width: 769px)", () => {
+    smoother = ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.25,
+      effects: true,
+    });
 
-  console.log("ScrollSmoother__init");
-  isSmomther = ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1.25,
-    effects: true,
+    return () => {
+      if (smoother) smoother.kill();
+    };
   });
 }
 
@@ -98,7 +98,7 @@ function aos지연시간일일히적기귀찮아함수() {
 
 // main sec2 highlight
 let HighlightObserver = null;
-function highlightAni__init() {
+function main_sec2PcAni__init() {
   const cardBox = document.querySelector(".sec-2 .scroll-ani");
   const cards = cardBox.querySelectorAll(".card");
 
@@ -138,7 +138,7 @@ function highlightAni__init() {
 }
 
 // main sec6 news
-function newsHover__init() {
+function main_sec6Hover__init() {
   const cardBox = document.querySelector(".sec-6 .card-box");
   const cards = cardBox.querySelectorAll(".card");
 
@@ -171,7 +171,7 @@ function newsHover__init() {
 }
 
 // main sec4 btn after content swap
-function sec4btnSwapContent() {
+function main_sec4btnSwapContent() {
   const btns = document.querySelectorAll(".sec-4 .btn-wrap a");
   btns.forEach((el) => {
     let content = el.querySelector("span").textContent;
@@ -180,7 +180,7 @@ function sec4btnSwapContent() {
 }
 
 // text split for sec 4
-function textSplit__init() {
+function main_sec4TextSplit__init() {
   const target = document.querySelectorAll(".sec-4 .text-box span");
   let charArr = [];
   let spanEl;
@@ -211,7 +211,7 @@ function textSplit__init() {
 }
 
 // sec3 gsap
-function sec3_gsapScroll__init() {
+function main_sec3Gsap__init() {
   const pinWrap = document.querySelector(".sec-3 .content-wrap");
   if (pinWrap == null) {
     return;
@@ -220,42 +220,45 @@ function sec3_gsapScroll__init() {
   const header = document.querySelector(".header");
 
   if (isMobile) {
-    console.log(`sec3_gsapScroll__init paused`);
+    console.log(`main_sec3Gsap__init paused`);
     return;
   }
   // Pinning and horizontal scrolling
 
-  gsap.to(pinWrap, {
-    scrollTrigger: {
-      scroller: "#smooth-wrapper",
-      scrub: 1,
-      trigger: pinWrap,
-      pin: true,
-      // anticipatePin: 1,
-      start: "top top",
-      end: () => pinWrap.offsetWidth + 200,
-      onEnter: () => {
-        header.classList.add("invert");
-      },
-      onEnterBack: () => {
-        header.classList.add("invert");
-      },
-      onLeave: () => {
-        header.classList.remove("invert");
-      },
-      onLeaveBack: () => {
-        header.classList.remove("invert");
-      },
-    },
+  let tl = gsap.timeline();
+  tl.to(pinWrap, {
     x: () => -(pinWrap.offsetWidth - window.innerWidth),
     ease: "none",
+    duration: 10,
+  });
+  ScrollTrigger.create({
+    trigger: pinWrap,
+    pin: true,
+    scrub: 1,
+    animation: tl,
+    // anticipatePin: 1,
+    start: "top top",
+    // end: () => pinWrap.offsetWidth * 1.5,
+    end: "+=270%",
+    onEnter: () => {
+      header.classList.add("invert");
+    },
+    onEnterBack: () => {
+      header.classList.add("invert");
+    },
+    onLeave: () => {
+      header.classList.remove("invert");
+    },
+    onLeaveBack: () => {
+      header.classList.remove("invert");
+    },
   });
 
   console.log(`main/section3 gsap loaded`);
 }
 
 // sec3 swiper
-function sec3__Swiper() {
+function main_sec3Swiper__init() {
   const swiperEl = document.querySelector(".sec-3 .right.swiper");
   const outerSwiper = new Swiper(swiperEl, {
     slidesPerView: 1,
@@ -308,7 +311,7 @@ function sec3__Swiper() {
 //
 
 // sub2 sec-2 text animation
-function sec_2Gsap__init() {
+function sub2_sec2Gsap__init() {
   const target = document.querySelector(".sub2-sec-2 .content-wrap");
   if (target == null) {
     console.log(`sec-2 gsap stoped ${target}`);
@@ -317,7 +320,7 @@ function sec_2Gsap__init() {
   const spanEl = target.querySelectorAll("span.splited");
   if (spanEl.length == 0) {
     setTimeout(() => {
-      sec_2Gsap__init();
+      sub2_sec2Gsap__init();
     }, 100);
   } else {
     console.log("sec-2 gsap init");
@@ -346,58 +349,35 @@ function sec_2Gsap__init() {
 }
 
 // subpage 2 sec3,4,5 drawsvg
-function sub2Gsap__init() {
-  ////////////////// sub2 sec-3
-  const target = document.querySelector(".sub2-sec-3");
-  if (target == null) {
-    return;
+function sub2_sec3Gsap__init() {
+  CreateGsapSvgAni(".sub2-sec-3", "#sec-3-line");
+  CreateGsapSvgAni(".sub2-sec-4", "#sec-4-line");
+  CreateGsapSvgAni(".sub2-sec-5", "#sec-5-line");
+
+  function CreateGsapSvgAni(targetEl, lineEl) {
+    const target = document.querySelector(targetEl);
+    if (target == null) {
+      return;
+    }
+    const svgLine = document.querySelector(lineEl);
+    let tl = gsap.timeline();
+
+    tl.fromTo(svgLine, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
+
+    ScrollTrigger.create({
+      trigger: target,
+      animation: tl,
+      start: "0% 0%",
+      end: "100% 100%",
+      scrub: 3,
+    });
+
+    ScrollTrigger.refresh();
   }
-  const svgLine1 = document.querySelector("#sec-3-line");
-  let drawLineTl = gsap.timeline();
-
-  sub2Trigger__1 = ScrollTrigger.create({
-    trigger: target,
-    animation: drawLineTl,
-    start: "0% 0%",
-    end: "100% 100%",
-    scrub: 3,
-    //  markers: true,
-  });
-  drawLineTl.fromTo(svgLine1, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
-
-  ////////////////// sec-4
-  const target2 = document.querySelector(".sub2-sec-4");
-  const svgLine2 = document.querySelector("#sec-4-line");
-  let drawLineTl2 = gsap.timeline();
-
-  sub2Trigger__2 = ScrollTrigger.create({
-    trigger: target2,
-    animation: drawLineTl2,
-    start: "0% 0%",
-    end: "100% 100%",
-    scrub: 3,
-    //  markers: true,
-  });
-  drawLineTl2.fromTo(svgLine2, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
-
-  ////////////////// sec-5
-  const target3 = document.querySelector(".sub2-sec-5");
-  const svgLine3 = document.querySelector("#sec-5-line");
-  let drawLineTl3 = gsap.timeline();
-
-  sub2Trigger__3 = ScrollTrigger.create({
-    trigger: target3,
-    animation: drawLineTl3,
-    start: "0% 0%",
-    end: "100% 100%",
-    scrub: 3,
-    //  markers: true,
-  });
-  drawLineTl3.fromTo(svgLine3, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
 }
 
 // text spliter // it can be used all section
-function AdvancedTextSplit__init() {
+function sub2_textSplit__init() {
   const target = document.querySelectorAll(`[data-split="true"]`);
   if ((target.length = 0)) {
     return;
@@ -440,7 +420,7 @@ function textAniDelay() {
 }
 
 // main mobile section 2
-function mainMobile() {
+function main_sec2MobileGsap__init() {
   if (!isMobile) {
     return;
   }
@@ -451,59 +431,30 @@ function mainMobile() {
     // 💡 scaleSet은 최종 스케일 값으로 사용됨
     let scaleSet = 1 - (cards.length - index) * 0.025;
 
-    gsap.to(card, {
-      // ⭐ 1. 스크롤에 따라 scale이 1에서 scaleSet으로 변하도록 설정
+    let tl = gsap.timeline();
+    tl.to(card, {
       scale: scaleSet,
+      y: -100,
       ease: "none",
+    });
 
-      scrollTrigger: {
-        trigger: card,
-
-        // Pin 시작: 뷰포트 중앙에 도달하면 핀 시작
-        start: "center center",
-
-        // ⭐ 2. Pin 종료 지점을 마지막 카드 요소의 시작 지점으로 설정
-        // 마지막 카드가 뷰포트 상단에 도달할 때 핀 해제
-        endTrigger: lastCard,
-        end: "center center", // 마지막 카드의 상단이 뷰포트 중앙에 올 때까지 핀 유지
-
-        pin: true,
-        pinSpacing: false,
-        scrub: true, // ⭐ 스크롤에 동기화
-        // markers: true
-      },
+    ScrollTrigger.create({
+      trigger: card,
+      start: "center center",
+      endTrigger: lastCard,
+      end: "bottom center",
+      pin: true,
+      pinSpacing: false,
+      scrub: true,
+      animation: tl,
+      // markers: true,
     });
   });
-  // 제미니야 고맙다!
-  // let firstCardST = ScrollTrigger.create({
-  //   trigger: cards[0],
-  //   start: "center center",
-  // });
-
-  // let lastCardST = ScrollTrigger.create({
-  //   trigger: cards[cards.length - 1],
-  //   start: "center center",
-  // });
-
-  // cards.forEach((card, index) => {
-  //   let scaleSet = 1 - (cards.length - index) * 0.025;
-  //   let scaleDown = gsap.to(card, { scale: scaleSet, "transform-origin": '"50% ' + lastCardST.start + '"' });
-
-  //   ScrollTrigger.create({
-  //     trigger: card,
-  //     start: "center center",
-  //     end: () => lastCardST.start,
-  //     pin: true,
-  //     pinSpacing: false,
-  //     ease: "none",
-  //     animation: scaleDown,
-  //     toggleActions: "restart none none reverse",
-  //   });
-  // });
+  ScrollTrigger.refresh();
 }
 
 // sub3 sec 2 filter
-function sub3__sec2Filter() {
+function sub3_sec2Filter() {
   const faqFilter = document.querySelectorAll(".filter .button");
   const faqContent = document.querySelectorAll(".faq .faq-content");
 
@@ -523,7 +474,7 @@ function sub3__sec2Filter() {
   });
 }
 // sub3 sec 2 modal popup
-function sub3__sec2Modal() {
+function sub3_sec2Modal() {
   const btnSupport = document.querySelector(".sub3-sec-2 .btn.support");
   const sub3__modal = document.querySelector(".sub3-contact--modal");
   const btn__sub3__modalClose = sub3__modal.querySelector(".head .btn-close");
@@ -553,7 +504,7 @@ function loadList() {
   HeaderbtnSwapContent();
   aos지연시간일일히적기귀찮아함수();
   sideBar__init();
-  ScrollSmoother__init();
+  scrollSmoother__init();
 
   /////////////////////////////////
   /////////// main page ///////////
@@ -561,13 +512,13 @@ function loadList() {
   if (document.querySelector("#mainPage") == null) {
   } else {
     console.log("mainpage founded");
-    sec3_gsapScroll__init();
-    sec3__Swiper();
-    textSplit__init();
-    sec4btnSwapContent();
-    highlightAni__init();
-    newsHover__init();
-    mainMobile();
+    main_sec2PcAni__init();
+    main_sec2MobileGsap__init();
+    main_sec3Gsap__init();
+    main_sec3Swiper__init();
+    main_sec4TextSplit__init();
+    main_sec4btnSwapContent();
+    main_sec6Hover__init();
   }
 
   /////////////////////////////////
@@ -584,9 +535,9 @@ function loadList() {
   if (document.querySelector("#subpage-2") == null) {
   } else {
     console.log("subpage-2 founded");
-    sec_2Gsap__init();
-    AdvancedTextSplit__init();
-    sub2Gsap__init();
+    sub2_sec2Gsap__init();
+    sub2_textSplit__init();
+    sub2_sec3Gsap__init();
   }
 
   /////////////////////////////////
@@ -595,8 +546,8 @@ function loadList() {
   if (document.querySelector("#subpage-3") == null) {
   } else {
     console.log("subpage-3 founded");
-    sub3__sec2Filter();
-    sub3__sec2Modal();
+    sub3_sec2Filter();
+    sub3_sec2Modal();
   }
 }
 
@@ -614,18 +565,18 @@ window.addEventListener("load", () => {
 ////////////////////////////////////
 
 function reSizeLoadList() {
-  const body = document.querySelector("body");
+  aos지연시간일일히적기귀찮아함수();
   if (document.querySelector("#mainPage") == null) {
   } else {
-    highlightAni__init();
-    newsHover__init();
-    mainMobile();
-    sec3_gsapScroll__init();
+    main_sec2PcAni__init();
+    main_sec2MobileGsap__init();
+    main_sec3Gsap__init();
+    main_sec6Hover__init();
   }
   if (document.querySelector("#subpage-2") == null) {
   } else {
-    sub2Gsap__init();
-    sec_2Gsap__init();
+    sub2_sec2Gsap__init();
+    sub2_sec3Gsap__init();
   }
   if (document.querySelector("#subpage-3") == null) {
   } else {
@@ -638,23 +589,24 @@ window.addEventListener("resize", () => {
 
   resizeTimer = setTimeout(() => {
     // 리사이즈시 너비값 변동 없으면 중지 <= 이거 없으면 모바일에서 계속 리사이즈됨
-    let currentWidth = window.innerWidth;
-    if (currentWidth == viewportWidth) {
+    let newWidth = window.innerWidth;
+    if (newWidth == viewportWidth) {
       return;
     }
 
-    viewportWidth = currentWidth;
+    viewportWidth = newWidth;
     isMobile = thresholdMobile >= viewportWidth;
 
-    if (isSmomther) {
-      isSmomther.kill();
-    }
-    isSmomther = null;
     ScrollTrigger.getAll().forEach((trigger) => {
       trigger.kill();
     });
-    ScrollTrigger.refresh(true);
     reSizeLoadList();
+    ScrollTrigger.refresh();
+
+    if (isMobile) {
+      // 모바일 전환시 스크롤 스무더가 만든 style 해제
+      document.querySelector("body").style.height = "auto";
+    }
 
     // console.clear();
     console.log(`isMobile : ${isMobile}`);
