@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 /* Normalization ================== */
 /*  */
 /*  */
@@ -115,10 +117,6 @@ header.invert {
   align-items: center;
   gap: 12rem;
   height: 100%;
-}
-
-.header > .header-grid > .menu-wrap > li {
-  color: #ffffff;
 }
 
 .header > .header-grid > .menu-wrap > li > a {
@@ -519,11 +517,6 @@ header.invert {
   cursor: default;
 }
 
-.bottom-section > .footer > .footer-link-wrap > div > li > a:hover {
-  text-decoration: 0.15rem underline wavy #cafa00;
-  text-underline-offset: 0.5rem;
-}
-
 .bottom-section > .footer > .footer-logo-wrap {
   width: 100%;
   height: 100%;
@@ -547,9 +540,9 @@ header.invert {
 }
 /* main)section-1 ==================================== */
 .sub-1-main > .sub-section-1 {
+  padding: 8rem 0 0;
   position: relative;
   margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
 }
@@ -722,20 +715,20 @@ header.invert {
   font-size: clamp(1.2rem, 2.5vw, 2.4rem);
 }
 /* sub-2 media ============================================= */
-@media screen and (max-width:1020px) {
-.sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
-  width: clamp(30rem, 55vw, 120rem);
-  height: clamp(15rem, 10vh, 60rem);
- }
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
+    width: clamp(30rem, 55vw, 120rem);
+    height: clamp(15rem, 10vh, 60rem);
+  }
 }
 
-@media screen and (max-width:1020px) {
+@media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-2 > .scroll-banner-container {
     flex-direction: column;
   }
 }
 
-@media screen and (max-width:1020px) {
+@media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper {
     text-align: center;
   }
@@ -789,13 +782,13 @@ header.invert {
   line-height: 1.6;
 }
 /* between-sec media ============================================= */
-@media screen and (max-width:1020px) {
+@media screen and (max-width: 1020px) {
   .sub-1-main > .between-section > .text-banner-wrapper > h1 {
     justify-content: center;
   }
 }
 
-@media screen and (max-width:1020px) {
+@media screen and (max-width: 1020px) {
   .sub-1-main > .between-section > .text-banner-wrapper {
     text-align: center;
     white-space: wrap;
@@ -867,7 +860,6 @@ header.invert {
   border: 0.3rem solid #fff;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 /* main)section-4 ==================================== */
 .sub-1-main > .sub-section-4 {
   position: relative;
@@ -918,11 +910,11 @@ header.invert {
   line-height: 1.6;
 }
 /* sub-4 media ============================================= */
-@media screen and (max-width:1020px) {
-.sub-1-main > .sub-section-4 > video {
-  width: 100vw;
-  height: 35vh;
- }
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-4 > video {
+    width: 100vw;
+    height: 35vh;
+  }
 }
 
 /* main)section-divider ==================================== */
@@ -1008,26 +1000,26 @@ header.invert {
   }
 }
 /* sec-divider media ============================================= */
-@media screen and (max-width:1020px) {
-.sub-1-main > .section-divider {
-  width: 100vw;
-  
-  animation: none;
- }
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .section-divider {
+    width: 100vw;
+
+    animation: none;
+  }
 }
 
-@media screen and (max-width:1020px) {
-.sub-1-main > .section-divider > .division {
-  display: flex;
-  justify-content: center;
- }
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .section-divider > .division {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-@media screen and (max-width:1020px) {
-.sub-1-main > .section-divider > .division > h1 {
-  padding: 0 3.2rem;
-  font-size: clamp(2.4rem, 2.5vw, 6rem);
- }
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .section-divider > .division > h1 {
+    padding: 0 3.2rem;
+    font-size: clamp(2.4rem, 2.5vw, 6rem);
+  }
 }
 /* main)section-5 ==================================== */
 .sub-1-main > .sub-section-5 {
@@ -1237,20 +1229,20 @@ header.invert {
   vertical-align: bottom;
 }
 /* sec-5 media ============================================= */
-@media screen and (max-width:1020px) {
-.sub-1-main > .sub-section-5 > .view-value-container {
-  padding: 6.4rem 1rem 1rem 1rem;
- }
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-5 > .view-value-container {
+    padding: 6.4rem 1rem 1rem 1rem;
+  }
 }
 
-@media screen and (max-width:1020px) {
-.sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 {
-  display: none;
- }
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 {
+    display: none;
+  }
 }
 
-@media screen and (max-width:1020px) {
-.sub-1-main > .sub-section-5 > .btn-wrapper > a > span {
-  display: none;
- }
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-5 > .btn-wrapper > a > span {
+    display: none;
+  }
 }

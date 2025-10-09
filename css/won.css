@@ -635,69 +635,69 @@ header .side-bar-btn {
       }
     }
 
-      &.left {
-        top: 50%;
-        left: 25%;
-      }
-      &.right {
-        top: 50%;
-        left: 75%;
-      }
+    &.left {
+      top: 50%;
+      left: 25%;
     }
+    &.right {
+      top: 50%;
+      left: 75%;
+    }
+  }
 
-    /* cta buttons */
-    .btn-wrap {
-      position: absolute;
-      bottom: 4%;
-      left: 50%;
+  /* cta buttons */
+  .btn-wrap {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    display: flex;
+    gap: 1.6rem;
+    transform: translate(-50%, -50%);
+    font-size: 2.2rem;
+
+    a {
+      --content: ""; /* content will be inherited from span / js */
       display: flex;
-      gap: 1.6rem;
-      transform: translate(-50%, -50%);
-      font-size: 2.2rem;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border-radius: 9rem;
+      width: 22rem;
+      height: 6.4rem;
+      background-color: var(--white);
+      color: var(--black);
+      font-weight: 500;
+      transition: all 0.3s;
 
-      a {
-        --content: ""; /* content will be inherited from span / js */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        border-radius: 9rem;
-        width: 22rem;
-        height: 6.4rem;
-        background-color: var(--white);
-        color: var(--black);
-        font-weight: 500;
-        transition: all 0.3s;
+      .txt-hide-wrap {
+        overflow: hidden;
+        span {
+          display: block;
+          position: relative;
+          transition: all 0.3s;
 
-        .txt-hide-wrap {
-          overflow: hidden;
-          span {
+          &::after {
+            content: var(--content);
             display: block;
-            position: relative;
-            transition: all 0.3s;
-
-            &::after {
-              content: var(--content);
-              display: block;
-              position: absolute;
-              top: 100%;
-            }
+            position: absolute;
+            top: 100%;
           }
         }
+      }
 
-        /* btn hover */
-        &:hover {
-          transform: scale(1.06);
-          box-shadow: 0 5px 24px rgba(0, 0, 0, 0.2);
+      /* btn hover */
+      &:hover {
+        transform: scale(1.06);
+        box-shadow: 0 5px 24px rgba(0, 0, 0, 0.2);
 
-          span {
-            transform: translateY(-100%);
-          }
+        span {
+          transform: translateY(-100%);
         }
       }
     }
   }
 }
+
 /* ----------------------------- section 4 end ----------------------------- */
 
 /* ----------------------------- section 6 ----------------------------- */
@@ -1252,9 +1252,8 @@ header .side-bar-btn {
       }
     }
 
-      .img-box-3 {
-        margin: 22rem 0 0;
-      }
+    .img-box-3 {
+      margin: 22rem 0 0;
     }
   }
 }
