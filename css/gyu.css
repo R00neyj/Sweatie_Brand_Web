@@ -402,25 +402,17 @@ header.invert {
 }
 
 .slider-1 .tracker {
-  -webkit-animation: logo-scroll-1 linear infinite;
-  animation: logo-scroll-1 linear infinite;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: calc(25rem * 14);
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
 }
 
 .slider-2 .tracker {
-  -webkit-animation: logo-scroll-2 linear infinite;
-  animation: logo-scroll-2 linear infinite;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: calc(25rem * 14);
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
 }
 
 .slider .slide {
@@ -550,6 +542,7 @@ header.invert {
 .sub-1-main > .sub-section-1 > .img-container {
   position: relative;
   margin: 0;
+  padding: 3rem 0 0 0;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
