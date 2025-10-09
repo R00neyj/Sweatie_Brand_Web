@@ -611,14 +611,13 @@ header .side-bar-btn {
         }
       }
 
-      &.left {
-        top: 50%;
-        left: 25%;
-      }
-      &.right {
-        top: 50%;
-        left: 75%;
-      }
+    &.left {
+      top: 50%;
+      left: 25%;
+    }
+    &.right {
+      top: 50%;
+      left: 75%;
     }
   }
 
