@@ -585,7 +585,7 @@ header .side-bar-btn {
       left: 0;
 
       video {
-        width: 103%;
+        width: 100%;
         height: 100%;
         object-fit: cover;
       }
@@ -611,13 +611,14 @@ header .side-bar-btn {
         }
       }
 
-    &.left {
-      top: 50%;
-      left: 25%;
-    }
-    &.right {
-      top: 50%;
-      left: 75%;
+      &.left {
+        top: 50%;
+        left: 20%;
+      }
+      &.right {
+        top: 50%;
+        left: 80%;
+      }
     }
   }
 
@@ -2158,6 +2159,11 @@ header .side-bar-btn {
     .text-box.right {
       top: 50%;
       left: 66%;
+    }
+  }
+  .sec-4 > .content-wrap {
+    .bg-video {
+      filter: blur(2px) brightness(0.7);
     }
   }
 

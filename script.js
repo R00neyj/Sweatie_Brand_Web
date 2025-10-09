@@ -199,15 +199,39 @@ function main_sec4TextSplit__init() {
       el.append(spans);
     }
   });
+}
 
-  // set- data-aos-delay
-  const target2 = document.querySelectorAll(".sec-4 .text-box span span");
-  target2.forEach((el, index) => {
-    el.setAttribute("data-aos", "fade-in");
-    el.setAttribute("data-aos-duration", "500");
-    el.setAttribute("data-aos-once", "true");
-    el.setAttribute("data-aos-delay", (index + 1) * 100);
+function main_sec4Gsap__init() {
+  console.log("hi");
+  const target = document.querySelector(".sec-4");
+  let spanEl = document.querySelectorAll(".sec-4 .text-box span span");
+  if (spanEl.length === 0) {
+    console.log("error");
+    return;
+  }
+  let tl = gsap.timeline();
+  spanEl.forEach((el) => {
+    gsap.set(el, { opacity: 1, filter: "blur(0px)" });
+
+    tl.from(el, {
+      opacity: 0.2,
+      filter: "blur(2px)",
+      duration: 0.8,
+      stagger: 0.03,
+      ease: "none",
+    });
   });
+
+  ScrollTrigger.create({
+    trigger: target,
+    animation: tl,
+    // markers: true,
+    scrub: 0.1,
+    start: "top center",
+    end: "+=50%",
+  });
+
+  ScrollTrigger.refresh();
 }
 
 // sec3 gsap
@@ -248,9 +272,11 @@ function main_sec3Gsap__init() {
     },
     onLeave: () => {
       header.classList.remove("invert");
+      AOS.refresh();
     },
     onLeaveBack: () => {
       header.classList.remove("invert");
+      AOS.refresh();
     },
   });
 
@@ -517,6 +543,7 @@ function loadList() {
     main_sec3Gsap__init();
     main_sec3Swiper__init();
     main_sec4TextSplit__init();
+    main_sec4Gsap__init();
     main_sec4btnSwapContent();
     main_sec6Hover__init();
   }
@@ -571,6 +598,7 @@ function reSizeLoadList() {
     main_sec2PcAni__init();
     main_sec2MobileGsap__init();
     main_sec3Gsap__init();
+    main_sec4Gsap__init();
     main_sec6Hover__init();
   }
   if (document.querySelector("#subpage-2") == null) {
@@ -602,13 +630,13 @@ window.addEventListener("resize", () => {
     });
     reSizeLoadList();
     ScrollTrigger.refresh();
+    AOS.refresh();
 
     if (isMobile) {
       // 모바일 전환시 스크롤 스무더가 만든 style 해제
       document.querySelector("body").style.height = "auto";
     }
 
-    // console.clear();
     console.log(`isMobile : ${isMobile}`);
     console.log("Resize done // ScrollTrigger reset");
   }, 200);
