@@ -675,6 +675,82 @@ header .side-bar-btn {
   }
 }
 /* ----------------------------- section 4 end ----------------------------- */
+/* section 5 */
+
+@keyframes main-marquee-1 {
+  0% {
+    transform: translateX(calc(var(--main-marquee-1-width) * -1));
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes main-marquee-2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(var(--main-marquee-2-width) * -1));
+  }
+}
+/* variable will change through js */
+.sec-5 {
+  --main-marquee-1-width: "";
+  --main-marquee-2-width: "";
+}
+.sec-5 > .partners-container {
+  overflow: hidden;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.75), transparent);
+    z-index: 1;
+  }
+  &::after {
+    left: initial;
+    right: 0;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.75), transparent);
+  }
+}
+
+.sec-5 > .partners-container > .marquee-slider.slider-1 {
+  animation: main-marquee-1 60s infinite linear;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+.sec-5 > .partners-container > .marquee-slider.slider-2 {
+  animation: main-marquee-2 60s infinite linear;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.sec-5 > .partners-container > .marquee-slider > .partners-marquee-2 {
+  flex-direction: row;
+}
+.sec-5 .slider {
+  overflow: visible;
+}
+
+.sec-5 > .partners-container > .marquee-slider > span {
+  padding-left: 3rem;
+}
+
+.sec-5 > .partners-container > .marquee-slider > .tracker {
+  flex-shrink: 1;
+  width: auto !important;
+}
 
 /* ----------------------------- section 6 ----------------------------- */
 .sec-6 {
@@ -694,6 +770,10 @@ header .side-bar-btn {
       overflow: hidden;
       border-radius: 2.4rem;
       transition: all var(--transition-duration);
+
+      > .card-wrap {
+        height: 100%;
+      }
 
       .img-box {
         line-height: 0;
@@ -2191,14 +2271,20 @@ header .side-bar-btn {
       display: block;
     }
   }
+  .sec-5 > .partners-container {
+    &::after,
+    &::before {
+      width: 4rem;
+    }
+  }
 
   .sec-5 > .partners-container > .marquee-slider > span > div {
     width: 25rem;
     height: 20rem;
 
     > img {
-      width: 80% !important;
-      height: 80% !important;
+      width: 80%;
+      height: 80%;
       object-fit: contain !important;
     }
   }

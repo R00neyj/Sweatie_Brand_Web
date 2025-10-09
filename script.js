@@ -137,104 +137,41 @@ function main_sec2PcAni__init() {
   }
 }
 
-// main sec6 news
-function main_sec6Hover__init() {
-  const cardBox = document.querySelector(".sec-6 .card-box");
-  const cards = cardBox.querySelectorAll(".card");
-
-  if (isMobile) {
-    cards.forEach((cardDeactive) => {
-      cardDeactive.classList.remove("active");
-    });
-
-    new Swiper(cardBox, {
-      slidesPerView: 1.1,
-      spaceBetween: 0,
-      speed: 600,
-
-      breakpoints: {
-        770: {
-          slidesPerView: "auto",
-        },
-      },
-    });
-  } else {
-    cards.forEach((el) => {
-      el.addEventListener("pointerenter", (e) => {
-        cards.forEach((cardDeactive) => {
-          cardDeactive.classList.remove("active");
-        });
-        el.classList.add("active");
-      });
-    });
-  }
-}
-
-// main sec4 btn after content swap
-function main_sec4btnSwapContent() {
-  const btns = document.querySelectorAll(".sec-4 .btn-wrap a");
-  btns.forEach((el) => {
-    let content = el.querySelector("span").textContent;
-    el.querySelector("span").style.setProperty("--content", `"${content}"`);
-  });
-}
-
-// text split for sec 4
-function main_sec4TextSplit__init() {
-  const target = document.querySelectorAll(".sec-4 .text-box span");
-  let charArr = [];
-  let spanEl;
-
-  target.forEach((el, index) => {
-    char = el.textContent.split("");
-
-    charArr.push(char);
-    el.innerText = "";
-
-    for (let i = 0; i < char.length; i++) {
-      let spans = document.createElement("span");
-      spans.textContent = charArr[index][i];
-      spans.classList.add(charArr[index][i]);
-
-      el.append(spans);
-    }
-  });
-}
-
-function main_sec4Gsap__init() {
-  console.log("hi");
-  const target = document.querySelector(".sec-4");
-  let spanEl = document.querySelectorAll(".sec-4 .text-box span span");
-  if (spanEl.length === 0) {
-    console.log("error");
+// main mobile section 2
+function main_sec2MobileGsap__init() {
+  if (!isMobile) {
     return;
   }
-  let tl = gsap.timeline();
-  spanEl.forEach((el) => {
-    gsap.set(el, { opacity: 1, filter: "blur(0px)" });
+  const cards = document.querySelectorAll(".scroll-ani > .card");
+  const lastCard = cards[cards.length - 1];
 
-    tl.from(el, {
-      opacity: 0.2,
-      filter: "blur(2px)",
-      duration: 0.8,
-      stagger: 0.03,
+  cards.forEach((card, index) => {
+    // 💡 scaleSet은 최종 스케일 값으로 사용됨
+    let scaleSet = 1 - (cards.length - index) * 0.025;
+
+    let tl = gsap.timeline();
+    tl.to(card, {
+      scale: scaleSet,
+      y: -100,
       ease: "none",
     });
-  });
 
-  ScrollTrigger.create({
-    trigger: target,
-    animation: tl,
-    // markers: true,
-    scrub: 0.1,
-    start: "top center",
-    end: "+=50%",
+    ScrollTrigger.create({
+      trigger: card,
+      start: "center center",
+      endTrigger: lastCard,
+      end: "bottom center",
+      pin: true,
+      pinSpacing: false,
+      scrub: true,
+      animation: tl,
+      // markers: true,
+    });
   });
-
   ScrollTrigger.refresh();
 }
 
-// sec3 gsap
+// main sec3 gsap
 function main_sec3Gsap__init() {
   const pinWrap = document.querySelector(".sec-3 .content-wrap");
   if (pinWrap == null) {
@@ -283,7 +220,7 @@ function main_sec3Gsap__init() {
   console.log(`main/section3 gsap loaded`);
 }
 
-// sec3 swiper
+// main sec3 swiper
 function main_sec3Swiper__init() {
   const swiperEl = document.querySelector(".sec-3 .right.swiper");
   const outerSwiper = new Swiper(swiperEl, {
@@ -331,6 +268,127 @@ function main_sec3Swiper__init() {
     });
   });
 }
+
+// main sec4 btn after content swap
+function main_sec4btnSwapContent() {
+  const btns = document.querySelectorAll(".sec-4 .btn-wrap a");
+  btns.forEach((el) => {
+    let content = el.querySelector("span").textContent;
+    el.querySelector("span").style.setProperty("--content", `"${content}"`);
+  });
+}
+
+// text split for sec 4
+function main_sec4TextSplit__init() {
+  const target = document.querySelectorAll(".sec-4 .text-box span");
+  let charArr = [];
+  let spanEl;
+
+  target.forEach((el, index) => {
+    char = el.textContent.split("");
+
+    charArr.push(char);
+    el.innerText = "";
+
+    for (let i = 0; i < char.length; i++) {
+      let spans = document.createElement("span");
+      spans.textContent = charArr[index][i];
+      spans.classList.add(charArr[index][i]);
+
+      el.append(spans);
+    }
+  });
+}
+
+// main sec4 gsap
+function main_sec4Gsap__init() {
+  console.log("hi");
+  const target = document.querySelector(".sec-4");
+  let spanEl = document.querySelectorAll(".sec-4 .text-box span span");
+  if (spanEl.length === 0) {
+    console.log("error");
+    return;
+  }
+  let tl = gsap.timeline();
+  spanEl.forEach((el) => {
+    gsap.set(el, { opacity: 1, filter: "blur(0px)" });
+
+    tl.from(el, {
+      opacity: 0.2,
+      filter: "blur(2px)",
+      duration: 0.8,
+      stagger: 0.03,
+      ease: "none",
+    });
+  });
+
+  ScrollTrigger.create({
+    trigger: target,
+    animation: tl,
+    // markers: true,
+    scrub: 0.1,
+    start: "top center",
+    end: "+=50%",
+  });
+
+  ScrollTrigger.refresh();
+}
+
+// main sec5 marquee
+function main_sec5GetMarqueeWidth() {
+  const sec5 = document.querySelector(".sec-5");
+  if (sec5 == null) {
+    return;
+  }
+  const target1 = document.querySelector(".sec-5 .marquee-slider.slider-1 .tracker");
+  const target2 = document.querySelector(".sec-5 .marquee-slider.slider-2 .tracker");
+
+  let marquee1Width = target1.getBoundingClientRect().width;
+  let marquee2Width = target2.getBoundingClientRect().width;
+
+  sec5.style.setProperty("--main-marquee-1-width", `${marquee1Width}px`);
+  sec5.style.setProperty("--main-marquee-2-width", `${marquee2Width}px`);
+
+  // for debug
+  console.log(marquee1Width);
+}
+
+// main sec6 news
+function main_sec6Hover__init() {
+  const cardBox = document.querySelector(".sec-6 .card-box");
+  const cards = cardBox.querySelectorAll(".card");
+
+  if (isMobile) {
+    cards.forEach((cardDeactive) => {
+      cardDeactive.classList.remove("active");
+    });
+
+    new Swiper(cardBox, {
+      slidesPerView: 1.1,
+      spaceBetween: 0,
+      speed: 600,
+
+      breakpoints: {
+        770: {
+          slidesPerView: "auto",
+        },
+      },
+    });
+  } else {
+    cards.forEach((el) => {
+      el.addEventListener("pointerenter", (e) => {
+        cards.forEach((cardDeactive) => {
+          cardDeactive.classList.remove("active");
+        });
+        el.classList.add("active");
+      });
+    });
+  }
+}
+
+//
+//////////////////////////////////// subpage 1
+//
 
 //
 //////////////////////////////////// subpage 2
@@ -445,39 +503,9 @@ function textAniDelay() {
   }
 }
 
-// main mobile section 2
-function main_sec2MobileGsap__init() {
-  if (!isMobile) {
-    return;
-  }
-  const cards = document.querySelectorAll(".scroll-ani > .card");
-  const lastCard = cards[cards.length - 1];
-
-  cards.forEach((card, index) => {
-    // 💡 scaleSet은 최종 스케일 값으로 사용됨
-    let scaleSet = 1 - (cards.length - index) * 0.025;
-
-    let tl = gsap.timeline();
-    tl.to(card, {
-      scale: scaleSet,
-      y: -100,
-      ease: "none",
-    });
-
-    ScrollTrigger.create({
-      trigger: card,
-      start: "center center",
-      endTrigger: lastCard,
-      end: "bottom center",
-      pin: true,
-      pinSpacing: false,
-      scrub: true,
-      animation: tl,
-      // markers: true,
-    });
-  });
-  ScrollTrigger.refresh();
-}
+//
+//////////////////////////////////// subpage 3
+//
 
 // sub3 sec 2 filter
 function sub3_sec2Filter() {
@@ -545,6 +573,7 @@ function loadList() {
     main_sec4TextSplit__init();
     main_sec4Gsap__init();
     main_sec4btnSwapContent();
+    main_sec5GetMarqueeWidth();
     main_sec6Hover__init();
   }
 
@@ -599,6 +628,7 @@ function reSizeLoadList() {
     main_sec2MobileGsap__init();
     main_sec3Gsap__init();
     main_sec4Gsap__init();
+    main_sec5GetMarqueeWidth();
     main_sec6Hover__init();
   }
   if (document.querySelector("#subpage-2") == null) {
