@@ -433,7 +433,7 @@ function sub2_sec2Gsap__init() {
 }
 
 // subpage 2 sec3,4,5 drawsvg
-function sub2_sec3Gsap__init() {
+function sub2_GsapSvg__init() {
   CreateGsapSvgAni(".sub2-sec-3", "#sec-3-line");
   CreateGsapSvgAni(".sub2-sec-4", "#sec-4-line");
   CreateGsapSvgAni(".sub2-sec-5", "#sec-5-line");
@@ -446,17 +446,19 @@ function sub2_sec3Gsap__init() {
     const svgLine = document.querySelector(lineEl);
     let tl = gsap.timeline();
 
-    tl.fromTo(svgLine, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
+    gsap.set(svgLine, { drawSVG: "5%" });
+    tl.fromTo(svgLine, { drawSVG: "5%" }, { duration: 10, drawSVG: "100%" });
 
-    ScrollTrigger.create({
+    let st = ScrollTrigger.create({
       trigger: target,
       animation: tl,
-      start: "0% 0%",
-      end: "100% 100%",
-      scrub: 3,
+      start: "0% 10%",
+      end: "100% 0%",
+      scrub: 1,
+      markers: true,
     });
 
-    ScrollTrigger.refresh();
+    st.refresh();
   }
 }
 
@@ -593,7 +595,7 @@ function loadList() {
     console.log("subpage-2 founded");
     sub2_sec2Gsap__init();
     sub2_textSplit__init();
-    sub2_sec3Gsap__init();
+    sub2_GsapSvg__init();
   }
 
   /////////////////////////////////
@@ -634,7 +636,7 @@ function reSizeLoadList() {
   if (document.querySelector("#subpage-2") == null) {
   } else {
     sub2_sec2Gsap__init();
-    sub2_sec3Gsap__init();
+    sub2_GsapSvg__init();
   }
   if (document.querySelector("#subpage-3") == null) {
   } else {
