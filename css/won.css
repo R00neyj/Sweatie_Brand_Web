@@ -924,7 +924,7 @@ header .side-bar-btn {
 
 /* ----------------------------- sub2 section 1 ----------------------------- */
 .sub2-sec-1 {
-  margin-top: var(--header-height);
+  padding-top: var(--header-height);
 
   > .content-wrap {
     height: calc(100svh - var(--header-height));

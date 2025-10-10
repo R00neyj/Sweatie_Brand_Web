@@ -13,19 +13,16 @@
   width: 100%;
   height: calc(100dvh - 8rem);
   margin: 0;
-  padding: 0;
   color: #ffffff;
+  padding-top: 8rem;
 }
 /* top)video container ======================== */
 .top-section > .video-container {
   width: 100%;
   height: 100dvh;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
-  margin-top: 8rem;
 
   > .filter {
     position: absolute;
