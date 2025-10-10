@@ -112,9 +112,13 @@ function main_sec2PcAni__init() {
               el.classList.remove("active");
             });
             entry.target.classList.add("active");
-            setTimeout(() => {
-              ScrollTrigger.refresh();
-            }, 500);
+
+            // timer for gsap position refresh
+            // let timer;
+            // timer = setTimeout(() => {
+            //   clearTimeout(timer);
+            //   ScrollTrigger.refresh();
+            // }, 500);
           }
         });
       },
@@ -146,7 +150,7 @@ function main_sec2MobileGsap__init() {
   const lastCard = cards[cards.length - 1];
 
   cards.forEach((card, index) => {
-    // 💡 scaleSet은 최종 스케일 값으로 사용됨
+    // scaleSet은 최종 스케일 값으로 사용됨
     let scaleSet = 1 - (cards.length - index) * 0.025;
 
     let tl = gsap.timeline();
@@ -156,7 +160,7 @@ function main_sec2MobileGsap__init() {
       ease: "none",
     });
 
-    ScrollTrigger.create({
+    let st = ScrollTrigger.create({
       trigger: card,
       start: "center center",
       endTrigger: lastCard,
@@ -167,8 +171,8 @@ function main_sec2MobileGsap__init() {
       animation: tl,
       // markers: true,
     });
+    st.refresh();
   });
-  ScrollTrigger.refresh();
 }
 
 // main sec3 gsap
@@ -192,7 +196,7 @@ function main_sec3Gsap__init() {
     ease: "none",
     duration: 10,
   });
-  ScrollTrigger.create({
+  let st = ScrollTrigger.create({
     trigger: pinWrap,
     pin: true,
     scrub: 1,
@@ -202,6 +206,7 @@ function main_sec3Gsap__init() {
     // end: () => pinWrap.offsetWidth * 1.5,
     end: "+=270%",
     onEnter: () => {
+      st.refresh();
       header.classList.add("invert");
     },
     onEnterBack: () => {
@@ -390,37 +395,37 @@ function main_sec6Hover__init() {
 //
 
 function sub1Swiper_1__init() {
-  var swiper1 = new Swiper(".mySwiper", {
+  let swiper1 = new Swiper(".mySwiper", {
     direction: "horizontal",
     slidesPerView: 1.2,
     spaceBetween: 30,
-    mousewheel: true,
     breakpoints: {
       768: {
         direction: "vertical",
+        mousewheel: true,
       },
     },
   });
 }
 
 function sub1Swiper_2__init() {
-  var swiper2 = new Swiper(".mySwiper2", {
+  let swiper2 = new Swiper(".mySwiper2", {
     slidesPerView: 1.2,
-    spaceBetween: 30,
+    spaceBetween: 20,
     slidesPerGroup: 1,
     loop: true,
+    speed: "4500",
     loopFillGroupWithBlank: true,
     autoplay: {
-      delay: 3000,
+      delay: 1,
       disableOnInteraction: false,
     },
     breakpoints: {
       768: {
-        slidesPerView: 2,
-        spaceBetween: 30,
+        slidesPerView: 2.2,
       },
       1024: {
-        slidesPerView: 4,
+        slidesPerView: 3.2,
         spaceBetween: 30,
       },
     },
@@ -449,9 +454,45 @@ function sub1_getMarqueeWidth() {
   const marqueeSlide = marqueeWrap.querySelectorAll(".section-divider");
 
   let width = marqueeSlide[0].offsetWidth;
-  console.log(width);
 
   marqueeWrap.style.setProperty("--sub1-marquee-width", `${width}px`);
+}
+
+function sub1_sec5Gsap__init() {
+  const triggerTarget = document.querySelector(".sub-section-5 .view-value-container");
+  const aniTarget = triggerTarget.querySelectorAll(" .value");
+
+  // 스크롤바 생김 방지
+  triggerTarget.style.overflowY = "hidden";
+
+  let st;
+  let tl = gsap.timeline();
+
+  gsap.set(aniTarget, { y: 100, opacity: 0 });
+
+  tl.fromTo(
+    aniTarget,
+    {
+      y: "50%",
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power1.out",
+    }
+  );
+
+  st = ScrollTrigger.create({
+    trigger: triggerTarget,
+    start: "center bottom",
+    animation: tl,
+    toggleActions: "play none none reverse",
+  });
+
+  st.refresh();
 }
 
 //
@@ -649,11 +690,12 @@ function loadList() {
   if (document.querySelector("#subpage-1") == null) {
   } else {
     console.log("subpage-1 founded");
-    sub1_getMarqueeWidth();
     textFlow__init();
     sub1Swiper_1__init();
     sub1Swiper_2__init();
     boxViewer__init();
+    sub1_getMarqueeWidth();
+    sub1_sec5Gsap__init();
   }
 
   /////////////////////////////////
@@ -707,15 +749,13 @@ function reSizeLoadList() {
   if (document.querySelector("#subpage-1") == null) {
   } else {
     sub1_getMarqueeWidth();
+    sub1_sec5Gsap__init();
   }
 
   if (document.querySelector("#subpage-2") == null) {
   } else {
     sub2_sec2Gsap__init();
     sub2_GsapSvg__init();
-  }
-  if (document.querySelector("#subpage-3") == null) {
-  } else {
   }
 }
 
