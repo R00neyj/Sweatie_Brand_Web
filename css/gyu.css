@@ -647,6 +647,9 @@ header.invert {
     left: 50%;
     transform: translate(-50%, -20%);
     text-align: center;
+    width: 100%;
+    padding: 0 12px;
+    white-space: normal;
   }
 }
 
@@ -658,7 +661,7 @@ header.invert {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(0deg, #161616, rgba(0, 0, 0, 0.2));
   }
 }
 /* main)section-2 ==================================== */
@@ -681,7 +684,9 @@ header.invert {
   justify-content: center;
   white-space: nowrap;
   gap: clamp(6.5rem, 2.5vw, 13rem);
-  padding: clamp(3.5rem, 5vw, 10rem);
+  padding: clamp(3.5rem, 5vw, 10rem) 0;
+  width: 100%;
+  max-width: 164rem;
 }
 /* section-2 > banner-wrapper ==================================== */
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper {
@@ -775,8 +780,16 @@ header.invert {
 /* sub-2 media ============================================= */
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
-    width: clamp(85vw, 85vw, 120rem);
+    /* width: clamp(85vw, 85vw, 120rem); */
+    width: 100%;
     height: clamp(35vh, 35vh, 60rem);
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
+    overflow: visible;
   }
 }
 
@@ -788,7 +801,17 @@ header.invert {
 
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper {
+    padding: 0 12px;
     text-align: center;
+    white-space: normal;
+  }
+}
+@media (max-width: 375px) {
+  .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper {
+    > h3,
+    h4 {
+      text-align: left;
+    }
   }
 }
 
@@ -811,7 +834,7 @@ header.invert {
   background-color: #161616;
   margin: 0;
   padding: 0;
-  padding-top: 10vh;
+  padding-top: 20vh;
   position: relative;
   top: 0;
   left: 0;
@@ -825,18 +848,27 @@ header.invert {
   display: inline-flex;
   flex-direction: column;
   gap: clamp(0.8rem, 2.5vw, 1.2rem);
-  padding: 3.2rem 2rem 3.2rem 2rem;
+  padding: 3.2rem 0;
   white-space: nowrap;
 }
 
 .sub-1-main > .between-section > .text-banner-wrapper > h1 {
-  width: clamp(80vw, 80vw, 80rem);
+  width: 100%;
   display: flex;
   font-family: "Urbanist";
   font-weight: bold;
   font-size: clamp(3.15rem, 3vw, 6.4rem);
   padding-top: clamp(1.8rem, 2.5vw, 3.6rem);
-  border-top: 0.2rem solid #ffffff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: min(100%, 82rem);
+    border-top: 0.2rem solid #ffffff;
+  }
 }
 
 .sub-1-main > .between-section > .text-banner-wrapper > h3 {
@@ -854,7 +886,7 @@ header.invert {
 /* between-sec media ============================================= */
 @media screen and (max-width: 1020px) {
   .sub-1-main > .between-section {
-    padding: 10rem 0;
+    padding: 10rem 0 0;
   }
 }
 
@@ -874,7 +906,7 @@ header.invert {
 .sub-1-main > .sub-section-3 {
   width: 100%;
   height: 100%;
-  background-color: #161616;
+  background: linear-gradient(#161616, black);
   margin: 0;
   padding: 0;
   position: relative;
@@ -882,50 +914,50 @@ header.invert {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: clamp(3.6rem, 2.5vw, 4.8rem);
-  padding-bottom: 15vh;
+  /* padding-top: clamp(3.6rem, 2.5vw, 4.8rem); */
+  padding: 15vh 0;
 }
 
 .sub-1-main > .sub-section-3 > .swiper {
   width: 100%;
-  height: 100%;
+  height: max(20.83333vw, 260px);
+  padding: 0 0 0 20px;
+
+  > .swiper-wrapper {
+    transition-timing-function: linear;
+
+    > .swiper-slide {
+      .card-content {
+        height: 100%;
+
+        .image {
+          height: 100%;
+          border-radius: 16px;
+          overflow: hidden;
+          transition: all 0.4s;
+
+          > img {
+            transition: inherit;
+            filter: brightness(0.8);
+          }
+        }
+      }
+
+      &:hover {
+        .card-content > .image {
+          border-radius: 8px;
+
+          > img {
+            transform: scale(1.05);
+            filter: brightness(1);
+          }
+        }
+      }
+    }
+  }
 }
 
-.sub-1-main > .sub-section-3 > .card {
-  position: relative;
-  background: #fff;
-  border-radius: 2rem;
-  margin: 2rem 0;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-.sub-1-main > .sub-section-3 > .card::before {
-  content: "";
-  position: absolute;
-  height: 40%;
-  width: 100%;
-  background: #192459;
-}
-
-.sub-1-main > .sub-section-3 > .card > .card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 100;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.sub-1-main > .sub-section-3 > .card > .image {
-  height: 100%;
-  width: 100%;
-  padding: 0.3rem;
-  object-fit: cover;
-  vertical-align: middle;
-}
-
-.sub-1-main > .sub-section-3 > .card > .image > img {
+.sub-1-main > .sub-section-3 > .swiper img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -963,6 +995,10 @@ header.invert {
   align-items: center;
   justify-content: center;
   gap: clamp(1.2rem, 2.5vw, 3.2rem);
+  width: 100%;
+  white-space: normal;
+  text-align: center;
+  padding: 0 12px;
 }
 
 .sub-1-main > .sub-section-4 > .video-text-wrapper > h1 {
@@ -998,9 +1034,11 @@ header.invert {
 }
 
 .sub-1-main > .section-divider-container {
+  --marquee-bg-color: #161616;
   display: flex;
-  padding: 3.6rem 0;
-  background: #161616;
+  padding: 2rem 0;
+  background: linear-gradient(90deg, black, var(--marquee-bg-color) 10%, var(--marquee-bg-color) 90%, black);
+
   overflow-x: hidden;
 
   > .section-divider-wrap {
@@ -1013,7 +1051,8 @@ header.invert {
 }
 
 .sub-1-main .section-divider {
-  padding-left: 10rem;
+  --marquee-gap: min(10rem, 10vw);
+  padding-left: var(--marquee-gap);
   margin: 0;
   position: relative;
   top: 0;
@@ -1022,7 +1061,7 @@ header.invert {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  gap: 10rem;
+  gap: var(--marquee-gap);
 }
 
 .sub-1-main .section-divider > .division {
@@ -1038,8 +1077,8 @@ header.invert {
   font-family: "Urbanist";
   display: flex;
   gap: 1.6rem;
-  font-weight: bold;
-  font-size: 6rem;
+  font-weight: 500;
+  font-size: 5rem;
   flex-shrink: 0;
 }
 
@@ -1056,7 +1095,7 @@ header.invert {
 
 .sub-1-main .section-divider > .division-logo > img {
   display: block;
-  width: 6rem;
+  width: max(36px, 3vw);
   object-fit: cover;
   filter: invert(1);
 }
@@ -1325,6 +1364,9 @@ header.invert {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 0 12px;
+    white-space: normal;
+    width: 100%;
   }
 }
 

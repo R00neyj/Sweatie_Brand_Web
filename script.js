@@ -395,37 +395,37 @@ function main_sec6Hover__init() {
 //
 
 function sub1Swiper_1__init() {
-  var swiper1 = new Swiper(".mySwiper", {
+  let swiper1 = new Swiper(".mySwiper", {
     direction: "horizontal",
     slidesPerView: 1.2,
     spaceBetween: 30,
-    mousewheel: true,
     breakpoints: {
       768: {
         direction: "vertical",
+        mousewheel: true,
       },
     },
   });
 }
 
 function sub1Swiper_2__init() {
-  var swiper2 = new Swiper(".mySwiper2", {
+  let swiper2 = new Swiper(".mySwiper2", {
     slidesPerView: 1.2,
-    spaceBetween: 30,
+    spaceBetween: 20,
     slidesPerGroup: 1,
     loop: true,
+    speed: "4500",
     loopFillGroupWithBlank: true,
     autoplay: {
-      delay: 3000,
+      delay: 1,
       disableOnInteraction: false,
     },
     breakpoints: {
       768: {
-        slidesPerView: 2,
-        spaceBetween: 30,
+        slidesPerView: 2.2,
       },
       1024: {
-        slidesPerView: 4,
+        slidesPerView: 3.2,
         spaceBetween: 30,
       },
     },
@@ -690,11 +690,11 @@ function loadList() {
   if (document.querySelector("#subpage-1") == null) {
   } else {
     console.log("subpage-1 founded");
-    sub1_getMarqueeWidth();
     textFlow__init();
     sub1Swiper_1__init();
     sub1Swiper_2__init();
     boxViewer__init();
+    sub1_getMarqueeWidth();
     sub1_sec5Gsap__init();
   }
 
