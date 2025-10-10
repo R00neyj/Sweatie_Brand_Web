@@ -571,7 +571,7 @@ header.invert {
   position: absolute;
   top: 50%;
   left: 100%;
-  transform: translate(-117%, -30%);
+  transform: translate(-117%, -25%);
   display: flex;
   flex-direction: column;
   gap: clamp(3rem, 2.5vw, 9rem);
@@ -587,14 +587,35 @@ header.invert {
 
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper > h2 > p {
   font-family: "Urbanist";
-  font-size: clamp(2.25rem, 5vw, 9.6rem);
+  font-size: clamp(3.6rem, 5vw, 9.6rem);
   font-weight: 700;
 }
 
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper > h3 {
   font-family: "Pretendard";
-  font-size: clamp(1.15rem, 2.5vw, 4.8rem);
+  font-size: clamp(2rem, 2.5vw, 4.8rem);
   font-weight: 700;
+}
+/* sub-1 media ============================================= */
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-1 > .slogun-text-wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-1 > .img-container::after {
+    content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  }
 }
 /* main)section-2 ==================================== */
 .sub-1-main > .sub-section-2 {
@@ -629,23 +650,24 @@ header.invert {
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h1 {
   font-weight: bold;
-  font-size: clamp(3.2rem, 2.5vw, 6.4rem);
+  font-size: clamp(3.6rem, 5vw, 6.4rem);
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h3 {
   font-weight: bold;
-  font-size: clamp(1.4rem, 2.5vw, 2.8rem);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h4 {
   font-family: "Pretendard" !important;
   font-weight: medium;
-  font-size: clamp(1.2rem, 2.5vw, 2.4rem);
+  line-height: 1.7;
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
 }
 /* section-2 > scroll-wrapper ==================================== */
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
   position: relative;
-  width: clamp(30rem, 55vw, 120rem);
+  width: clamp(30rem, 50vw, 120rem);
   height: clamp(15rem, 55vh, 60rem);
   border-radius: clamp(0.67rem, 2.5vw, 2rem);
 }
@@ -698,19 +720,25 @@ header.invert {
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > span > h3 {
   font-family: "Urbanist";
   font-weight: 600;
-  font-size: clamp(1.8rem, 2.5vw, 3.6rem);
+  font-size: clamp(2.4rem, 2.5vw, 3.6rem);
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > span > h5 {
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: clamp(1.2rem, 2.5vw, 2.4rem);
+  font-size: clamp(2rem, 2.5vw, 2.4rem);
 }
 /* sub-2 media ============================================= */
 @media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h1 {
+    color: #cafa00;
+  }
+}
+
+@media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
-    width: clamp(30rem, 55vw, 120rem);
-    height: clamp(15rem, 10vh, 60rem);
+    width: clamp(85vw, 85vw, 120rem);
+    height: clamp(35vh, 35vh, 60rem);
   }
 }
 
@@ -726,6 +754,11 @@ header.invert {
   }
 }
 
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > img {
+    filter: brightness(0.5);
+  }
+}
 /* main)between-section ==================================== */
 .sub-1-main > .between-section {
   width: 100%;
@@ -747,7 +780,7 @@ header.invert {
   display: inline-flex;
   flex-direction: column;
   gap: clamp(0.8rem, 2.5vw, 1.2rem);
-  padding: 3.2rem 2rem 6.4rem 2rem;
+  padding: 3.2rem 2rem 3.2rem 2rem;
   white-space: nowrap;
 }
 
@@ -756,7 +789,7 @@ header.invert {
   display: flex;
   font-family: "Urbanist";
   font-weight: bold;
-  font-size: clamp(3.2rem, 2.5vw, 6.4rem);
+  font-size: clamp(3.4rem, 3.5vw, 6.4rem);
   padding-top: clamp(1.8rem, 2.5vw, 3.6rem);
   border-top: 0.2rem solid #ffffff;
 }
@@ -764,19 +797,20 @@ header.invert {
 .sub-1-main > .between-section > .text-banner-wrapper > h3 {
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: clamp(2.4rem, 2.5vw, 4.8rem);
+  font-size: clamp(2.8rem, 2.5vw, 4.8rem);
 }
 
 .sub-1-main > .between-section > .text-banner-wrapper > h5 {
   font-family: "Pretendard";
   font-weight: 400;
-  font-size: clamp(1.2rem, 2.5vw, 2.4rem);
-  line-height: 1.6;
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  line-height: 1.7;
 }
 /* between-sec media ============================================= */
 @media screen and (max-width: 1020px) {
   .sub-1-main > .between-section > .text-banner-wrapper > h1 {
     justify-content: center;
+    color: #cafa00;
   }
 }
 
@@ -788,8 +822,8 @@ header.invert {
 }
 /* main)section-3 ==================================== */
 .sub-1-main > .sub-section-3 {
-  width: 100%;
-  height: 100%;
+  width: 133.5%;
+  height: 133.5%;
   background-color: #161616;
   margin: 0;
   padding: 0;
@@ -820,7 +854,6 @@ header.invert {
   height: 40%;
   width: 100%;
   background: #192459;
-  border-radius: 2rem 2rem 0 0;
 }
 
 .sub-1-main > .sub-section-3 > .card > .card-content {
@@ -832,13 +865,11 @@ header.invert {
   z-index: 100;
   overflow: hidden;
   box-sizing: border-box;
-  border-radius: 50%;
 }
 
 .sub-1-main > .sub-section-3 > .card > .image {
   height: 100%;
   width: 100%;
-  border-radius: 50%;
   padding: 0.3rem;
   object-fit: cover;
   vertical-align: middle;
@@ -848,10 +879,14 @@ header.invert {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  border: 0.3rem solid #fff;
 }
-
+/* sub-3 media ============================================= */
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-3 {
+    width: 150%;
+    height: 150%;
+  }
+}
 /* main)section-4 ==================================== */
 .sub-1-main > .sub-section-4 {
   position: relative;
@@ -884,13 +919,13 @@ header.invert {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(2.4rem, 2.5vw, 3.2rem);
+  gap: clamp(1.2rem, 2.5vw, 3.2rem);
 }
 
 .sub-1-main > .sub-section-4 > .video-text-wrapper > h1 {
   font-family: "Urbanist";
   font-weight: bold;
-  font-size: clamp(3.2rem, 2.5vw, 6.4rem);
+  font-size: clamp(3.6rem, 5vw, 6.4rem);
   text-shadow: 0.2rem 0.2rem 0.6rem rgba(0, 0, 0, 0.5);
 }
 
@@ -898,8 +933,8 @@ header.invert {
   text-align: center;
   font-family: "Pretendard";
   font-weight: 400;
-  font-size: clamp(1.2rem, 2.5vw, 2.4rem);
-  line-height: 1.6;
+  font-size: clamp(1.25rem, 2.5vw, 2.4rem);
+  line-height: 1.7;
 }
 /* sub-4 media ============================================= */
 @media screen and (max-width: 1020px) {
@@ -909,6 +944,11 @@ header.invert {
   }
 }
 
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-4 > .video-text-wrapper > h1 {
+    color: #cafa00;
+  }
+}
 /* main)section-divider ==================================== */
 .sub-1-main > .section-divider {
   width: 100%;
@@ -1072,13 +1112,13 @@ header.invert {
 .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h1 > p {
   font-family: "Urbanist";
   font-weight: 700;
-  font-size: clamp(2.65rem, 5vw, 8rem);
+  font-size: clamp(4rem, 5vw, 8rem);
 }
 
 .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h3 {
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: clamp(1.6rem, 5vw, 4.8rem);
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
 }
 /* section-5 > view-value-wrapper ==================================== */
 .sub-1-main > .sub-section-5 > .view-value-container {
@@ -1088,14 +1128,14 @@ header.invert {
   width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.4rem;
+  gap: clamp(0.4rem, 2.5vw, 2.4rem);
   padding: 12.8rem 2rem 2rem 2rem;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div {
   position: relative;
   width: 100%;
-  height: 25vw;
+  height: 50vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -1131,7 +1171,7 @@ header.invert {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1.2rem, 1.5vw, 2.4rem);
+  gap: clamp(0.2rem, 1.25vw, 2.4rem);
   box-sizing: border-box;
   overflow: hidden;
   white-space: nowrap;
@@ -1142,14 +1182,14 @@ header.invert {
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h1 {
   font-family: "Pretendard";
   font-weight: bold;
-  font-size: clamp(3.25rem, 5vw, 9.75rem);
+  font-size: clamp(5rem, 5vw, 9.75rem);
   border-bottom: 0.2rem solid #ffffff;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h2 {
   font-family: "Urbanist";
-  font-weight: 800;
-  font-size: clamp(1.5rem, 4vw, 4.5rem);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 4.5rem);
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 {
@@ -1169,17 +1209,17 @@ header.invert {
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 > p:first-child {
   font-family: "Urbanist";
   font-weight: 600;
-  font-size: clamp(0.6rem, 5vw, 1.65rem);
+  font-size: 1.65rem;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 > p:last-child {
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: clamp(0.6rem, 5vw, 1.65rem);
+  font-size: 1.65rem;
 }
 /* section-5 > button-wrapper ==================================== */
 .sub-1-main > .sub-section-5 > .btn-wrapper > a {
-  padding: clamp(1.1rem, 2.5vw, 2.2rem) clamp(2.4rem, 2.5vw, 4.8rem);
+  padding: clamp(1.65rem, 2.5vw, 2.2rem) clamp(3.6rem, 2.5vw, 4.8rem);
   display: flex;
   align-items: center;
   gap: clamp(0.9rem, 5vw, 1.8rem);
@@ -1203,7 +1243,7 @@ header.invert {
 .sub-1-main > .sub-section-5 > .btn-wrapper > a > h2 {
   font-family: "Urbanist";
   font-weight: bold;
-  font-size: clamp(1.2rem, 2.5vw, 2.4rem);
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
 }
 
 .sub-1-main > .sub-section-5 > .btn-wrapper > a > span {
@@ -1222,8 +1262,30 @@ header.invert {
 }
 /* sec-5 media ============================================= */
 @media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper {
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h1 {
+    color: #cafa00;
+  }
+}
+
+@media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-5 > .view-value-container {
-    padding: 6.4rem 1rem 1rem 1rem;
+    padding: 3.8rem 1rem 1rem 1rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-5 > .view-value-container > div {
+    height: 20vh;
   }
 }
 
@@ -1236,5 +1298,17 @@ header.invert {
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-5 > .btn-wrapper > a > span {
     display: none;
+  }
+}
+/* footer media ====================================== */
+@media screen and (max-width: 1020px) {
+  .bottom-section > .footer .footer-link-wrap {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .bottom-section > .footer .footer-logo-wrap {
+    padding: 2rem 0 0.2rem 0;
   }
 }
