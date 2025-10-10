@@ -23,6 +23,7 @@
 }
 body .header {
   height: var(--header-height);
+  padding: 0 24px;
 }
 
 /* font-size adjustment */
@@ -909,13 +910,15 @@ header .side-bar-btn {
 /* ---------------------------------------------------------------------- */
 /* ----------------------------- sub page 2 ----------------------------- */
 /* ---------------------------------------------------------------------- */
-.section.sub2 .section-header {
-  h3 {
-    font-size: 9rem;
-    line-height: 1.5;
-  }
-  h4 {
-    font-size: 6.4rem;
+.section.sub2 {
+  .section-header {
+    h3 {
+      font-size: 8rem;
+      line-height: 1.5;
+    }
+    h4 {
+      font-size: 5.4rem;
+    }
   }
 }
 
@@ -1017,9 +1020,12 @@ header .side-bar-btn {
   --font-m: 3.2rem;
   --font-s: 2.4rem;
 }
+
+/* sub2 sec-3,4,5 general */
 .sub2-sec-3,
 .sub2-sec-4,
 .sub2-sec-5 {
+  padding: 0 24px;
   overflow-x: hidden;
   position: relative;
 
@@ -1138,7 +1144,7 @@ header .side-bar-btn {
   left: -2%;
 
   > .text-box {
-    text-wrap: nowrap;
+    white-space: normal;
   }
 
   > .img-box {
@@ -1274,8 +1280,8 @@ header .side-bar-btn {
 
 /* sub2 sec-5 box-3 */
 .sub2-sec-5 > .content-wrap > .content-box.box-3 {
-  top: 200rem;
-  right: 0;
+  top: 190rem;
+  right: 9%;
 
   .img-box {
     width: 40rem;
@@ -1392,6 +1398,8 @@ header .side-bar-btn {
 }
 /* ------------------------- subpage3 section 2 ------------------------- */
 .sub3-sec-2 {
+  padding: 0 24px;
+
   .content-wrap {
     width: 100%;
     max-width: 164rem;
@@ -1813,6 +1821,7 @@ header .side-bar-btn {
 }
 /* ------------------------- subpage3 section 3 ------------------------- */
 .sub3-sec-3 {
+  padding: 0 24px;
   position: relative;
   height: 76vh;
   overflow: hidden;
@@ -2222,7 +2231,7 @@ header .side-bar-btn {
 
   /* ----------------------------- mobile section 4 ----------------------------- */
   .sec-4 > .content-wrap {
-    height: 60svh;
+    height: 90svh;
   }
 
   .sec-4 > .content-wrap {

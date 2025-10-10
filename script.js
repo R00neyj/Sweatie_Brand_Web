@@ -302,7 +302,6 @@ function main_sec4TextSplit__init() {
 
 // main sec4 gsap
 function main_sec4Gsap__init() {
-  console.log("hi");
   const target = document.querySelector(".sec-4");
   let spanEl = document.querySelectorAll(".sec-4 .text-box span span");
   if (spanEl.length === 0) {
@@ -310,28 +309,31 @@ function main_sec4Gsap__init() {
     return;
   }
   let tl = gsap.timeline();
-  spanEl.forEach((el) => {
-    gsap.set(el, { opacity: 1, filter: "blur(0px)" });
+  tl.fromTo(
+    spanEl,
+    {
+      opacity: 0,
+      filter: "blur(4px)",
+      x: -25,
+    },
+    {
+      opacity: 1,
+      filter: "blur(0px)",
+      x: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: "power1.out",
+    }
+  );
 
-    tl.from(el, {
-      opacity: 0.2,
-      filter: "blur(2px)",
-      duration: 0.8,
-      stagger: 0.03,
-      ease: "none",
-    });
-  });
-
-  ScrollTrigger.create({
+  let st = ScrollTrigger.create({
     trigger: target,
     animation: tl,
-    // markers: true,
-    scrub: 0.1,
     start: "top center",
-    end: "+=50%",
+    toggleActions: "play none none reverse",
   });
 
-  ScrollTrigger.refresh();
+  st.refresh();
 }
 
 // main sec5 marquee
@@ -348,9 +350,6 @@ function main_sec5GetMarqueeWidth() {
 
   sec5.style.setProperty("--main-marquee-1-width", `${marquee1Width}px`);
   sec5.style.setProperty("--main-marquee-2-width", `${marquee2Width}px`);
-
-  // for debug
-  console.log(marquee1Width);
 }
 
 // main sec6 news
@@ -433,7 +432,7 @@ function sub2_sec2Gsap__init() {
 }
 
 // subpage 2 sec3,4,5 drawsvg
-function sub2_sec3Gsap__init() {
+function sub2_GsapSvg__init() {
   CreateGsapSvgAni(".sub2-sec-3", "#sec-3-line");
   CreateGsapSvgAni(".sub2-sec-4", "#sec-4-line");
   CreateGsapSvgAni(".sub2-sec-5", "#sec-5-line");
@@ -446,17 +445,19 @@ function sub2_sec3Gsap__init() {
     const svgLine = document.querySelector(lineEl);
     let tl = gsap.timeline();
 
-    tl.fromTo(svgLine, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
+    gsap.set(svgLine, { drawSVG: "5%" });
+    tl.fromTo(svgLine, { drawSVG: "5%" }, { duration: 10, drawSVG: "100%" });
 
-    ScrollTrigger.create({
+    let st = ScrollTrigger.create({
       trigger: target,
       animation: tl,
-      start: "0% 0%",
-      end: "100% 100%",
-      scrub: 3,
+      start: "0% 10%",
+      end: "100% 0%",
+      scrub: 1,
+      markers: true,
     });
 
-    ScrollTrigger.refresh();
+    st.refresh();
   }
 }
 
@@ -593,7 +594,7 @@ function loadList() {
     console.log("subpage-2 founded");
     sub2_sec2Gsap__init();
     sub2_textSplit__init();
-    sub2_sec3Gsap__init();
+    sub2_GsapSvg__init();
   }
 
   /////////////////////////////////
@@ -634,7 +635,7 @@ function reSizeLoadList() {
   if (document.querySelector("#subpage-2") == null) {
   } else {
     sub2_sec2Gsap__init();
-    sub2_sec3Gsap__init();
+    sub2_GsapSvg__init();
   }
   if (document.querySelector("#subpage-3") == null) {
   } else {
