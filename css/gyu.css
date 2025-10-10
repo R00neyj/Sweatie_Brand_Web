@@ -670,13 +670,13 @@ header.invert {
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h3 {
-  font-weight: bold;
+  font-weight: 600;
   font-size: clamp(2rem, 3.5vw, 3.2rem);
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h4 {
   font-family: "Pretendard" !important;
-  font-weight: medium;
+  font-weight: 400;
   line-height: 1.7;
   font-size: clamp(1.6rem, 2.5vw, 2.4rem);
 }
@@ -761,18 +761,6 @@ header.invert {
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper {
     text-align: center;
-  }
-}
-
-@media screen and (max-width: 1020px) {
-  .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h3 {
-    font-weight: 500;
-  }
-}
-
-@media screen and (max-width: 1020px) {
-  .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h4 {
-    font-weight: 400;
   }
 }
 
