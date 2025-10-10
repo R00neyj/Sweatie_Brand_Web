@@ -524,6 +524,12 @@ header.invert {
   object-fit: cover;
   vertical-align: middle;
 }
+/* sub-media html ==================================== */
+@media screen and (max-width: 1020px) {
+  html {
+    font-size: 10px !important;
+  }
+}
 /* subPage-1 ========================================= */
 .sub-1-main {
   white-space: nowrap;
@@ -587,16 +593,31 @@ header.invert {
 
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper > h2 > p {
   font-family: "Urbanist";
-  font-size: clamp(3.6rem, 5vw, 9.6rem);
+  font-size: clamp(4.2rem, 5vw, 9.6rem);
   font-weight: 700;
 }
 
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper > h3 {
   font-family: "Pretendard";
-  font-size: clamp(2rem, 2.5vw, 4.8rem);
+  font-size: clamp(2.2rem, 2.5vw, 4.8rem);
   font-weight: 700;
 }
 /* sub-1 media ============================================= */
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-1 {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-1 > .img-container > img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+}
+
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-1 > .slogun-text-wrapper {
     top: 50%;
@@ -609,12 +630,12 @@ header.invert {
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-1 > .img-container::after {
     content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
   }
 }
 /* main)section-2 ==================================== */
@@ -730,12 +751,6 @@ header.invert {
 }
 /* sub-2 media ============================================= */
 @media screen and (max-width: 1020px) {
-  .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h1 {
-    color: #cafa00;
-  }
-}
-
-@media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
     width: clamp(85vw, 85vw, 120rem);
     height: clamp(35vh, 35vh, 60rem);
@@ -751,6 +766,25 @@ header.invert {
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h3 {
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-2 > .scroll-banner-container > .banner-wrapper > h4 {
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper > .swiper-slide > span {
+    white-space: wrap;
+    width: 100%;
   }
 }
 
@@ -789,7 +823,7 @@ header.invert {
   display: flex;
   font-family: "Urbanist";
   font-weight: bold;
-  font-size: clamp(3.4rem, 3.5vw, 6.4rem);
+  font-size: clamp(3.15rem, 3vw, 6.4rem);
   padding-top: clamp(1.8rem, 2.5vw, 3.6rem);
   border-top: 0.2rem solid #ffffff;
 }
@@ -808,9 +842,8 @@ header.invert {
 }
 /* between-sec media ============================================= */
 @media screen and (max-width: 1020px) {
-  .sub-1-main > .between-section > .text-banner-wrapper > h1 {
-    justify-content: center;
-    color: #cafa00;
+  .sub-1-main > .between-section {
+    padding: 10rem 0;
   }
 }
 
@@ -820,10 +853,16 @@ header.invert {
     white-space: wrap;
   }
 }
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .between-section > .text-banner-wrapper > h1 {
+    justify-content: center;
+  }
+}
 /* main)section-3 ==================================== */
 .sub-1-main > .sub-section-3 {
-  width: 133.5%;
-  height: 133.5%;
+  width: 100%;
+  height: 100%;
   background-color: #161616;
   margin: 0;
   padding: 0;
@@ -832,7 +871,7 @@ header.invert {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: clamp(2.4rem, 2.5vw, 4.8rem);
+  padding: clamp(3.6rem, 2.5vw, 4.8rem) 0;
 }
 
 .sub-1-main > .sub-section-3 > .swiper {
@@ -860,7 +899,6 @@ header.invert {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem;
   position: relative;
   z-index: 100;
   overflow: hidden;
@@ -879,13 +917,6 @@ header.invert {
   height: 100%;
   width: 100%;
   object-fit: cover;
-}
-/* sub-3 media ============================================= */
-@media screen and (max-width: 1020px) {
-  .sub-1-main > .sub-section-3 {
-    width: 150%;
-    height: 150%;
-  }
 }
 /* main)section-4 ==================================== */
 .sub-1-main > .sub-section-4 {
@@ -926,7 +957,7 @@ header.invert {
   font-family: "Urbanist";
   font-weight: bold;
   font-size: clamp(3.6rem, 5vw, 6.4rem);
-  text-shadow: 0.2rem 0.2rem 0.6rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .sub-1-main > .sub-section-4 > .video-text-wrapper > h4 {
@@ -940,13 +971,7 @@ header.invert {
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-4 > video {
     width: 100vw;
-    height: 35vh;
-  }
-}
-
-@media screen and (max-width: 1020px) {
-  .sub-1-main > .sub-section-4 > .video-text-wrapper > h1 {
-    color: #cafa00;
+    height: 70vh;
   }
 }
 /* main)section-divider ==================================== */
@@ -979,6 +1004,7 @@ header.invert {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .sub-1-main > .section-divider > .division > h1 {
@@ -994,11 +1020,11 @@ header.invert {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18rem;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .sub-1-main > .section-divider > .division-logo > img {
@@ -1087,7 +1113,7 @@ header.invert {
   width: 100%;
   height: 100%;
   vertical-align: middle;
-  object-fit: contain;
+  object-fit: cover;
 }
 /* section-5 > text-wrapper ==================================== */
 .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper {
@@ -1112,13 +1138,13 @@ header.invert {
 .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h1 > p {
   font-family: "Urbanist";
   font-weight: 700;
-  font-size: clamp(4rem, 5vw, 8rem);
+  font-size: clamp(3.8rem, 5vw, 8rem);
 }
 
 .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h3 {
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
 }
 /* section-5 > view-value-wrapper ==================================== */
 .sub-1-main > .sub-section-5 > .view-value-container {
@@ -1262,17 +1288,23 @@ header.invert {
 }
 /* sec-5 media ============================================= */
 @media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-5 {
+    margin-bottom: 20rem;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-5 > .background-container > .img-wrapper {
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper {
     text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-}
-
-@media screen and (max-width: 1020px) {
-  .sub-1-main > .sub-section-5 > .background-container > .phrase-text-wrapper > h1 {
-    color: #cafa00;
   }
 }
 
@@ -1298,17 +1330,5 @@ header.invert {
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-5 > .btn-wrapper > a > span {
     display: none;
-  }
-}
-/* footer media ====================================== */
-@media screen and (max-width: 1020px) {
-  .bottom-section > .footer .footer-link-wrap {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1020px) {
-  .bottom-section > .footer .footer-logo-wrap {
-    padding: 2rem 0 0.2rem 0;
   }
 }
