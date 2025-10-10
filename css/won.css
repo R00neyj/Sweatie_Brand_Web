@@ -1988,7 +1988,6 @@ header .side-bar-btn {
   /* ------------------------- mobile section 1 ------------------------- */
   .top-section {
     height: calc(var(--sec-1-mobileHeight) - 0rem);
-    margin-top: 8rem;
 
     .video-container {
       height: var(--sec-1-mobileHeight);
@@ -2275,7 +2274,6 @@ header .side-bar-btn {
     .partner-text-wrap {
       font-weight: 700;
       font-size: var(--mFontXXL);
-      padding-left: 24px;
       display: block;
     }
   }
@@ -2284,6 +2282,11 @@ header .side-bar-btn {
     &::before {
       width: 4rem;
     }
+  }
+  .sec-5 > .partner-text-wrap > .partner-text-box {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 
   .sec-5 > .partners-container > .marquee-slider > span > div {
@@ -2681,11 +2684,6 @@ header .side-bar-btn {
   /*  */
   /* ========================== mobile subpage 3 ==========================*/
   /*  */
-  .sub3 {
-    .content-wrap {
-      padding: 0 3rem;
-    }
-  }
 
   /* ========================== mobile subpage 3 section 1 ==========================*/
   .sub3-sec-1 {

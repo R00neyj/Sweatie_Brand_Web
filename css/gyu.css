@@ -608,7 +608,6 @@ header.invert {
   text-align: end;
   white-space: nowrap;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .sub-1-main > .sub-section-1 > .slogun-text-wrapper > h2 {
@@ -1148,7 +1147,6 @@ header.invert {
   flex-direction: column;
   gap: clamp(1.2rem, 2.5vw, 2.4rem);
   box-sizing: border-box;
-  overflow: hidden;
   white-space: nowrap;
 }
 
@@ -1190,7 +1188,7 @@ header.invert {
   border-radius: clamp(0.6rem, 2.5vw, 1.8rem);
 }
 
-.sub-1-main > .sub-section-5 > .view-value-container > div > img:hover {
+.sub-1-main > .sub-section-5 > .view-value-container > div:hover > img {
   transform: scale(1.2);
   filter: brightness(0.75);
   transition: all 0.3s ease-in-out;
