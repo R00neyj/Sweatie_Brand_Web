@@ -20,6 +20,7 @@
     <link href="../css/normalize.css" rel="stylesheet" />
     <link href="../css/gyu.css" rel="stylesheet" />
     <link href="../css/won.css" rel="stylesheet" />
+    <link href="../css/sub1.css" rel="stylesheet" />
   </head>
   <body id="subpage-1">
     <!-- header -->
@@ -265,35 +266,50 @@
             </div>
           </section>
           <!-- section-divider -->
-          <section class="section-divider">
-            <div class="division divide-1">
-              <h1>
-                <p>Beyond the Run,</p>
-                <p>Grow with Joy</p>
-              </h1>
+          <div class="section-divider-container">
+            <div class="section-divider-wrap">
+              <div class="section-divider">
+                <div class="division divide-1">
+                  <h1>
+                    <p>Beyond the Run,</p>
+                    <p>Grow with Joy</p>
+                  </h1>
+                </div>
+                <span class="division-logo">
+                  <img src="../image/logo/logo_symbol_box.svg" alt="logo-img" />
+                </span>
+                <div class="division divide-2">
+                  <h1>
+                    <p>Beyond the Run,</p>
+                    <p>Grow with Joy</p>
+                  </h1>
+                </div>
+                <span class="division-logo">
+                  <img src="../image/logo/logo_symbol_box.svg" alt="logo-img" />
+                </span>
+              </div>
+              <div class="section-divider">
+                <div class="division divide-1">
+                  <h1>
+                    <p>Beyond the Run,</p>
+                    <p>Grow with Joy</p>
+                  </h1>
+                </div>
+                <span class="division-logo">
+                  <img src="../image/logo/logo_symbol_box.svg" alt="logo-img" />
+                </span>
+                <div class="division divide-2">
+                  <h1>
+                    <p>Beyond the Run,</p>
+                    <p>Grow with Joy</p>
+                  </h1>
+                </div>
+                <span class="division-logo">
+                  <img src="../image/logo/logo_symbol_box.svg" alt="logo-img" />
+                </span>
+              </div>
             </div>
-            <span class="division-logo">
-              <img src="../image/logo/logo_symbol_box.svg" alt="logo-img" />
-            </span>
-            <div class="division divide-2">
-              <h1>
-                <p>Beyond the Run,</p>
-                <p>Grow with Joy</p>
-              </h1>
-            </div>
-            <span class="division-logo">
-              <img src="../image/logo/logo_symbol_box.svg" alt="logo-img" />
-            </span>
-            <div class="division divide-3">
-              <h1>
-                <p>Beyond the Run,</p>
-                <p>Grow with Joy</p>
-              </h1>
-            </div>
-            <span class="division-logo">
-              <img src="../image/logo/logo_symbol_box.svg" alt="logo-img" />
-            </span>
-          </section>
+          </div>
           <!-- sub-section-5 -->
           <section class="sub-section-5">
             <div class="background-container">
@@ -470,10 +486,23 @@
         );
       }
 
-      textFlow__init();
-      sub1Swiper_1__init();
-      sub1Swiper_2__init();
-      boxViewer__init();
+      function sub1_getMarqueeWidth() {
+        const marqueeWrap = document.querySelector(".section-divider-wrap");
+        const marqueeSlide = marqueeWrap.querySelectorAll(".section-divider");
+
+        let width = marqueeSlide[0].offsetWidth;
+        console.log(width);
+
+        marqueeWrap.style.setProperty("--sub1-marquee-width", `${width}px`);
+      }
+
+      window.addEventListener("load", () => {
+        sub1_getMarqueeWidth();
+        textFlow__init();
+        sub1Swiper_1__init();
+        sub1Swiper_2__init();
+        boxViewer__init();
+      });
     </script>
   </body>
 </html>

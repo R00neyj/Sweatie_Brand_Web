@@ -868,7 +868,7 @@ header .side-bar-btn {
   .box-1,
   .box-3 {
     font-weight: 500;
-    font-size: 2rem;
+    font-size: var(--mFontS);
   }
 
   .box-4 {
@@ -2370,7 +2370,7 @@ header .side-bar-btn {
   .bottom-section > .footer > .footer-link-wrap {
     text-wrap: nowrap;
     flex-wrap: wrap;
-    gap: 36px;
+    gap: 36px 20px;
     padding: 64px 24px;
 
     div {
