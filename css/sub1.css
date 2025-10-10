@@ -1,0 +1,12 @@
+/* sub-media html ==================================== */
+@media screen and (max-width: 1020px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}

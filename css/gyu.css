@@ -532,12 +532,7 @@ header.invert {
   object-fit: cover;
   vertical-align: middle;
 }
-/* sub-media html ==================================== */
-@media screen and (max-width: 1020px) {
-  html {
-    font-size: 10px !important;
-  }
-}
+
 /* subPage-1 ========================================= */
 .sub-1-main {
   white-space: nowrap;
