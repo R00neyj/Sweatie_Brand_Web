@@ -649,7 +649,6 @@ function loadList() {
   if (document.querySelector("#subpage-1") == null) {
   } else {
     console.log("subpage-1 founded");
-    AOS.refresh();
     sub1_getMarqueeWidth();
     textFlow__init();
     sub1Swiper_1__init();
@@ -677,6 +676,8 @@ function loadList() {
     sub3_sec2Filter();
     sub3_sec2Modal();
   }
+
+  AOS.refresh();
 }
 
 let viewportWidth = window.innerWidth;
@@ -704,6 +705,7 @@ function reSizeLoadList() {
     main_sec6Hover__init();
   }
   if (document.querySelector("#subpage-1") == null) {
+  } else {
     sub1_getMarqueeWidth();
   }
 
