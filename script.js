@@ -389,6 +389,71 @@ function main_sec6Hover__init() {
 //////////////////////////////////// subpage 1
 //
 
+function sub1Swiper_1__init() {
+  var swiper1 = new Swiper(".mySwiper", {
+    direction: "horizontal",
+    slidesPerView: 1.2,
+    spaceBetween: 30,
+    mousewheel: true,
+    breakpoints: {
+      768: {
+        direction: "vertical",
+      },
+    },
+  });
+}
+
+function sub1Swiper_2__init() {
+  var swiper2 = new Swiper(".mySwiper2", {
+    slidesPerView: 1.2,
+    spaceBetween: 30,
+    slidesPerGroup: 1,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+  });
+}
+
+function textFlow__init() {
+  $("html").mouseenter(function () {
+    $(this).find("> body > .sub-1-main > .sub-section-1 > .slogun-text-wrapper").addClass("textSlider");
+  });
+}
+
+function boxViewer__init() {
+  $(".sub-1-main > .sub-section-5 > .view-value-container > div > img").hover(
+    function () {
+      $(this).parent().children("span").children("h5").addClass("viewer");
+    },
+    function () {
+      $(this).parent().children("span").children("h5").removeClass("viewer");
+    }
+  );
+}
+
+function sub1_getMarqueeWidth() {
+  const marqueeWrap = document.querySelector(".section-divider-wrap");
+  const marqueeSlide = marqueeWrap.querySelectorAll(".section-divider");
+
+  let width = marqueeSlide[0].offsetWidth;
+  console.log(width);
+
+  marqueeWrap.style.setProperty("--sub1-marquee-width", `${width}px`);
+}
+
 //
 //////////////////////////////////// subpage 2
 //
@@ -584,6 +649,11 @@ function loadList() {
   if (document.querySelector("#subpage-1") == null) {
   } else {
     console.log("subpage-1 founded");
+    sub1_getMarqueeWidth();
+    textFlow__init();
+    sub1Swiper_1__init();
+    sub1Swiper_2__init();
+    boxViewer__init();
   }
 
   /////////////////////////////////
@@ -606,6 +676,8 @@ function loadList() {
     sub3_sec2Filter();
     sub3_sec2Modal();
   }
+
+  AOS.refresh();
 }
 
 let viewportWidth = window.innerWidth;
@@ -632,6 +704,11 @@ function reSizeLoadList() {
     main_sec5GetMarqueeWidth();
     main_sec6Hover__init();
   }
+  if (document.querySelector("#subpage-1") == null) {
+  } else {
+    sub1_getMarqueeWidth();
+  }
+
   if (document.querySelector("#subpage-2") == null) {
   } else {
     sub2_sec2Gsap__init();
