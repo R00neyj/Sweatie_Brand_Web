@@ -982,31 +982,53 @@ header.invert {
   }
 }
 /* main)section-divider ==================================== */
-.sub-1-main > .section-divider {
-  width: 100%;
-  height: 100%;
+
+@keyframes sub1-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(var(--sub1-marquee-width) * -1));
+  }
+}
+
+.sub-1-main > .section-divider-container {
+  display: flex;
+  padding: 3.6rem 0;
+  background: #161616;
+  overflow-x: hidden;
+
+  > .section-divider-wrap {
+    display: flex;
+    --sub1-marquee-width: "";
+
+    animation: sub1-marquee 10s infinite linear;
+  }
+}
+
+.sub-1-main .section-divider {
+  /* width: 100%; */
+  /* height: 100%; */
   margin: 0;
-  padding: 3.6rem;
   position: relative;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #161616;
+  flex-shrink: 0;
 
-  -webkit-animation: logo-scroll-1 linear infinite;
+  /* -webkit-animation: logo-scroll-1 linear infinite;
   animation: logo-scroll-1 linear infinite;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: calc(25rem * 14);
+
   animation-duration: 10s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
 }
 
-.sub-1-main > .section-divider > .division {
-  width: 100%;
+.sub-1-main .section-divider > .division {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -1014,7 +1036,7 @@ header.invert {
   flex-shrink: 0;
 }
 
-.sub-1-main > .section-divider > .division > h1 {
+.sub-1-main .section-divider > .division > h1 {
   text-align: center;
   font-family: "Urbanist";
   display: flex;
@@ -1023,7 +1045,7 @@ header.invert {
   font-size: 6rem;
 }
 
-.sub-1-main > .section-divider > .division-logo {
+.sub-1-main .section-divider > .division-logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1034,7 +1056,7 @@ header.invert {
   flex-shrink: 0;
 }
 
-.sub-1-main > .section-divider > .division-logo > img {
+.sub-1-main .section-divider > .division-logo > img {
   display: block;
   width: 6rem;
   object-fit: cover;
@@ -1065,23 +1087,16 @@ header.invert {
   }
 }
 /* sec-divider media ============================================= */
-@media screen and (max-width: 1020px) {
-  .sub-1-main > .section-divider {
-    width: 100vw;
-
-    animation: none;
-  }
-}
 
 @media screen and (max-width: 1020px) {
-  .sub-1-main > .section-divider > .division {
+  .sub-1-main .section-divider > .division {
     display: flex;
     justify-content: center;
   }
 }
 
 @media screen and (max-width: 1020px) {
-  .sub-1-main > .section-divider > .division > h1 {
+  .sub-1-main .section-divider > .division > h1 {
     padding: 0 3.2rem;
     font-size: clamp(2.4rem, 2.5vw, 6rem);
   }
