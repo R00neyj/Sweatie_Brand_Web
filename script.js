@@ -405,6 +405,10 @@ function sub1Swiper_1__init() {
         mousewheel: true,
       },
     },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
 }
 
