@@ -680,7 +680,7 @@ header.invert {
 .sub-1-main > .sub-section-2 > .scroll-banner-container {
   position: relative;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   white-space: nowrap;
   gap: clamp(6.5rem, 2.5vw, 13rem);
@@ -717,8 +717,18 @@ header.invert {
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper {
   position: relative;
   width: clamp(30rem, 50vw, 120rem);
-  height: clamp(15rem, 55vh, 60rem);
+  height: 80vh;
   border-radius: clamp(0.67rem, 2.5vw, 2rem);
+  user-select: none;
+  > .btn {
+    opacity: 0;
+    background-color: #000;
+    height: 20%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+  }
 }
 
 .sub-1-main > .sub-section-2 > .scroll-banner-container > .swiper > .swiper-wrapper {
