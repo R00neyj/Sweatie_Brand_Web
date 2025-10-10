@@ -1191,6 +1191,7 @@ header.invert {
   filter: brightness(0.75);
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > img {
