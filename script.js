@@ -98,22 +98,59 @@ function aos지연시간일일히적기귀찮아함수() {
 //////////////////////////////////// mainpage
 //
 function main_loading__init() {
+  const loadingTime = 1800;
   const htmlEl = document.querySelector("html");
   const loadingEl = document.querySelector(".loading-screen");
+  if (loadingEl === null) {
+    return;
+  }
   const numb = document.querySelector(".percentage .number");
-  htmlEl.style.overflow = "hidden";
-  setTimeout(() => {
+  const video = document.querySelector("#main-video");
+  const loadingScreenKey = "hasVisitedBefore";
+  const isFirstVisit = sessionStorage.getItem(loadingScreenKey) === null;
+
+  if (isFirstVisit) {
+    sessionStorage.setItem(loadingScreenKey, "true");
+    loading();
+  } else {
+    loaded();
+  }
+
+  function loading() {
+    htmlEl.style.overflow = "hidden";
+    let isVideoReady = false;
+    loadingEl.style.setProperty("--loading-time", `${loadingTime}ms`);
+    video.pause();
+
+    video.addEventListener("canplaythrough", () => {
+      isVideoReady = true;
+    });
+
+    for (let i = 0; i <= 100; i++) {
+      setTimeout(() => {
+        numb.textContent = i;
+      }, (loadingTime / 100) * i);
+    }
+    setTimeout(loadCheck, loadingTime + 300);
+
+    function loadCheck() {
+      if (isVideoReady) {
+        loaded();
+      } else {
+        console.log("video not loaded...");
+        setTimeout(loadCheck, 300);
+      }
+    }
+  }
+  function loaded() {
     htmlEl.style.overflow = "auto";
     loadingEl.classList.remove("active");
-  }, 1800);
-
-  for (let i = 0; i <= 100; i++) {
-    setTimeout(() => {
-      numb.innerHTML = i;
-    }, (1500 / 100) * i);
+    video.play();
   }
 }
-main_loading__init();
+document.addEventListener("DOMContentLoaded", () => {
+  main_loading__init();
+});
 // main sec2 highlight
 let HighlightObserver = null;
 function main_sec2PcAni__init() {
