@@ -2035,6 +2035,18 @@ header .side-bar-btn {
     }
   }
 
+  /* mobile loading */
+  .loading-screen {
+    .logo-box {
+      > svg {
+        width: 90vw;
+      }
+    }
+    .percentage {
+      font-size: var(--mFontXXL);
+    }
+  }
+
   /* section header mobile component */
   .section {
     .section-header {
