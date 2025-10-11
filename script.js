@@ -664,11 +664,14 @@ function sub3_sec2Modal() {
 // ctrl + click  jump to function
 
 function loadList() {
+  //loading screen
   const htmlEl = document.querySelector("html");
+  const loadingEl = document.querySelector(".loading-screen");
   htmlEl.style.overflow = "hidden";
   setTimeout(() => {
     htmlEl.style.overflow = "auto";
-  }, 100);
+    loadingEl.classList.remove("active");
+  }, 1800);
 
   /////////// global function
   HeaderbtnSwapContent();

@@ -238,6 +238,56 @@ header .side-bar-btn {
   }
 }
 
+/* ----------------------------- loading screen ----------------------------- */
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.loading-screen.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  background-color: #000;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+
+  .logo-box {
+    color: var(--mono-gray-3);
+    > svg {
+      width: 50rem;
+    }
+  }
+
+  .logo-box.overlay {
+    color: var(--white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    overflow: hidden;
+    animation: loading 1.5s 1 forwards;
+  }
+
+  > .text-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 /* ----------------------------- section 2 ----------------------------- */
 .sec-2 {
   > .content-wrap {
