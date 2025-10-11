@@ -114,11 +114,11 @@ function main_sec2PcAni__init() {
             entry.target.classList.add("active");
 
             // timer for gsap position refresh
-            // let timer;
-            // timer = setTimeout(() => {
-            //   clearTimeout(timer);
-            //   ScrollTrigger.refresh();
-            // }, 500);
+            let timer;
+            timer = setTimeout(() => {
+              clearTimeout(timer);
+              ScrollTrigger.refresh();
+            }, 500);
           }
         });
       },
