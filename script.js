@@ -664,6 +664,12 @@ function sub3_sec2Modal() {
 // ctrl + click  jump to function
 
 function loadList() {
+  const htmlEl = document.querySelector("html");
+  htmlEl.style.overflow = "hidden";
+  setTimeout(() => {
+    htmlEl.style.overflow = "auto";
+  }, 100);
+
   /////////// global function
   HeaderbtnSwapContent();
   aos지연시간일일히적기귀찮아함수();
