@@ -97,7 +97,23 @@ function aos지연시간일일히적기귀찮아함수() {
 //
 //////////////////////////////////// mainpage
 //
+function main_loading__init() {
+  const htmlEl = document.querySelector("html");
+  const loadingEl = document.querySelector(".loading-screen");
+  const numb = document.querySelector(".percentage .number");
+  htmlEl.style.overflow = "hidden";
+  setTimeout(() => {
+    htmlEl.style.overflow = "auto";
+    loadingEl.classList.remove("active");
+  }, 1800);
 
+  for (let i = 0; i <= 100; i++) {
+    setTimeout(() => {
+      numb.innerHTML = i;
+    }, (1500 / 100) * i);
+  }
+}
+main_loading__init();
 // main sec2 highlight
 let HighlightObserver = null;
 function main_sec2PcAni__init() {
@@ -665,13 +681,6 @@ function sub3_sec2Modal() {
 
 function loadList() {
   //loading screen
-  const htmlEl = document.querySelector("html");
-  const loadingEl = document.querySelector(".loading-screen");
-  htmlEl.style.overflow = "hidden";
-  setTimeout(() => {
-    htmlEl.style.overflow = "auto";
-    loadingEl.classList.remove("active");
-  }, 1800);
 
   /////////// global function
   HeaderbtnSwapContent();
