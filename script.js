@@ -89,6 +89,8 @@ function aos지연시간일일히적기귀찮아함수() {
       엘리먼트.removeAttribute("data-aos-offset");
       엘리먼트.setAttribute("data-aos-offset", "100");
     }
+
+    AOS.refresh();
   });
 }
 
@@ -518,9 +520,8 @@ function sub2_sec2Gsap__init() {
     tl = gsap.timeline({
       scrollTrigger: {
         trigger: target,
-        start: "top 70%",
-        end: "bottom 70%",
-        toggleActions: "play none none reverse",
+        start: "top 60%",
+        end: "bottom 60%",
         // markers: true,
         scrub: 1,
       },
@@ -590,11 +591,11 @@ function sub2_textSplit__init() {
       el.append(spans);
     }
 
-    textAniDelay();
+    // textAniDelay();
   });
 }
 
-// text spliter add delay //// this for main sec4
+// text spliter add delay ////
 function textAniDelay() {
   const target = document.querySelectorAll(".splited");
   let targetHas = !!target[0].getAttribute("data-split-delay");
@@ -706,8 +707,8 @@ function loadList() {
   if (document.querySelector("#subpage-2") == null) {
   } else {
     console.log("subpage-2 founded");
-    sub2_sec2Gsap__init();
     sub2_textSplit__init();
+    sub2_sec2Gsap__init();
     sub2_GsapSvg__init();
   }
 
