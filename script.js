@@ -399,15 +399,12 @@ function sub1Swiper_1__init() {
     direction: "horizontal",
     slidesPerView: 1.2,
     spaceBetween: 30,
+    mousewheel: true,
     breakpoints: {
       768: {
         direction: "vertical",
-        mousewheel: true,
+        slidesPerView: 1.2,
       },
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
     },
   });
 }
@@ -417,6 +414,7 @@ function sub1Swiper_2__init() {
     slidesPerView: 1.2,
     spaceBetween: 20,
     slidesPerGroup: 1,
+    freeMode: true,
     loop: true,
     speed: "4500",
     loopFillGroupWithBlank: true,
