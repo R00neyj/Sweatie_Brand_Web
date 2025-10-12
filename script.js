@@ -261,7 +261,7 @@ function main_sec3Gsap__init() {
     // end: () => pinWrap.offsetWidth * 1.5,
     end: "+=270%",
     onEnter: () => {
-      st.refresh();
+      ScrollTrigger.refresh();
       header.classList.add("invert");
     },
     onEnterBack: () => {
