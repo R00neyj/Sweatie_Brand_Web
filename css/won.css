@@ -940,7 +940,7 @@ header .side-bar-btn {
   }
 }
 
-.bottom-section > .footer > .footer-link-wrap > div > li {
+.bottom-section > .footer > .footer-link-wrap > div > div {
   > a {
     transition: all 0.3s;
     position: relative;
@@ -1776,11 +1776,8 @@ header .side-bar-btn {
 
       /* font size */
       font-size: 1.6rem;
-      h4 {
+      .h4 {
         font-size: 2.4rem;
-        > span {
-          color: var(--primary);
-        }
       }
 
       /* box component */
@@ -1793,7 +1790,14 @@ header .side-bar-btn {
           gap: 1rem;
           margin-bottom: 0.4rem;
 
-          > span {
+          > .h4 {
+            font-weight: 700;
+            color: var(--white);
+            > span {
+              color: var(--primary);
+            }
+          }
+          span {
             color: var(--mono-gray-7);
           }
         }

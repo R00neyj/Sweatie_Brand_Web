@@ -45,7 +45,7 @@
 
         <div class="translate-wrap">
           <a href="#">
-            <div class="img-box"><img src="../image/top-section/header/translate icon.png" alt="translate" /></div>
+            <div class="img-box"><img src="../image/top-section/header/translate_icon.png" alt="translate" /></div>
             <span>KOR</span>
           </a>
         </div>
@@ -101,7 +101,7 @@
 
         <div class="language-btn">
           <a href="#"
-            ><div class="img-box"><img src="../image/top-section/header/translate icon.png" alt="translate" /></div>
+            ><div class="img-box"><img src="../image/top-section/header/translate_icon.png" alt="translate" /></div>
             <span>KOR</span>
           </a>
         </div>
@@ -284,10 +284,10 @@
                 <p>Republic of Korea</p>
               </div>
               <div class="box-2">
-                <li><a href="../html/sub1_gyu.html">SWEATIE</a></li>
-                <li><a href="../html/sub2_won.html">Service</a></li>
-                <li><a href="#">Review</a></li>
-                <li><a href="#">Contact</a></li>
+                <div><a href="../html/sub1_gyu.html">SWEATIE</a></div>
+                <div><a href="../html/sub2_won.html">Service</a></div>
+                <div><a href="#">Review</a></div>
+                <div><a href="#">Contact</a></div>
               </div>
               <div class="box-3">
                 <p>Any Business Inquieries</p>
@@ -295,9 +295,9 @@
                 <p>Hello123@sweatie.com</p>
               </div>
               <div class="box-4">
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Youtube</a></li>
-                <li><a href="#">X</a></li>
+                <div><a href="#">Instagram</a></div>
+                <div><a href="#">Youtube</a></div>
+                <div><a href="#">X</a></div>
               </div>
             </div>
           </div>
@@ -322,56 +322,56 @@
         <form class="grid">
           <div class="box name">
             <label for="name" class="head">
-              <h4>Name <span>*</span></h4>
+              <span class="h4">Name <span>*</span></span>
               <span>담당자 성함/직책</span>
             </label>
             <div class="body"><input type="text" id="name" autocomplete="name" placeholder="담당자 성함/직책을 입력해주세요" required /></div>
           </div>
           <div class="box number">
             <label for="phoneNumber" class="head">
-              <h4>Number <span>*</span></h4>
+              <span class="h4">Number <span>*</span></span>
               <span>연락처</span>
             </label>
-            <div class="body"><input type="tel" id="phoneNumber" autocomplete="tel-national" placeholder="연락처를 입력해주세요" required /></div>
+            <div class="body"><input type="tel" id="phoneNumber" autocomplete="tel" placeholder="연락처를 입력해주세요" required /></div>
           </div>
           <div class="box email">
             <label for="email" class="head">
-              <h4>E-mail <span>*</span></h4>
+              <span class="h4">E-mail <span>*</span></span>
               <span>이메일 주소</span>
             </label>
             <div class="body"><input type="email" id="email" autocomplete="email" placeholder="이메일 주소를 입력해주세요" required /></div>
           </div>
           <div class="box company">
             <label for="companyName" class="head">
-              <h4>Company</h4>
+              <span class="h4">Company</span>
               <span>회사명 (선택사항)</span>
             </label>
             <div class="body"><input type="text" id="companyName" autocomplete="off" placeholder="회사명을 입력해주세요(선택사항)" /></div>
           </div>
           <div class="box brand">
             <label for="brandName" class="head">
-              <h4>Brand name</h4>
+              <span class="h4">Brand name</span>
               <span>브랜드명 (선택사항)</span>
             </label>
             <div class="body"><input type="text" id="brandName" placeholder="브랜드명을 입력해주세요(선택사항)" /></div>
           </div>
           <div class="box ask">
             <label for="ask" class="head">
-              <h4>Feel free to ask</h4>
+              <span class="h4">Feel free to ask</span>
               <span>문의사항</span>
             </label>
-            <div class="body"><textarea type="text" id="ask" placeholder="문의사항을 입력해주세요" required></textarea></div>
+            <div class="body"><textarea name="ask" id="ask" placeholder="문의사항을 입력해주세요" required></textarea></div>
           </div>
           <div class="terms-info">
-            <a href="#"
-              ><div class="svg-box">
+            <a href="#">
+              <div class="svg-box">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="2.4rem" fill="currentColor">
                   <path
                     d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
                 </svg>
               </div>
-              <span class="kr">개인정보 수집 및 이용에 대한 안내</span></a
-            >
+              <span class="kr">개인정보 수집 및 이용에 대한 안내</span>
+            </a>
           </div>
           <button id="askSubmit" class="submit" type="submit"><span class="kr">문의하기</span></button>
         </form>
@@ -389,6 +389,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- my script -->
     <script src="../script.js"></script>
   </body>
 </html>
