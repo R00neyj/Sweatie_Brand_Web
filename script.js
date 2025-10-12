@@ -626,7 +626,7 @@ function sub2_GsapSvg__init() {
 // text spliter // it can be used all section
 function sub2_textSplit__init() {
   const target = document.querySelectorAll(`[data-split="true"]`);
-  if ((target.length = 0)) {
+  if (target.length === 0) {
     return;
   }
   target.forEach((el, index) => {
