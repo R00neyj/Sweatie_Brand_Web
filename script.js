@@ -498,10 +498,10 @@ function textFlow__init() {
 function boxViewer__init() {
   $(".sub-1-main > .sub-section-5 > .view-value-container > div > img").hover(
     function () {
-      $(this).parent().children("span").children("h5").addClass("viewer");
+      $(this).parent().children("div").children("h5").addClass("viewer");
     },
     function () {
-      $(this).parent().children("span").children("h5").removeClass("viewer");
+      $(this).parent().children("div").children("h5").removeClass("viewer");
     }
   );
 }
