@@ -145,6 +145,8 @@ function main_loading__init() {
   function loaded() {
     htmlEl.style.overflow = "auto";
     loadingEl.classList.remove("active");
+    document.querySelector(".intro-container > .intro-wrap > .intro-box").classList.add("active");
+    document.querySelector(".top-section > .video-container").classList.add("active");
     video.play();
   }
 }
