@@ -2450,19 +2450,19 @@ header .side-bar-btn {
   .bottom-section {
     min-width: initial;
   }
+  .bottom-section > .footer {
+    width: 100%;
+  }
   .bottom-section > .footer > .footer-link-wrap {
-    text-wrap: nowrap;
-    flex-wrap: wrap;
+    word-break: break-all;
     gap: 36px 20px;
     padding: 64px 24px;
 
-    div {
-      font-size: var(--mFontS);
-    }
-
     .box-1,
-    .box-3 {
-      font-size: var(--mFontS);
+    .box-2,
+    .box-3,
+    .box-4 {
+      font-size: var(--mFontXS);
     }
   }
 

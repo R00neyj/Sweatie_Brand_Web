@@ -598,11 +598,11 @@ function sub2_sec2Gsap__init() {
 
 // subpage 2 sec3,4,5 drawsvg
 function sub2_GsapSvg__init() {
-  CreateGsapSvgAni(".sub2-sec-3", "#sec-3-line");
-  CreateGsapSvgAni(".sub2-sec-4", "#sec-4-line");
-  CreateGsapSvgAni(".sub2-sec-5", "#sec-5-line");
+  CreateGsapSvgAni(".sub2-sec-3 > .svg-box", "#sec-3-line", "50%");
+  CreateGsapSvgAni(".sub2-sec-4", "#sec-4-line", "50%");
+  CreateGsapSvgAni(".sub2-sec-5 > .svg-box", "#sec-5-line", "50%");
 
-  function CreateGsapSvgAni(targetEl, lineEl) {
+  function CreateGsapSvgAni(targetEl, lineEl, start) {
     const target = document.querySelector(targetEl);
     if (target == null) {
       return;
@@ -610,14 +610,14 @@ function sub2_GsapSvg__init() {
     const svgLine = document.querySelector(lineEl);
     let tl = gsap.timeline();
 
-    gsap.set(svgLine, { drawSVG: "5%" });
-    tl.fromTo(svgLine, { drawSVG: "5%" }, { duration: 10, drawSVG: "100%" });
+    gsap.set(svgLine, { drawSVG: "0%" });
+    tl.fromTo(svgLine, { drawSVG: "0%" }, { duration: 10, drawSVG: "100%" });
 
     let st = ScrollTrigger.create({
       trigger: target,
       animation: tl,
-      start: "0% 10%",
-      end: "100% 0%",
+      start: `0% ${start}`,
+      end: `100% ${start}`,
       scrub: 1,
       // markers: true,
     });
