@@ -423,9 +423,10 @@ function main_sec6Hover__init() {
     });
 
     new Swiper(cardBox, {
-      slidesPerView: 1.1,
+      slidesPerView: 1,
       spaceBetween: 0,
       speed: 600,
+      centeredslides: true,
 
       breakpoints: {
         770: {
@@ -785,8 +786,10 @@ const thresholdMobile = 768;
 let isMobile = thresholdMobile >= viewportWidth;
 
 window.addEventListener("load", () => {
-  console.log(`isMobile : ${isMobile}`);
+  // console.log(`isMobile : ${isMobile}`);
+
   loadList();
+  console.clear();
 });
 
 ////////////////////////////////////

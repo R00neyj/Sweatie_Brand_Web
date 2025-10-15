@@ -1347,7 +1347,7 @@ header.invert {
 /* sec-5 media ============================================= */
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-5 {
-    margin-bottom: 20rem;
+    margin-bottom: 5rem;
   }
 }
 
