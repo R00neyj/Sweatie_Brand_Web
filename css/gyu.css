@@ -854,7 +854,7 @@ header.invert {
   display: flex;
   font-family: "Urbanist";
   font-weight: bold;
-  font-size: clamp(3.15rem, 3vw, 6.4rem);
+  font-size: clamp(3.6rem, 3vw, 6.4rem);
   padding-top: clamp(1.8rem, 2.5vw, 3.6rem);
 
   &::before {
@@ -864,7 +864,6 @@ header.invert {
     left: 0;
     display: block;
     width: min(100%, 82rem);
-    border-top: 0.2rem solid #ffffff;
   }
 }
 
@@ -895,7 +894,7 @@ header.invert {
 }
 
 @media screen and (max-width: 1020px) {
-  .sub-1-main > .between-section > .text-banner-wrapper > h1 {
+  .sub-1-main > .between-section > .text-banner-wrapper > h2 {
     justify-content: center;
   }
 }
@@ -1268,12 +1267,24 @@ header.invert {
   font-weight: bold;
   font-size: clamp(5rem, 5vw, 9.75rem);
   border-bottom: 0.2rem solid #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div:hover > div > h3 {
+  font-size: clamp(4.5rem, 4.5vw, 8.775rem);
+  transition: all 0.3s ease-in-out;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > div > h4 {
   font-family: "Urbanist";
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 4.5rem);
+  transition: all 0.3s ease-in-out;
+}
+
+.sub-1-main > .sub-section-5 > .view-value-container > div:hover > div > h4 {
+  font-size: clamp(1.8rem, 3.6vw, 4.05rem);
+  transition: all 0.3s ease-in-out;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > div > h5 {
@@ -1385,6 +1396,12 @@ header.invert {
 @media screen and (max-width: 1020px) {
   .sub-1-main > .sub-section-5 > .view-value-container > div > span > h5 {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .sub-1-main > .sub-section-5 > .view-value-container > div > div > h5 > span {
+    font-size: clamp(2rem, 3vw, 1.4rem);
   }
 }
 
