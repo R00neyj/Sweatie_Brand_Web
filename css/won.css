@@ -1151,9 +1151,9 @@ header .side-bar-btn {
   }
 
   > .img-box {
-    width: 140rem;
-    top: 34%;
-    left: 15%;
+    width: 120rem;
+    top: 42%;
+    left: 31%;
     position: absolute;
   }
 }
@@ -1205,14 +1205,14 @@ header .side-bar-btn {
 /* sub2 sec-4 box-1 */
 .sub2-sec-4 > .content-wrap > .content-box.box-1 {
   top: 5rem;
-  left: -2%;
+  left: 0;
 
   > .text-box {
     white-space: normal;
   }
 
   > .img-box {
-    width: 53rem;
+    width: 50rem;
   }
 }
 
@@ -1326,7 +1326,7 @@ header .side-bar-btn {
   }
 
   .img-box {
-    width: 52rem;
+    width: 48rem;
   }
 }
 
