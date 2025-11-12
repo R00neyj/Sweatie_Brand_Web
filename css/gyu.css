@@ -1332,10 +1332,9 @@ header.invert {
   transition: all 0.2s ease-in-out;
 }
 
-.sub-1-main > .sub-section-5 > .view-value-container > div > div > h5.viewer {
+.sub-1-main > .sub-section-5 > .view-value-container > div:hover > div > h5 {
   opacity: 1;
   visibility: visible;
-  transition: all 0.2s ease-in-out;
 }
 
 .sub-1-main > .sub-section-5 > .view-value-container > div > div > h5 > span:first-child {
