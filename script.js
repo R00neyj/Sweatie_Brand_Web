@@ -691,7 +691,7 @@ function sub3_sec2Modal() {
   });
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    alert(`문의 완료염~~`);
+    alert(`문의가 접수되었습니다`);
     form.reset();
     sub3__modal.classList.remove("active");
   });
